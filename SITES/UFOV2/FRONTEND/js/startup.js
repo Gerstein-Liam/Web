@@ -27,12 +27,16 @@ function  includeHTML()  {
     }
  }
  function myMove() {
-   var elem = document.getElementById("page-grid-container"),style;   
+ 
+
+ 
+  var elem = document.getElementById("page-grids-organisation");   
    var pos = 0;
    var id = setInterval(frame, 40);
    function frame() {
      if (pos == 100) {
        clearInterval(id);
+       alert("Hello press F11 to improve experience");
      } else {
        pos++; 
        let cmd=(100-pos)+'% '+ (pos)  +'% ';
@@ -40,6 +44,8 @@ function  includeHTML()  {
        console.log(cmd);
      }
    }
+
+   
  }
  function Startup() {
    // includeHTML() ;
