@@ -15,7 +15,7 @@
 .app-grids-organisation .main-menu-container {
     display:inline-block;
     position: relative;
-    background-color: #ff020248;
+    background-color: #b18f8f5e;
     grid-column: 1;
     grid-row: 1 / span 1;
     padding: 0px;
@@ -29,7 +29,7 @@
 .app-grids-organisation .workspace-container {
     display:inline-block;
     position: relative;
-    background-color: #1d1af0fd;
+    background-color: #b18f8f5e;
     grid-column: 1;
     grid-row: 2 / span 1;
     padding: 0px;

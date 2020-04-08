@@ -38,7 +38,7 @@
   .page-grids-organisation  .app-container {
     display:block;
     position: relative;
-    background-color: rgb(62, 65, 47);
+    background-color: rgb(238, 240, 230);
     grid-row: 2 / span 1;
     border: inherit;
     border-collapse: collapse ;
