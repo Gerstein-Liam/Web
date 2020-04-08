@@ -32,6 +32,7 @@ https://www.w3schools.com/cssref/pr_grid-column.asp
 }
 
 
+
 .page-grid-container{
 
   overflow: hidden;
@@ -80,11 +81,19 @@ https://www.w3schools.com/cssref/pr_grid-column.asp
 
 
 
+h1{
+
+  color: blue;
+
+
+}
 
 
 
+.TitleS1{
+font-size: larger;
 
-
+}
 
 
 

@@ -18,6 +18,8 @@ function openForm__Mod(index) {
     document.getElementById("country_add").value = PastCountry;
     document.getElementById("sector_add").value = PastSector;
     document.getElementById("preslink_add").value = PastURL;
+
+    document.querySelector
     // console.log(Name + " | " + Vorname + " | " + Country + " | " + Sector);
 }
 function openForm() {
