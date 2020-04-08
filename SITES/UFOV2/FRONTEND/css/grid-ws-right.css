@@ -1,0 +1,46 @@
+.rightarea-grids-organisation  {
+    display: grid;
+    position: relative;
+    grid-template-columns: 80% 20% ; 
+    grid-template-rows: 10% 90%;
+    background-color: rgba(255, 255, 255, 0);
+    height: 100%;
+    padding: 0px;
+    grid-gap: 0%;
+}
+.rightarea-grids-organisation .database-title-container {
+    display:inline-block;
+    position: relative;
+    background-color: #8b67675e;
+    grid-column: 1 / span 2;
+    grid-row: 1 ;
+    padding: 0px;
+    margin-top: 5px;
+    height: 95%;
+    width:  96%;
+    margin-left: 2%; 
+  }
+  .rightarea-grids-organisation  .database-table-container {
+    display:inline-block;
+    position: relative;
+    background-color: #8b67675e;
+    grid-column: 1 / span 1;
+    grid-row: 2 ;
+    padding: 0px;
+    margin-top: 5px;
+    height: 95%;
+    width:  96%;
+    margin-left: 2%; 
+  }
+   .rightarea-grids-organisation .database-tools-container {
+    display:inline-block;
+    position: relative;
+    background-color: #8b67675e;
+    grid-column: 2 / span 1;
+    grid-row: 2 ;
+    padding: 0px;
+    margin-top: 5px;
+    height: 95%;
+    width:  88%;
+    margin-left: 2%; 
+  }
