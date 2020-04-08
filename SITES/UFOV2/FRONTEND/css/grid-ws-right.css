@@ -1,7 +1,7 @@
 .rightarea-grids-organisation  {
     display: grid;
     position: relative;
-    grid-template-columns: 80% 20% ; 
+    grid-template-columns: 2% 88% 10% ; 
     grid-template-rows: 10% 90%;
     background-color: rgba(255, 255, 255, 0);
     height: 98%;
@@ -15,7 +15,7 @@
     display:inline-block;
     position: relative;
     background-color: #8b67675e;
-    grid-column: 1 / span 2;
+    grid-column: 2 / span 2;
     grid-row: 1 ;
     height: inherit;
     width:  inherit;
@@ -28,7 +28,7 @@
     display:inline-block;
     position: relative;
     background-color: #8b67675e;
-    grid-column: 1 / span 1;
+    grid-column: 2 / span 1;
     grid-row: 2 ;
     height: inherit;
     width:  inherit;
@@ -41,7 +41,7 @@
     display:inline-block;
     position: relative;
     background-color: #8b67675e;
-    grid-column: 2 / span 1;
+    grid-column: 3 / span 1;
     grid-row: 2 ;
     height: inherit;
     width:  inherit;
@@ -50,3 +50,19 @@
     grid-gap: inherit;
     margin-top: inherit;
   }
+
+  .rightarea-grids-organisation .ma-right-nav-left {
+    display:inline-block;
+    position: relative;
+    background-color: #070acc5e;
+    grid-column: 1 / span 1;
+    grid-row: 1 / span 2 ;
+    height: inherit;
+    width:  inherit;
+    
+    padding: inherit;
+    grid-gap: inherit;
+    margin-top: inherit;
+  }
+
+  

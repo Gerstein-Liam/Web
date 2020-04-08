@@ -1,7 +1,7 @@
 .mas-grids-organisation  {
     display: grid;
     position: relative;
-    grid-template-columns: 80% 20% ; 
+    grid-template-columns: 80% 10% 10%  ; 
     grid-template-rows: 20% 80%;
     background-color: rgba(255, 255, 255, 0);
     height: 95%;
@@ -44,6 +44,20 @@
     background-color: #8b67675e;
     grid-column: 2 / span 1;
     grid-row: 2 ;
+    padding: 0px;
+    margin-top: 5px;
+    height: 95%;
+    width:  88%;
+    margin-left: 2%; 
+  }
+
+
+  .mas-grids-organisation .database-nav-container {
+    display:inline-block;
+    position: relative;
+    background-color: #20cc2f5e;
+    grid-column: 3 / span 1;
+    grid-row: 1 / span 2 ;
     padding: 0px;
     margin-top: 5px;
     height: 95%;
