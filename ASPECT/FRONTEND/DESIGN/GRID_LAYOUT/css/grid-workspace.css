@@ -5,15 +5,10 @@
   grid-template-columns: 10% 45% 45%;
   grid-template-rows: 100% ;
   background-color: rgba(255, 255, 255, 0);
-  height: 100vh;
-
+  height: 100%;
   padding: 0px;
   grid-gap: 0%;
 }
-
-
-
-
 .workspace-grids-organisation .left-area-container {
   display:inline-block;
   position: relative;
@@ -24,10 +19,7 @@
   height: 98%;
   width:  96%;
   margin-left: 2%; 
-
 }
-
-
 .workspace-grids-organisation .mid-area-container {
   display:inline-block;
   position: relative;
@@ -38,9 +30,7 @@
   height: 98%;
   width:  96%;
   margin-left: 2%; 
-
 }
-
 .workspace-grids-organisation .right-area-container {
   display:inline-block;
   position: relative;
@@ -51,6 +41,4 @@
   height: 98%;
   width:  96%;
   margin-left: 2%; 
-
 }
-

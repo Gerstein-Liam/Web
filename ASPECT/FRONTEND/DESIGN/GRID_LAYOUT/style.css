@@ -1,21 +1,10 @@
 /*
 https://www.w3schools.com/cssref/pr_grid-column.asp
  */
-
-
  @import url("./css/grid-site.css");
  @import url("./css/grid-app.css");
-
-
-
-
  @import url("./css/grid-workspace.css");
-  /*
- @import url("./css/grid-section1.css");
- @import url("./css/grid-section2.css");
- */
- 
- 
+ @import url("./css/grid-ws-midarea.css");
  
  body {
   margin: 0;
@@ -25,19 +14,6 @@ https://www.w3schools.com/cssref/pr_grid-column.asp
   background-size: 10%;
   height: 100%;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
 h1{
   color: blue;
 }

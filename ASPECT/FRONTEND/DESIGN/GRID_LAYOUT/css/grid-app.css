@@ -5,13 +5,10 @@
     grid-template-columns: 100%;
     grid-template-rows: 3% 97% ;
     background-color: rgba(255, 255, 255, 0);
-    height: 100vh;
-  
+    height: 100%;
     padding: 0px;
     grid-gap: 0%;
   }
-
-
 .app-grids-organisation .main-menu-container {
     display:inline-block;
     position: relative;
@@ -19,13 +16,11 @@
     grid-column: 1;
     grid-row: 1 / span 1;
     padding: 0px;
-    margin-top: 5px;
+    margin-top: 1px;
     height: 98%;
     width:  96%;
     margin-left: 2%; 
- 
   }
-
 .app-grids-organisation .workspace-container {
     display:inline-block;
     position: relative;
@@ -33,15 +28,8 @@
     grid-column: 1;
     grid-row: 2 / span 1;
     padding: 0px;
-    margin-top: 8px;
+    margin-top: 2px;
     height: 98%;
     width:  96%;
     margin-left: 2%;
-
- 
   } 
-
-
-  
-
-
