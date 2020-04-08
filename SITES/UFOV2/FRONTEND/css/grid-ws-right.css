@@ -4,9 +4,12 @@
     grid-template-columns: 80% 20% ; 
     grid-template-rows: 10% 90%;
     background-color: rgba(255, 255, 255, 0);
-    height: 100%;
+    height: 98%;
+    width:  98%;
+    
     padding: 0px;
     grid-gap: 0%;
+    margin-top: 0px;
 }
 .rightarea-grids-organisation .database-title-container {
     display:inline-block;
@@ -14,11 +17,12 @@
     background-color: #8b67675e;
     grid-column: 1 / span 2;
     grid-row: 1 ;
-    padding: 0px;
-    margin-top: 5px;
-    height: 95%;
-    width:  96%;
-    margin-left: 2%; 
+    height: inherit;
+    width:  inherit;
+    
+    padding: inherit;
+    grid-gap: inherit;
+    margin-top: inherit;
   }
   .rightarea-grids-organisation  .database-table-container {
     display:inline-block;
@@ -26,11 +30,12 @@
     background-color: #8b67675e;
     grid-column: 1 / span 1;
     grid-row: 2 ;
-    padding: 0px;
-    margin-top: 5px;
-    height: 95%;
-    width:  96%;
-    margin-left: 2%; 
+    height: inherit;
+    width:  inherit;
+    
+    padding: inherit;
+    grid-gap: inherit;
+    margin-top: inherit;
   }
    .rightarea-grids-organisation .database-tools-container {
     display:inline-block;
@@ -38,9 +43,10 @@
     background-color: #8b67675e;
     grid-column: 2 / span 1;
     grid-row: 2 ;
-    padding: 0px;
-    margin-top: 5px;
-    height: 95%;
-    width:  88%;
-    margin-left: 2%; 
+    height: inherit;
+    width:  inherit;
+    
+    padding: inherit;
+    grid-gap: inherit;
+    margin-top: inherit;
   }
