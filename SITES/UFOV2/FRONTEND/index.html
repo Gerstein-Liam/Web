@@ -1,0 +1,38 @@
+<!--                             
+  http://ufodb/layout/grid-basis/
+  https://www.educba.com/html5-vs-javascript/  
+   -->
+<!--     -->
+<!DOCTYPE html
+   PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<HTML>
+
+<head>
+   <meta charset="utf-8" />
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" type="text/css" href="style.css" />
+   <script src="https://www.w3schools.com/lib/w3.js"></script>
+   <script src="./js/startup.js"></script>
+   <script src="./js/modlayout.js"></script>
+   <title>UFO DATABASE</title>
+</head>
+
+<body onload="Startup()">
+   <div class="page-grids-organisation" id="page-grids-organisation">
+      <div class="welcome-container" id="welcome-container">
+         <div class="bg" id="bg" onmousedown="myMove()">
+            <img src="../../../../media/diagram.svg" style="width: 20%;height: 100%;float:right;margin-right: 5%;">
+            </img>
+         </div>
+      </div>
+      <div class="app-container" id="app-container">
+         <div class="app-grids-organisation" id="app-grids-organisation">
+            <div w3-include-html="./html/mainmenu.html"></div>                      <!--MAIN MENU-->
+            <div w3-include-html="./html/workspace.html"></div>                     <!--WORKSPACE-->
+         </div>
+      </div>
+   </div>
+   <script>includeHTML();</script>
+</body>
+
+</html>
