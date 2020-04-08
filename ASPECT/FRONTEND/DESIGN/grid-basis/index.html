@@ -1,0 +1,36 @@
+<!--                             
+  http://ufodb/layout/grid-basis/
+   -->
+<!DOCTYPE html
+   PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<HTML>
+<head>
+   <meta charset="utf-8" />
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" type="text/css" href="style.css" />
+   <script src="./js/startup.js"></script>
+   <script src="./js/modlayout.js"></script>
+   <title>UFO DATABASE</title>
+</head>
+<body onload="Startup()">
+   <div class="page-grid-container" id="page-grid-container">
+      <div class="welcome-container" id="welcome-container">
+         <div class="bg" id="bg"  onmousedown="myMove()" >
+         </div>
+      </div>
+      <div class="app-container" id="app-container">
+         <header>
+            <img src="../../media/ufodb_banner.png" class="imgbanner" alt="Smiley face">
+         </header>
+         <div class="main-grid-container" id="main-grid-container">
+            <div class="Main-Menu" id="Main-Menu" onmousedown="MenuDisplay(this)">
+            </div>
+            <div class="Menu-Contextual">
+               Menu Contextuel
+            </div>
+            <div w3-include-html="./html/workspace.html"></div>
+         </div>
+      </div>
+   </div>
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!-- http://ufodb/test_domjson/ajax_client -->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>UFO-DB</title>
+  <style>
+    td,
+    th {
+      border: 1px solid #dddddd;
+      text-align: left;
+      padding: 4px;
+    }
+  </style>
+  <script>
+    function DOM_WithPHP_Test() {
+      if (window.XMLHttpRequest) {
+        // code for IE7+, Firefox, Chrome, Opera, Safari
+        xmlhttp = new XMLHttpRequest();
+      } else {
+        // code for IE6, IE5
+        xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+      }
+      xmlhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+          var obj = JSON.parse(this.responseText);
+          console.log(obj);
+          var result = "";
+          var dom = document.getElementById("DOM");
+          var table = document.createElement("table");
+          var ligne;
+          for (let i = 0; i <= 2; i++) {
+            var ligne = document.createElement("tr");
+            var firstname = document.createElement("td");
+            firstname.innerHTML = obj.Person[i].FirstName;
+            var lastname = document.createElement("td");
+            lastname.innerHTML = obj.Person[i].LastName;
+            ligne.appendChild(firstname);
+            ligne.appendChild(lastname);
+            console.log(obj.Person[i].FirstName + obj.Person[i].LastName);
+            result += obj.Person[i].FirstName + " " + obj.Person[i].LastName;
+            table.appendChild(ligne);
+          }
+          dom.appendChild(table);
+          console.log(result);
+        }
+      };
+      xmlhttp.open("GET", `ajax_phpserver.php`, true);
+      xmlhttp.send();
+    }
+    // NODE.JS
+    function DOM_WithNode_Test() {
+      if (window.XMLHttpRequest) {
+        // code for IE7+, Firefox, Chrome, Opera, Safari
+        xmlhttp = new XMLHttpRequest();
+      } else {
+        // code for IE6, IE5
+        xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+      }
+      xmlhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+          var obj = JSON.parse(this.responseText);
+          console.log(obj);
+          var result = "";
+          var dom = document.getElementById("DOM");
+          var table = document.createElement("table");
+          var ligne;
+          for (let i = 0; i <= 2; i++) {
+            var ligne = document.createElement("tr");
+            var firstname = document.createElement("td");
+            firstname.innerHTML = obj[i].NAME;
+            var lastname = document.createElement("td");
+            lastname.innerHTML = obj[i].VORNAME;
+            ligne.appendChild(firstname);
+            ligne.appendChild(lastname);
+            //  console.log(obj.Person[i].FirstName + obj.Person[i].LastName);
+            // result += obj.Person[i].FirstName + " " + obj.Person[i].LastName;
+            table.appendChild(ligne);
+          }
+          dom.appendChild(table);
+          //  console.log(result);
+        }
+      };
+      xmlhttp.open("GET", `http://localhost:8080/ajax`, true);
+      xmlhttp.send();
+    }
+  </script>
+</head>
+<body onload="DOM_WithNode_Test()">
+  <h1 style="text-align: center;">TEST DOM-JSON (NODE OR PHP)</h1>
+  <div id="DOM"></div>
+</body>
+</html>

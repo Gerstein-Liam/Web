@@ -1,0 +1,132 @@
+body {
+   
+    margin: 0;
+    padding: 0;
+    background-color: rgb(197, 189, 189);
+    background-repeat: no-repeat;
+    background-size: 10%;
+}
+
+
+header{
+/* border: 1px solid #f5ecec;*/
+
+
+background-color: rgb(0, 0, 0);
+width: 100%;
+
+}
+
+.imgbanner{
+    
+    border-radius: 20px;
+    display: block;
+    max-width: 20%;
+    height: auto;
+    margin-left: 0%;
+
+    /* border: 1px solid #f5ecec;
+    
+    margin-left: auto;
+    margin-right: auto;
+    
+    */
+    
+ 
+
+
+}
+.popup {
+	display: none;
+	position: fixed;
+	bottom: 0;
+	right: 15px;
+	border: 3px solid #f1f1f1;
+    z-index: 9;
+  
+}
+
+
+.open-button {
+    
+   
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    display: block;
+	position: fixed;
+	bottom: 0;
+	right: 15px;
+	border: 3px solid #f1f1f1;
+	z-index: 9;
+   
+    height: 100px;
+    width: 10%;
+  
+}
+
+ul#menu li {
+	display: inline;
+}
+
+table {
+	font-family: arial, sans-serif;
+	border-collapse: collapse;
+	width: 100%;
+}
+
+thead,
+tfoot {
+	background-color: rgb(40, 26, 167);
+	color: #fff;
+}
+
+tbody {
+	background-color: rgba(255, 255, 255, 0.877);
+	color: rgb(0, 0, 0);
+}
+
+td,
+th {
+	border: 1px solid #dddddd;
+	text-align: left;
+    padding: 4px;
+}
+
+
+/* Create three equal columns that floats next to each other */
+
+.column {
+	float: left;
+	width: 15.0%;
+	padding: 15px;
+}
+
+.column-table {
+	float: left;
+	width: 60.0%;
+	padding: 15px;
+}
+
+
+/* Clear floats after the columns */
+
+.row:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+
+/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+
+@media screen and (max-width:600px) {
+	.column {
+		width: 100%;
+	}
+}

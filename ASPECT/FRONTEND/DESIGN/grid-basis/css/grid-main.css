@@ -1,0 +1,42 @@
+.main-grid-container {
+    display: grid;
+    position: relative;
+    /* grid-template-columns: auto auto ; */
+    grid-template-columns: 10% 90%;
+    grid-template-rows: 5% 95% ;
+    background-color: #2196F3;
+    height: 95vh;
+    padding: 0px;
+    grid-gap: 0px;
+    border: 1px solid #000000;
+    border-collapse: collapse ;
+    box-sizing: border-box;
+  }
+  .main-grid-container .Main-Menu {
+    display:block;
+    position: relative;
+    background-color: rgba(71, 15, 224, 0.8);
+    grid-column: 1;
+    grid-row: 1 / span 2;
+  
+  }
+  .main-grid-container .Menu-Contextual {
+    background-color: rgba(255, 255, 255, 0.8);
+    grid-column: 2 / span 1;
+    grid-row: 1 / span 1;
+ 
+    
+  }
+  .main-grid-container .sections-grid-container {
+    display:block;
+    position: relative;
+    background-color: rgba(215, 252, 5, 0.8);
+    grid-column: 2;
+    grid-row: 2 / span 1;
+   
+  }
+  div {
+    text-align: center;
+    /*  padding: 20px 0;  */
+    font-size: 20px;
+  }

@@ -1,0 +1,47 @@
+<h2>Liste temoin</h2>
+<div class="column-table">
+  <div id="result"> </div>
+</div>
+<div class="column">
+  <table>
+    <thead>
+      <tr>
+        <th colspan=2> <label for="cars">FILTER</label> </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th> <label for="cars">Country</label> </th>
+        <th>
+          <select id="fcountry" name="country" form="find_testimy_criterias" onchange="UpdateResult()">
+            <option value="%">Any</option>
+            <option value="usa">UnitedStates</option>
+            <option value="france">France</option>
+          </select>
+        </th>
+      </tr>
+      <tr>
+        <th> <label for="cars">Sector</label> </th>
+        <th>
+          <select id="fsector" name="sector" form="find_testimy_criterias" onchange="UpdateResult()">
+            <option value="%">Any</option>
+            <option value="civil">Civil</option>
+            <option value="army">Army</option>
+            <option value="politics">Politics</option>
+            <option value="scientits">Scientits</option>
+          </select>
+        </th>
+      </tr>
+      <tr>
+        <th> <label for="cars">Observation Type</label> </th>
+        <th>
+          <select id="fobs" name="observation_type" form="find_testimy_criterias" onchange="UpdateResult()">
+            <option value="%">Any</option>
+            <option value="direct">Direct</option>
+            <option value="indirect">Indirect</option>
+          </select>
+        </th>
+      </tr>
+    </tbody>
+  </table>
+</div>

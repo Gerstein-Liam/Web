@@ -1,0 +1,10 @@
+INSERT INTO `person` (`ID_person`, `NAME`, `VORNAME`) VALUES (NULL, 'dsd', 'ddd');
+
+UPDATE person
+SET `VORNAME`='raul'
+WHERE `ID_person`=(
+SELECT`ID_person` FROM  person
+WHERE NAME='Denis');
+
+
+https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Classes
