@@ -26,7 +26,6 @@ function  includeHTML()  {
        }
     }
  }
-
  function myMove() {
    var elem = document.getElementById("page-grid-container"),style;   
    var pos = 0;
@@ -42,9 +41,6 @@ function  includeHTML()  {
      }
    }
  }
-
-
-
  function Startup() {
    // includeHTML() ;
   //  myMove();

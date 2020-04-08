@@ -1,16 +1,14 @@
-.mid-area-grids-organisations  {
+  .mid-area-grids-organisations  {
     display: grid;
     position: relative;
     /* grid-template-columns: auto auto ; */
-
     grid-template-rows: 33% 33% 33%;
     background-color: rgba(255, 255, 255, 0);
     height: 100%;
     padding: 0px;
     grid-gap: 0%;
 }
-
-.mid-area-grids-organisations .ma-top-container {
+  .mid-area-grids-organisations .ma-top-container {
     display:inline-block;
     position: relative;
     background-color: #b18f8f5e;
@@ -22,7 +20,6 @@
     width:  96%;
     margin-left: 2%; 
   }
-
   .mid-area-grids-organisations .ma-mid-container {
     display:inline-block;
     position: relative;
@@ -35,8 +32,6 @@
     width:  96%;
     margin-left: 2%; 
   }
-
-
   .mid-area-grids-organisations .ma-bottom-container {
     display:inline-block;
     position: relative;
