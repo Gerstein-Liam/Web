@@ -1,11 +1,14 @@
-   .workspace-grid-container {
+
+  
+  
+  .workspace-grid-container {
     position: relative;
     display: grid;
     /* grid-template-columns: auto auto ; */
     grid-template-rows: 33% 33% 33% ;
     grid-template-columns: 10% 45% 45%;
     grid-auto-flow: row;
-    background-color: rgb(198, 209, 208);
+    background-color: rgb(30, 182, 169);
     padding: 0px;
     grid-gap: 0%;
     height: 100%;
@@ -13,6 +16,9 @@
     border: solid rgb(0, 0, 0);
     border-width: 1px 1px 1px 1px;   /*    haut droit bas gauche https://developer.mozilla.org/fr/docs/Web/CSS/border-width */                
   }
+
+  
+  
   
   .workspace-grid-container  .Menu-Contextual {
     display:inline-block;
@@ -29,7 +35,7 @@
   .workspace-grid-container  .workspace-Section1 {
     display:inline-block;
     position: relative;
-    background-color: rgba(96, 223, 37, 0.8);
+    background-color: rgba(223, 189, 37, 0.8);
     grid-column: 2;
     grid-row: 1 / span 1;
     border: solid rgb(0, 0, 0);
@@ -38,7 +44,7 @@
   .workspace-grid-container  .workspace-Section2 {
     display:inline-block;
     position: relative;
-    background-color: rgba(96, 223, 37, 0.8);
+    background-color: rgba(135, 167, 20, 0.8);
     grid-column: 2;
     grid-row: 2 / span 1;
     border: solid rgb(0, 0, 0);
@@ -47,7 +53,7 @@
   .workspace-grid-container  .workspace-Section3 {
     display:inline-block;
     position: relative;
-    background-color: rgba(96, 223, 37, 0.8);
+    background-color: rgba(131, 163, 57, 0.8);
     grid-column: 2;
     grid-row: 3 / span 1;
   }

@@ -1,24 +1,7 @@
-.main-grid-container {
-    display: grid;
-    position: relative;
-    /* grid-template-columns: auto auto ; */
-    grid-template-columns: 100%;
-    grid-template-rows: 5% 95% ;
-    background-color: #2196F3;
-    height: 100vh;
-    padding: 0px;
-    grid-gap: 0px;
-  }
-  .main-grid-container .Main-Menu {
-    display:block;
-    position: relative;
-    background-color: #f1f1f1;
-    grid-column: 1;
-    grid-row: 1 / span 1;
+
   
-  }
   .main-grid-container .Menu-Contextual {
-    background-color: #cf3232;
+    background-color: #e21818;
     grid-column: 2 / span 1;
     grid-row: 1 / span 1;
   }
