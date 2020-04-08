@@ -20,7 +20,7 @@ https://www.w3schools.com/cssref/pr_grid-column.asp
 
 .bg {
   /* The image used */
-  background-image: url("../../media/earth_title.jpg");
+  background-image: url("/media/earth_title.jpg");
 
   /* Full height */
   height: 100%; 
