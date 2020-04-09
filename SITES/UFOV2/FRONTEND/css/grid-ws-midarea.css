@@ -3,11 +3,16 @@
     position: relative;
     /* grid-template-columns: auto auto ; */
     grid-template-columns:  98% 2%;
-    grid-template-rows: 33% 33% 33%;
+    grid-template-rows: 33% 33% 34%;
     background-color: rgba(255, 255, 255, 0);
+  
+    
     height: 100%;
+    width: 100%;
     padding: 0px;
     grid-gap: 0%;
+    margin-top: 0px;
+    margin-left: 0%;
 }
   .mid-area-grids-organisations .ma-top-container {
     display:inline-block;
@@ -15,11 +20,13 @@
     background-color: #b18f8f5e;
     grid-column: 1;
     grid-row: 1 / span 1;
+   
+    height: 100%;
+    width: 100%;
     padding: 0px;
-    margin-top: 5px;
-    height: 95%;
-    width:  96%;
-    margin-left: 2%; 
+    grid-gap: 0%;
+    margin-top: 0px;
+    margin-left: 0%;
 
     border-width: 1px;
     border-top-style: dotted;
@@ -33,11 +40,13 @@
     background-color: #b18f8f5e;
     grid-column: 1;
     grid-row: 2 / span 1;
+    
+    height: 100%;
+    width: 100%;
     padding: 0px;
-    margin-top: 5px;
-    height: 95%;
-    width:  96%;
-    margin-left: 2%; 
+    grid-gap: 0%;
+    margin-top: 0px;
+    margin-left: 0%;
 
     border-width: 1px;
     border-top-style: dotted;
@@ -51,11 +60,13 @@
     background-color: #b18f8f5e;
     grid-column: 1;
     grid-row: 3 / span 1;
+    
+    height: 100%;
+    width: 100%;
     padding: 0px;
-    margin-top: 5px;
-    height: 95%;
-    width:  96%;
-    margin-left: 2%; 
+    grid-gap: 0%;
+    margin-top: 0px;
+    margin-left: 0%;
 
     border-width: 1px;
     border-top-style: dotted;
@@ -72,12 +83,16 @@
     background-color: #0a19eb5e;
     grid-column: 2;
     grid-row: 1 / span 3;
-    padding: 0px;
-    margin-top: 5px;
-    height: 95%;
-    width:  96%;
-    margin-left: 2%; 
+  
 
+    height: 100%;
+    width: 100%;
+    padding: 0px;
+    grid-gap: 0%;
+    margin-top: 0px;
+    margin-left: 0%;
+
+  
     border-width: 1px;
     border-top-style: dotted;
     border-right-style: dotted;

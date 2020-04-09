@@ -5,9 +5,13 @@
     grid-template-columns: 100%;
     grid-template-rows: 3% 97% ;
     background-color: rgba(255, 255, 255, 0);
+    
     height: 100%;
+    width: 100%;
     padding: 0px;
     grid-gap: 0%;
+    margin-top: 0px;
+    margin-left: 0%;
   }
 .app-grids-organisation .main-menu-container {
     display:inline-block;
@@ -15,11 +19,13 @@
     background-color: #b18f8f5e;
     grid-column: 1;
     grid-row: 1 / span 1;
+   
+    height: 100%;
+    width: 100%;
     padding: 0px;
-    margin-top: 1px;
-    height: 98%;
-    width:  96%;
-    margin-left: 2%; 
+    grid-gap: 0%;
+    margin-top: 0px;
+    margin-left: 0%;
 
     border-width: 2px;
     border-top-style: dashed;
@@ -36,11 +42,13 @@
     background-color: #b18f8f5e;
     grid-column: 1;
     grid-row: 2 / span 1;
+  
+    height: 100%;
+    width: 100%;
     padding: 0px;
-    margin-top: 2px;
-    height: 98%;
-    width:  96%;
-    margin-left: 2%;
+    grid-gap: 0%;
+    margin-top: 0px;
+    margin-left: 0%;
 
     border-width: 2px;
     border-top-style: dashed;
