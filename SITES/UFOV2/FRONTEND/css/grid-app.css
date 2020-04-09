@@ -3,7 +3,7 @@
     position: relative;
     /* grid-template-columns: auto auto ; */
     grid-template-columns: 100%;
-    grid-template-rows: 3% 97% ;
+    grid-template-rows: 2.5% 97.5% ;
     background-color: rgba(255, 255, 255, 0);
     
     height: 100%;
@@ -16,7 +16,7 @@
 .app-grids-organisation .main-menu-container {
     display:inline-block;
     position: relative;
-    background-color: #b18f8f5e;
+    background-color: rgb(51, 53, 146);
     grid-column: 1;
     grid-row: 1 / span 1;
    
@@ -27,11 +27,7 @@
     margin-top: 0px;
     margin-left: 0%;
 
-    border-width: 2px;
-    border-top-style: dashed;
-    border-right-style: dotted;
-    border-bottom-style: dotted;
-    border-left-style: dotted;
+   
 
 
   
@@ -50,9 +46,5 @@
     margin-top: 0px;
     margin-left: 0%;
 
-    border-width: 2px;
-    border-top-style: dashed;
-    border-right-style: dotted;
-    border-bottom-style: dotted;
-    border-left-style: dotted;
+   
   } 

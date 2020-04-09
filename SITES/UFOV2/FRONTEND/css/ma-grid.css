@@ -1,10 +1,9 @@
 .mas-grids-organisation  {
     display: grid;
     position: relative;
-    grid-template-columns: 88% 10% 2%  ; 
+    grid-template-columns: 95% 5% 0%  ; 
     grid-template-rows: 10% 90%;
     background-color: rgba(255, 255, 255, 0);
-    
     height: 100%;
     width: 100%;
     padding: 0px;
@@ -12,97 +11,76 @@
     margin-top: 0px;
     margin-left: 0%;
 }
-
-
-
-.mas-grids-organisation .database-title-container {
+.mas-grids-organisation h1{
+  font-size: small;
+  text-align: center; 
+  color: white;
+}
+  .mas-grids-organisation .database-title-container {
     display:inline-block;
     position: relative;
-    background-color: #8b67675e;
+    background-color: rgb(75, 75, 75);
     grid-column: 1 / span 2;
     grid-row: 1 ;
-    
     height: 100%;
     width: 100%;
     padding: 0px;
     grid-gap: 0%;
     margin-top: 0px;
     margin-left: 0%;
-
-
-  
-
   }
-
   .mas-grids-organisation .database-table-container {
     display:inline-block;
     position: relative;
     background-color: #8b67675e;
     grid-column: 1 / span 1;
     grid-row: 2 ;
-  
-    
-    
-    
     height: 100%;
     width: 100%;
     padding: 0px;
     grid-gap: 0%;
     margin-top: 0px;
     margin-left: 0%;
-
     border-width: 1px;
+    border-radius: 20px;
     border-top-style: solid;
     border-right-style: solid;
 /* border-bottom-style: dotted;
     border-left-style: dotted;  */
-
     box-sizing: border-box;
-
     overflow: scroll;
+    
   }
-
-
   .mas-grids-organisation .database-tools-container {
     display:inline-block;
     position: relative;
-    background-color: #8b67675e;
+    background-color: rgb(75, 75, 75);
     grid-column: 2 / span 1;
     grid-row: 2 ;
-  
     height: 100%;
     width: 100%;
     padding: 0px;
     grid-gap: 0%;
     margin-top: 0px;
     margin-left: 0%;
-
     border-width: 1px;
-    border-top-style: solid;
-
   }
-
-
   .mas-grids-organisation .database-nav-container {
     display:inline-block;
     position: relative;
     background-color: #20cc2f5e;
     grid-column: 3 / span 1;
     grid-row: 1 / span 2 ;
-  
     height: 100%;
     width: 100%;
     padding: 0px;
     grid-gap: 0%;
     margin-top: 0px;
     margin-left: 0%;
-
-
     border-width: 1px;
   /*   border-top-style: solid;
     border-right-style: solid;
 border-bottom-style: dotted;  */
     border-left-style: solid; 
-
     box-sizing: border-box;
   }

@@ -1,14 +1,23 @@
 /*
 https://www.w3schools.com/cssref/pr_grid-column.asp
  */
- @import url("./css/grid-site.css");
- @import url("./css/grid-app.css");
- @import url("./css/grid-workspace.css");
- @import url("./css/grid-ws-midarea.css");
- @import url("./css/ma-grid.css");
- @import url("./css/grid-ws-right.css");
+ 
 
- @import url("./css/tables.css");
+ /*
+@viewport {
+  width: device-width;
+  user-zoom: fixed ;
+}
+*/
+ 
+ @import url("./css/grid-site.css");
+ 
+ 
+ @import url("./css/grid-app.css");
+ @import url("./css/grid-main-menu.css");
+ @import url("./css/grid-workspace.css");
+
+
  
  body {
   margin: 0;
@@ -17,6 +26,7 @@ https://www.w3schools.com/cssref/pr_grid-column.asp
   background-repeat: no-repeat;
   background-size: 10%;
   height: 100%;
+ 
 }
 h1{
   color: blue;

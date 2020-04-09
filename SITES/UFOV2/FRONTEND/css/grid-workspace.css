@@ -1,3 +1,11 @@
+
+@import url("../css/grid-ws-right.css");
+@import url("../css/grid-ws-midarea.css");
+@import url("../css/grid-ws-leftarea.css");
+
+@import url("../css/tables.css");
+
+
 .workspace-grids-organisation  {
   display: grid;
   position: relative;
@@ -17,7 +25,7 @@
 .workspace-grids-organisation .left-area-container {
   display:inline-block;
   position: relative;
-  background-color: #b49b9b5e;
+  background-color: rgb(75, 75, 75);
   grid-column: 1;
   
   
@@ -52,8 +60,12 @@
   border-width: 1px;
   border-top-style: solid;
   border-right-style: solid;
+
+ 
+ 
+ /*
   border-bottom-style: solid;
-  border-left-style: solid;
+  border-left-style: solid;*/
 }
 .workspace-grids-organisation .right-area-container {
   display:inline-block;
@@ -75,3 +87,10 @@
   border-bottom-style: solid;
   border-left-style: solid;
 }
+
+
+
+
+
+
+
