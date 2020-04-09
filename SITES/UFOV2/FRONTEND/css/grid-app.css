@@ -20,6 +20,15 @@
     height: 98%;
     width:  96%;
     margin-left: 2%; 
+
+    border-width: 2px;
+    border-top-style: dashed;
+    border-right-style: dotted;
+    border-bottom-style: dotted;
+    border-left-style: dotted;
+
+
+  
   }
 .app-grids-organisation .workspace-container {
     display:inline-block;
@@ -32,4 +41,10 @@
     height: 98%;
     width:  96%;
     margin-left: 2%;
+
+    border-width: 2px;
+    border-top-style: dashed;
+    border-right-style: dotted;
+    border-bottom-style: dotted;
+    border-left-style: dotted;
   } 

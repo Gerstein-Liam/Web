@@ -20,6 +20,12 @@
     height: 95%;
     width:  96%;
     margin-left: 2%; 
+
+    border-width: 1px;
+    border-top-style: dotted;
+    border-right-style: dotted;
+    border-bottom-style: dotted;
+    border-left-style: dotted;
   }
   .mid-area-grids-organisations .ma-mid-container {
     display:inline-block;
@@ -32,6 +38,12 @@
     height: 95%;
     width:  96%;
     margin-left: 2%; 
+
+    border-width: 1px;
+    border-top-style: dotted;
+    border-right-style: dotted;
+    border-bottom-style: dotted;
+    border-left-style: dotted;
   }
   .mid-area-grids-organisations .ma-bottom-container {
     display:inline-block;
@@ -44,6 +56,12 @@
     height: 95%;
     width:  96%;
     margin-left: 2%; 
+
+    border-width: 1px;
+    border-top-style: dotted;
+    border-right-style: dotted;
+    border-bottom-style: dotted;
+    border-left-style: dotted;
   }
 
 
@@ -59,4 +77,10 @@
     height: 95%;
     width:  96%;
     margin-left: 2%; 
+
+    border-width: 1px;
+    border-top-style: dotted;
+    border-right-style: dotted;
+    border-bottom-style: dotted;
+    border-left-style: dotted;
   }
