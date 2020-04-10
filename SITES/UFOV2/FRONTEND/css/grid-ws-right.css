@@ -12,10 +12,10 @@
     margin-top: 0px;
     margin-left: 0%;
 }
-.rightarea-grids-organisation .database-title-container {
+.rightarea-grids-organisation .documentswindow-title {
     display:inline-block;
     position: relative;
-    background-color: rgb(75, 75, 75);
+    background-color: rgb(255, 11, 11);
     grid-column: 2 / span 2;
     grid-row: 1 ;
    
@@ -26,10 +26,10 @@
     margin-top: 0px;
     margin-left: 0%;
   }
-  .rightarea-grids-organisation  .database-table-container {
+  .rightarea-grids-organisation  .documentswindow-documents-container  {
     display:inline-block;
     position: relative;
-    background-color: rgb(218, 218, 218);
+    background-color: rgb(172, 255, 19);
     grid-column: 2 / span 1;
     grid-row: 2 ;
     
@@ -40,10 +40,10 @@
     margin-top: 0px;
     margin-left: 0%;
   }
-   .rightarea-grids-organisation .database-tools-container {
+   .rightarea-grids-organisation .documentswindow-tools {
     display:inline-block;
     position: relative;
-    background-color: rgb(75, 75, 75);
+    background-color: rgb(40, 0, 216);
     grid-column: 3 / span 1;
     grid-row: 2 ;
   
@@ -55,10 +55,10 @@
     margin-left: 0%;
   }
 
-  .rightarea-grids-organisation .ma-right-nav-left {
+  .rightarea-grids-organisation .documentswindow-nav {
     display:inline-block;
     position: relative;
-    background-color: #02aefd5e;
+    background-color: #15ff005e;
     grid-column: 1 / span 1;
     grid-row: 1 / span 2 ;
   
@@ -78,5 +78,56 @@
     box-sizing: border-box;
 
   }
+
+
+
+
+  .documents-grid-organisation  {
+    display: grid;
+    position: relative;
+   
+    grid-template-rows: 50% 50%;
+    background-color: rgba(255, 255, 255, 0);
+   
+    height: 100%;
+    width: 100%;
+    padding: 0px;
+    grid-gap: 0%;
+    margin-top: 0px;
+    margin-left: 0%;
+}
+
+
+.documents-grid-organisation .documents-list {
+  display:inline-block;
+  position: relative;
+  background-color: rgb(223, 221, 233);
+
+  grid-row: 1 ;
+
+  height: 100%;
+  width: 80%;
+  padding: 0px;
+  grid-gap: 0%;
+  margin-top: 0px;
+  margin-left: 0%;
+}
+
+.documents-grid-organisation .adocument {
+  display:inline-block;
+  position: relative;
+  background-color: rgb(52, 27, 177);
+
+  grid-row: 2 ;
+
+  height: 100%;
+  width: 80%;
+  padding: 0px;
+  grid-gap: 0%;
+  margin-top: 0px;
+  margin-left: 0%;
+}
+
+
 
   
