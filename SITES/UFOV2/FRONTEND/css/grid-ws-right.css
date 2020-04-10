@@ -1,7 +1,7 @@
 .rightarea-grids-organisation  {
     display: grid;
     position: relative;
-    grid-template-columns: 2% 88% 10% ; 
+    grid-template-columns: 2% 95% 5% ; 
     grid-template-rows: 3.5% 96.5%;
     background-color: rgba(255, 255, 255, 0);
    
@@ -58,7 +58,7 @@
   .rightarea-grids-organisation .ma-right-nav-left {
     display:inline-block;
     position: relative;
-    background-color: #e7dcdc5e;
+    background-color: #02aefd5e;
     grid-column: 1 / span 1;
     grid-row: 1 / span 2 ;
   
