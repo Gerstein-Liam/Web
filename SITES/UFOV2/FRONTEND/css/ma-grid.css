@@ -65,7 +65,13 @@
     grid-gap: 0%;
     margin-top: 0px;
     margin-left: 0%;
-    border-width: 1px;
+
+
+    border: solid #5B6DCD 2px;
+    box-sizing: border-box;
+  
+
+    
   }
   .db-grids-organisation .database-nav-container {
     display:inline-block;

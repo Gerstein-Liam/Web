@@ -34,3 +34,22 @@ h1{
 .TitleS1{
 font-size: larger;
 }
+
+
+.svg-tools{
+
+  position: relative; 
+  width: 50%; 
+  height:40% ;
+   top: 40%; 
+  margin-left: 10%; 
+  box-sizing: content-box;
+
+  background: no-repeat url("../../../media/filter_out.svg") ;
+
+}
+.svg-tools:hover{
+  
+ 
+  background: no-repeat url("../../../media/filter_in.svg") ;
+}

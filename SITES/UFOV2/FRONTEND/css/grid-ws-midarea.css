@@ -60,7 +60,8 @@
     grid-gap: 0%;
     margin-top: 0px;
     margin-left: 0%;
-    border-width: 1px;
+    border-width: 0px;
+  
   }
   .mid-area-grids-organisations .ma-mid-nav-right {
     display:inline-block;
@@ -75,4 +76,5 @@
     margin-top: 0px;
     margin-left: 0%;
     border-width: 1px;
+    
   }
