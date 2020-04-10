@@ -38,11 +38,15 @@ function  includeHTML()  {
        clearInterval(id);
        alert("Hello press F11 to improve experience");
      } else {
+      
+
        pos++; 
-       let cmd=(100-pos)+'% '+ (pos)  +'% ';
-       elem.style.gridTemplateRows= cmd   ;
-       console.log(cmd);
-     }
+       let row=(100-pos)+'% '+ (pos)  +'% ';
+       elem.style.gridTemplateRows= row   ;
+       console.log(row);
+     
+     
+      }
    }
 
    

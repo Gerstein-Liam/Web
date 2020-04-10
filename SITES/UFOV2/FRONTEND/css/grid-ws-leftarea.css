@@ -1,28 +1,10 @@
-.left-area-container .Menu-container {
-  
+  .left-area-container .Menu-container {
     height: 50%;
-    width: 50%; 
-    background-color: aliceblue;
-    
-  
-    /*
-    display:inline-block;
-    position: relative;
-    background-color: #b49b9b5e;
-    grid-column: 3;
-  
-  
-    height: 100%;
-    width: 100%;
-    padding: 0px;
-    grid-gap: 0%;
-    margin-top: 0px;
-    margin-left: 0%;
-  
-    border-width: 1px;
-    border-top-style: solid;
-    border-right-style: solid;
-    border-bottom-style: solid;
-    border-left-style: solid;
-    */
+    width: 100%; 
+    background-color: rgb(75, 75, 75);
+    margin-top: 20%;
+    margin-left: 5%;
+  }
+  .Menu-container tr:hover  {
+    Background-color: rgb(6, 71, 192);
   }

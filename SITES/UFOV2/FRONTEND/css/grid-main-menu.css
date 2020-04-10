@@ -1,7 +1,8 @@
 .main-menu-container {
 height: 100%;
 }
-ul {
+
+.main-menu-container ul {
     height: 100%;
     position: relative;
     list-style-type: none;
@@ -10,20 +11,27 @@ ul {
     overflow: hidden;
     background-color: #333;
   }
-  li {
-    float: left;
+  .main-menu-container li {
+   display: inline;
   }
-  li a {
+  .main-menu-container li a {
     font-size: small;
-    display: block;
+
     color: white;
     text-align: center;
     padding: 4px 6px;
     text-decoration: none;
   }
-  li a:hover:not(.active) {
+
+/*
+  .main-menu-container li a:hover:not(.active) {
     background-color: #111;
   }
-  .active {
+  */
+
+  .main-menu-container li a:hover {
+    background-color: rgb(6, 71, 192);
+  }
+  .main-menu-container .active {
     background-color: #4CAF50;
   }
