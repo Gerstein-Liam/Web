@@ -195,14 +195,14 @@ function MaximizeMidArea(){
 
 CurrentStatus=document.getElementById("workspace-grids-organisation").style.gridTemplateColumns;
 
-if(CurrentStatus=="7% 92% 0%"){
+if(CurrentStatus=="7% 93% 0%"){
     document.getElementById("workspace-grids-organisation").style.gridTemplateColumns = "7% 46% 46%";
   //  alert("MaxMidtoIDLE");
 }
 else
 {
 
-document.getElementById("workspace-grids-organisation").style.gridTemplateColumns = "7% 92% 0%";
+document.getElementById("workspace-grids-organisation").style.gridTemplateColumns = "7% 93% 0%";
 
 //alert("IdleToMaxMid");
 }
@@ -219,14 +219,14 @@ document.getElementById("workspace-grids-organisation").style.gridTemplateColumn
 function MaximizeRightArea(){
 
     CurrentStatus=document.getElementById("workspace-grids-organisation").style.gridTemplateColumns;
-    if(CurrentStatus=="7% 0% 92%"){
+    if(CurrentStatus=="7% 0% 93%"){
         document.getElementById("workspace-grids-organisation").style.gridTemplateColumns = "7% 46% 46%";
       //  alert("MaxRighttoIDLE");
     }
     else
     {
     
-      document.getElementById("workspace-grids-organisation").style.gridTemplateColumns = "7% 0% 92%";
+      document.getElementById("workspace-grids-organisation").style.gridTemplateColumns = "7% 0% 93%";
      // alert("IdleToMaxRight");
 
     
