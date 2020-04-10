@@ -1,9 +1,12 @@
   .left-area-container .Menu-container {
-    height: 50%;
-    width: 100%; 
-    background-color: rgb(75, 75, 75);
-    margin-top: 20%;
-    margin-left: 5%;
+    
+    position: relative;
+    height: 12%;
+    width: 80%; 
+    background-color: rgba(75, 255, 4, 0.219);
+    margin-top: 25%;
+    margin-left: 10%;
+    border-radius: 10px;
   }
   .Menu-container tr:hover  {
     Background-color: rgb(6, 71, 192);
