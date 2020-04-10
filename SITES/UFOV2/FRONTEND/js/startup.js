@@ -1,3 +1,6 @@
+/*
+https://www.w3schools.com/js/js_input_examples.asp
+*/
 function  includeHTML()  {
     var z, i, elmnt, file, xhttp;
     /*loop through a collection of all HTML elements:*/
@@ -26,34 +29,43 @@ function  includeHTML()  {
        }
     }
  }
- function myMove() {
- 
-
- 
-  var elem = document.getElementById("page-grids-organisation");   
+ function myMove(cmd) {
+   var elem = document.getElementById("page-grids-organisation");   
    var pos = 0;
-   var id = setInterval(frame, 40);
-   function frame() {
+   var id ;
+   if(cmd == "show_welcome"){
+     // alert("Display welcome");
+      id = setInterval(show_welcome, 40);
+    }
+    else
+    {
+     // alert("Display app");
+      id = setInterval(show_app, 40);
+    }
+   function show_app() {
      if (pos == 100) {
        clearInterval(id);
-       alert("Hello press F11 to improve experience");
+      // alert("Hello press F11 to improve experience");
      } else {
-      
-
-       pos++; 
-       let row=(100-pos)+'% '+ (pos)  +'% ';
-       elem.style.gridTemplateRows= row   ;
-       console.log(row);
-     
-     
+         pos++; 
+         let row=(100-pos)+'% '+ (pos)  +'% ';
+         elem.style.gridTemplateRows= row   ;
+         console.log(row);
       }
    }
-
-   
+   function show_welcome() {
+      if (pos == 100) {
+        clearInterval(id);
+     //   alert("Hello press F11 to improve experience");
+      } else {
+          pos++; 
+          let row=(pos)+'% '+ (100-pos)  +'% ';
+          elem.style.gridTemplateRows= row   ;
+          console.log(row);
+       }
+    }
  }
  function Startup() {
    // includeHTML() ;
   //  myMove();
-
-  
   }
