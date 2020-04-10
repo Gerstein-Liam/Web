@@ -118,9 +118,14 @@ function ChangeTableLayout() {
 }
 
 
+const LinkStack;
+
+function NavigationHistoric(){
+
+alert("Iframe change URL");
 
 
-
+}
 
 /*
 let MenuFSM = "Open";

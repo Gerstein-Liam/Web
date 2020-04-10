@@ -65,7 +65,23 @@ function  includeHTML()  {
        }
     }
  }
+
+
+
+/*
+ function survey_iframe() {
+   console.log(window.frames[0].location);
+
+
+}
+  setInterval(survey_iframe, 40);
+*/
+
+
+
  function Startup() {
    // includeHTML() ;
   //  myMove();
   }
+
+
