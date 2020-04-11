@@ -1,7 +1,7 @@
 .db-grids-organisation  {
     display: grid;
     position: relative;
-    grid-template-columns: 95% 5% 0%  ; 
+    grid-template-columns: calc(100% - 40px) 40px 0%  ; 
     grid-template-rows: 10% 90%;     
     background-color: rgba(255, 255, 255, 0);
     height: 100%;
@@ -97,7 +97,7 @@ border-bottom-style: dotted;  */
   .evt-grids-organisation  {
     display: grid;
     position: relative;
-    grid-template-columns: 95% 5% 0%  ; 
+    grid-template-columns: calc(100% - 40px) 40px 0%  ; 
     grid-template-rows: 10% 90%;     
     background-color: rgba(255, 255, 255, 0);
     height: 100%;
@@ -187,7 +187,7 @@ border-bottom-style: dotted;  */
   .grp-grids-organisation  {
     display: grid;
     position: relative;
-    grid-template-columns: 95% 5% 0%  ; 
+    grid-template-columns: calc(100% - 40px) 40px 0%  ; 
     grid-template-rows: 10% 90%;     
     background-color: rgba(255, 255, 255, 0);
     height: 100%;

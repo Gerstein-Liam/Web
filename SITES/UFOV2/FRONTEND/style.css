@@ -1,24 +1,16 @@
 /*
 https://www.w3schools.com/cssref/pr_grid-column.asp
  */
- 
-
  /*
 @viewport {
   width: device-width;
   user-zoom: fixed ;
 }
 */
- 
  @import url("./css/grid-site.css");
- 
- 
  @import url("./css/grid-app.css");
  @import url("./css/grid-main-menu.css");
  @import url("./css/grid-workspace.css");
-
-
- 
  body {
   margin: 0;
   padding: 0;
@@ -26,7 +18,6 @@ https://www.w3schools.com/cssref/pr_grid-column.asp
   background-repeat: no-repeat;
   background-size: 10%;
   height: 100%;
- 
 }
 h1{
   color: blue;
@@ -34,30 +25,21 @@ h1{
 .TitleS1{
 font-size: larger;
 }
-
-
 .svg-tools{
-
   display: block;
   position: relative; 
-  width: 60%; 
-  height:100% ;
+  width: 20px; 
+  height:20px ;
   top:5%; 
   margin-left: 20%; 
   box-sizing: content-box;
-
   background: no-repeat url("../../../media/filter_out.svg") ;
-
 }
 .svg-tools:hover{
-  
- 
   background: no-repeat url("../../../media/filter_in.svg") ;
 }
-
 /*
 .svg-search{
-
   display: block;
   position: relative; 
   width: 100%; 
@@ -65,13 +47,35 @@ font-size: larger;
   top:5%; 
   margin-left: 0%; 
   box-sizing: content-box;
-
   background: no-repeat url("../../../media/search_out.svg") ;
-
 }
 .svg-search:hover{
-  
- 
   background: no-repeat url("../../../media/search_in.svg") ;
 }
 */
+.svg-expand-topleft{
+  display: block;
+  position: relative; 
+  width: 20px; 
+  height:20px ;
+  top:5%; 
+  margin-left: 5px; 
+  box-sizing: content-box;
+  background: no-repeat url("../../../media/expand_screen_out.svg") ;
+}
+.svg-expand-topleft:hover{
+  background: no-repeat url("../../../media/filter_in.svg") ;
+}
+.svg-split{
+  display: block;
+  position: relative; 
+  width: 20px; 
+  height:20px ;
+  top:10%; 
+  margin-left: 5px; 
+  box-sizing: content-box;
+  background: no-repeat url("../../../media/split_screen_out.svg") ;
+}
+.svg-split:hover{
+  background: no-repeat url("../../../media/filter_in.svg") ;
+}

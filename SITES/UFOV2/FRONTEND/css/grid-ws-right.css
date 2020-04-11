@@ -1,7 +1,7 @@
 .rightarea-grids-organisation  {
     display: grid;
     position: relative;
-    grid-template-columns: 2% 95% 5% ; 
+    grid-template-columns: 10px calc(100% - 50px) 40px ; 
     grid-template-rows: 3.5% 96.5%;
     background-color: rgba(255, 255, 255, 0);
    
@@ -58,7 +58,7 @@
   .rightarea-grids-organisation .documentswindow-nav {
     display:inline-block;
     position: relative;
-    background-color: #15ff005e;
+    background-color: #0653805e;
     grid-column: 1 / span 1;
     grid-row: 1 / span 2 ;
   
@@ -71,12 +71,12 @@
 
 
     border-width: 1px;
-   
+   /*
     border-right-style: solid;
     border-bottom-style: solid;
     border-left-style: solid;
     box-sizing: border-box;
-
+*/
   }
 
 
