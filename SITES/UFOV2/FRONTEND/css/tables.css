@@ -9,7 +9,14 @@
   
   #customers td, #customers th {
     border: 1px solid rgb(0, 0, 0);
-    padding: 2px;
+    padding: 1px;
+  }
+
+
+  #customers .bt-td-th {
+    border: 1px solid rgb(0, 0, 0);
+    padding: 0px;
+    width: 60px;
   }
   
   #customers tr:nth-child(even){background-color: #f2f2f2;}
@@ -28,12 +35,12 @@
     background-color: rgb(19, 182, 73); /* Green */
     border: none;
     color: rgb(255, 248, 248);
-    padding: px;
+    padding: 0px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
     font-size: 10px;
-    margin: auto;
+    margin-left: 10px;
     cursor: pointer;
     border: 1px solid rgb(134, 121, 121);
   }
