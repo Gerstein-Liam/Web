@@ -33,10 +33,10 @@ font-size: larger;
   top:5%; 
   margin-left: 20%; 
   box-sizing: content-box;
-  background: no-repeat url("../../../media/filter_out.svg") ;
+  background: no-repeat url("../FRONTEND/media/icon/filter_out.svg") ;
 }
 .svg-tools:hover{
-  background: no-repeat url("../../../media/filter_in.svg") ;
+  background: no-repeat url("../FRONTEND/media/icon/filter_in.svg") ;
 }
 /*
 .svg-search{

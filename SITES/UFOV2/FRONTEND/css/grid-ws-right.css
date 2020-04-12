@@ -123,10 +123,10 @@ padding-top: 0px;
   padding-top: 10px;
   margin-left: 10px; 
   box-sizing: content-box;
-  background: no-repeat url("../../../../media/expand_top_out.svg") ;
+  background: no-repeat url("../media/icon/expand_top_out.svg") ;
 }
 .svg-expand-top:hover{
-  background: no-repeat url("../../../../media/filter_in.svg") ;
+  background: no-repeat url("../media/icon/expand_top_in.svg") ;
 }
 .svg-split{
   display: block;
@@ -136,11 +136,11 @@ padding-top: 0px;
   height:30% ;
   margin-left: 10px; 
   box-sizing: content-box;
-  background: no-repeat url("../../../../media/split_vertical-screen_out.svg") ;
+  background: no-repeat url("../media/icon/split_vertical-screen_out.svg") ;
   transform: rotate(0deg);
 }
 .svg-split:hover{
-  background: no-repeat url("../../../../media/filter_in.svg") ;
+  background: no-repeat url("../media/icon/split_vertical-screen_hover.svg") ;
 }
 .svg-expand-bottom{
   display: block;
@@ -149,8 +149,8 @@ padding-top: 0px;
   height:30% ;
   margin-left: 10px; 
   box-sizing: content-box;
-  background: no-repeat url("../../../../media/expand_bottom_out.svg") ;
+  background: no-repeat url("../media/icon/expand_bottom_out.svg") ;
 }
 .svg-expand-bottom:hover{
-  background: no-repeat url("../../../../media/filter_in.svg") ;
+  background: no-repeat url("../media/icon/expand_bottom_in.svg") ;
 }
