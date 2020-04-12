@@ -3,7 +3,7 @@
     position: relative;
     /* grid-template-columns: auto auto ; */
     grid-template-columns: 100%;
-    grid-template-rows: 2.5% 97.5% ;
+    grid-template-rows: 6% 94% ;
     background-color: rgba(255, 255, 255, 0);
     
     height: 100%;
@@ -16,7 +16,7 @@
 .app-grids-organisation .main-menu-container {
     display:inline-block;
     position: relative;
-    background-color: rgb(51, 53, 146);
+    background-color: rgb(255, 255, 255);
     grid-column: 1;
     grid-row: 1 / span 1;
    
@@ -27,7 +27,7 @@
     margin-top: 0px;
     margin-left: 0%;
 
-   
+ 
 
 
   

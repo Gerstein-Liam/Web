@@ -215,7 +215,7 @@ function MaximizeMidArea(){
 CurrentStatus=document.getElementById("workspace-grids-organisation").style.gridTemplateColumns;
 
 if(CurrentStatus=="7% 93% 0%"){
-    document.getElementById("workspace-grids-organisation").style.gridTemplateColumns = "7% 46% 46%";
+    document.getElementById("workspace-grids-organisation").style.gridTemplateColumns = "7% 46% 47%";
   //  alert("MaxMidtoIDLE");
 }
 else
@@ -239,7 +239,7 @@ function MaximizeRightArea(){
 
     CurrentStatus=document.getElementById("workspace-grids-organisation").style.gridTemplateColumns;
     if(CurrentStatus=="7% 0% 93%"){
-        document.getElementById("workspace-grids-organisation").style.gridTemplateColumns = "7% 46% 46%";
+        document.getElementById("workspace-grids-organisation").style.gridTemplateColumns = "7% 46% 47%";
       //  alert("MaxRighttoIDLE");
     }
     else

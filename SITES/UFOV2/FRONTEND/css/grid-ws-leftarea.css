@@ -1,41 +1,7 @@
   
   
   
-  
-  .left-area-container .logo {
-    
-    display: block;
-    position: relative; 
-    width: 100px ;
-    height:100px ;
-    top:0px; 
-    margin-left: -5px; 
-    box-sizing: content-box;
-    background: no-repeat url("../media/icon/globe.svg") ;
-    background-color: rgb(233, 62, 62);
-   background-color: rgb(75, 75, 75);
-    animation: mymove 5s;
 
-    animation-iteration-count: infinite;
-    border-radius: 100%;
-  }
-  
-  @keyframes mymove2 {
-    from {
-          transform: rotate(0deg);   }
-    to {
-      
-      transform: rotate(360deg);
-    
-    
-    
-    }
-  }
-
-@keyframes mymove {
-  from {transform: rotateX(0deg) rotate(360deg); }
-  to { transform: rotateX(360deg) rotate(0deg); }
-}
   
   
   .left-area-container .Menu-container {
@@ -43,7 +9,7 @@
     position: relative;
     height: 12%;
     width: 80%; 
-    background-color: rgb(138, 121, 121);
+    background-color: rgb(255, 255, 255);
     margin-top: 25%;
     margin-left: 4%;
     border-radius: 10px;

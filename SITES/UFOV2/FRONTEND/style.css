@@ -37,6 +37,8 @@ font-size: larger;
 }
 .svg-tools:hover{
   background: no-repeat url("../FRONTEND/media/icon/filter_in.svg") ;
+  background-color: #dfdede;
+  border-radius: 4px;
 }
 /*
 .svg-search{

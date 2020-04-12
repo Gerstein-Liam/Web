@@ -21,7 +21,7 @@
 
     
     position: relative;
-    background-color: rgb(75, 75, 75);
+    background-color: rgb(255, 255, 255);
     grid-column: 1 / span 2;
     grid-row: 1 ;
     height: 100%;
@@ -34,7 +34,7 @@
   .db-grids-organisation .database-table-container {
     display:inline-block;
     position: relative;
-    background-color: #a8abb4;
+    background-color: #ffffff;
     grid-column: 1 / span 1;
     grid-row: 2 ;
     height: 100%;
@@ -43,20 +43,15 @@
     grid-gap: 0%;
     margin-top: 0px;
     margin-left: 0%;
-    border-width: 1px;
-    border-radius: 20px;
-    border-top-style: solid;
-    border-right-style: solid;
-/* border-bottom-style: dotted;
-    border-left-style: dotted;  */
+
     box-sizing: border-box;
-    overflow: scroll;
+    overflow-y: scroll;
     
   }
   .db-grids-organisation .database-tools-container {
     display:inline-block;
     position: relative;
-    background-color: rgb(75, 75, 75);
+    background-color: rgb(255, 255, 255);
     grid-column: 2 / span 1;
     grid-row: 2 ;
     height: 100%;
@@ -67,7 +62,7 @@
     margin-left: 0%;
 
 
-    border: solid rgb(75, 75, 75) 2px;
+    border: solid rgb(255, 255, 255) 2px;
     box-sizing: border-box;
   
 
@@ -117,7 +112,7 @@ border-bottom-style: dotted;  */
 
     
     position: relative;
-    background-color: rgb(75, 75, 75);
+    background-color: rgb(255, 255, 255);
     grid-column: 1 / span 2;
     grid-row: 1 ;
     height: 100%;
@@ -130,7 +125,7 @@ border-bottom-style: dotted;  */
   .evt-grids-organisation .database-table-container {
     display:inline-block;
     position: relative;
-    background-color: #a8abb4;
+    background-color: #ffffff;
     grid-column: 1 / span 1;
     grid-row: 2 ;
     height: 100%;
@@ -139,20 +134,15 @@ border-bottom-style: dotted;  */
     grid-gap: 0%;
     margin-top: 0px;
     margin-left: 0%;
-    border-width: 1px;
-    border-radius: 20px;
-    border-top-style: solid;
-    border-right-style: solid;
-/* border-bottom-style: dotted;
-    border-left-style: dotted;  */
+
     box-sizing: border-box;
-    overflow: scroll;
+    overflow-y: scroll;
     
   }
   .evt-grids-organisation .database-tools-container {
     display:inline-block;
     position: relative;
-    background-color: rgb(75, 75, 75);
+    background-color: rgb(255, 255, 255);
     grid-column: 2 / span 1;
     grid-row: 2 ;
     height: 100%;
@@ -175,11 +165,7 @@ border-bottom-style: dotted;  */
     grid-gap: 0%;
     margin-top: 0px;
     margin-left: 0%;
-    border-width: 1px;
-  /*   border-top-style: solid;
-    border-right-style: solid;
-border-bottom-style: dotted;  */
-    border-left-style: solid; 
+
     box-sizing: border-box;
   }
 
@@ -189,7 +175,7 @@ border-bottom-style: dotted;  */
     position: relative;
     grid-template-columns: calc(100% - 40px) 40px 0%  ; 
     grid-template-rows: 10% 90%;     
-    background-color: rgba(255, 255, 255, 0);
+    background-color: rgba(145, 95, 95, 0);
     height: 100%;
     width: 100%;
     padding: 0px;
@@ -207,7 +193,7 @@ border-bottom-style: dotted;  */
 
     
     position: relative;
-    background-color: rgb(75, 75, 75);
+    background-color: rgb(255, 255, 255);
     grid-column: 1 / span 2;
     grid-row: 1 ;
     height: 100%;
@@ -220,7 +206,7 @@ border-bottom-style: dotted;  */
   .grp-grids-organisation .database-table-container {
     display:inline-block;
     position: relative;
-    background-color: #a8abb4;
+    background-color: #ffffff;
     grid-column: 1 / span 1;
     grid-row: 2 ;
     height: 100%;
@@ -229,20 +215,18 @@ border-bottom-style: dotted;  */
     grid-gap: 0%;
     margin-top: 0px;
     margin-left: 0%;
-    border-width: 1px;
-    border-radius: 20px;
-    border-top-style: solid;
-    border-right-style: solid;
+    
+   
 /* border-bottom-style: dotted;
     border-left-style: dotted;  */
     box-sizing: border-box;
-    overflow: scroll;
+    overflow-y: scroll;
     
   }
   .grp-grids-organisation .database-tools-container {
     display:inline-block;
     position: relative;
-    background-color: rgb(75, 75, 75);
+    background-color: rgb(255, 255, 255);
     grid-column: 2 / span 1;
     grid-row: 2 ;
     height: 100%;
@@ -256,7 +240,7 @@ border-bottom-style: dotted;  */
   .grp-grids-organisation .database-nav-container {
     display:inline-block;
     position: relative;
-    background-color: #00ff155e;
+    background-color: #ffffff5e;
     grid-column: 3 / span 1;
     grid-row: 1 / span 2 ;
     height: 100%;

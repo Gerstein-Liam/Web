@@ -29,7 +29,7 @@
    /* Welcome Page */
    .welcome-container .bg {
     /* The image used */
-    background-image: url("/media/earth_banner.jpg");
+    background-image: url("../media/image/earth_banner.jpg");
     /* Full height */
     height: 100%; 
     /* Center and scale the image nicely */

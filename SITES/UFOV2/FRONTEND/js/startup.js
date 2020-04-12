@@ -35,12 +35,12 @@ function  includeHTML()  {
    var id ;
    if(cmd == "show_welcome"){
      // alert("Display welcome");
-      id = setInterval(show_welcome, 40);
+      id = setInterval(show_welcome, 30);
     }
     else
     {
      // alert("Display app");
-      id = setInterval(show_app, 40);
+      id = setInterval(show_app, 30);
     }
    function show_app() {
      if (pos == 100) {

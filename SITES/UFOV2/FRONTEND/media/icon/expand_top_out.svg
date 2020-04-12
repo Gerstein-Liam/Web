@@ -21,7 +21,7 @@
    inkscape:version="0.92.4 (5da689c313, 2019-01-14)"><metadata
    id="metadata55"><rdf:RDF><cc:Work
        rdf:about=""><dc:format>image/svg+xml</dc:format><dc:type
-         rdf:resource="http://purl.org/dc/dcmitype/StillImage" /><dc:title></dc:title></cc:Work></rdf:RDF></metadata><defs
+         rdf:resource="http://purl.org/dc/dcmitype/StillImage" /><dc:title /></cc:Work></rdf:RDF></metadata><defs
    id="defs53" /><sodipodi:namedview
    pagecolor="#ffffff"
    bordercolor="#666666"
@@ -37,35 +37,41 @@
    showgrid="false"
    inkscape:pagecheckerboard="true"
    inkscape:zoom="0.65186406"
-   inkscape:cx="-127.1423"
+   inkscape:cx="-400.9724"
    inkscape:cy="377.52646"
-   inkscape:window-x="-8"
+   inkscape:window-x="1912"
    inkscape:window-y="-8"
    inkscape:window-maximized="1"
    inkscape:current-layer="Capa_1" />
 
 <g
    id="g12"
-   transform="matrix(0,1,1,0,-1.62661,-6.08709)">
+   transform="matrix(0,1,1,0,-1.62661,-6.08709)"
+   style="fill:#0000ff">
 	<g
-   id="g10">
+   id="g10"
+   style="fill:#0000ff">
 		<polygon
    points="317.951,275.984 435.955,275.984 381.678,330.878 410.098,358.98 512,255.92 410.019,153.94 381.758,182.201 435.572,236.016 317.951,236.016 "
    id="polygon8"
-   transform="translate(-155.66102,2.7118644)" />
+   transform="translate(-155.66102,2.7118644)"
+   style="fill:#0000ff" />
 	</g>
 </g>
 <g
    id="g18"
-   transform="matrix(0,-1.0083167,1.0098499,0,-4.7501669,512.54356)">
+   transform="matrix(0,-1.0083167,1.0098499,0,-4.7501669,512.54356)"
+   style="fill:#0000ff">
 	<g
-   id="g16">
+   id="g16"
+   style="fill:#0000ff">
 		<path
    d="m 60.157,471.827 c -11.019,0 -19.984,-8.965 -19.984,-19.984 V 365.912 H 0.205 v 85.931 c 0,33.058 26.895,59.952 59.952,59.952 h 391.687 c 33.058,0 59.952,-26.895 59.952,-59.952 v -85.931 h -39.968 v 85.931 c 0,11.019 -8.965,19.984 -19.984,19.984 m 0,-431.655 c 11.019,0 19.984,8.965 19.984,19.984 v 84.932 h 39.968 v 0.001 -84.933 c 0,-33.058 -26.895,-59.952 -59.952,-59.952 H 60.157 C 27.099,0.204 0.205,27.099 0.205,60.156 v 84.932 H 40.173 V 60.156 c 0,-11.019 8.965,-19.984 19.984,-19.984"
    id="path14"
    inkscape:connector-curvature="0"
    transform="matrix(0.99152542,0,0,0.98939831,0,5.4258916)"
-   sodipodi:nodetypes="csccssssccsccscccssssccsc" />
+   sodipodi:nodetypes="csccssssccsccscccssssccsc"
+   style="fill:#0000ff" />
 	</g>
 </g>
 <g
