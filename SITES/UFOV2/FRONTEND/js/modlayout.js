@@ -117,6 +117,28 @@ function ChangeTableLayout() {
     } 
 }
 
+function  ExpandTop(){
+
+
+    document.getElementById("documents-grid-organisation").style.gridTemplateRows  = '100% 0%';
+    
+}
+
+function  ExpandBottom(){
+
+
+    document.getElementById("documents-grid-organisation").style.gridTemplateRows  = '0% 100%';
+    
+}
+
+
+function  Split(){
+
+
+    document.getElementById("documents-grid-organisation").style.gridTemplateRows  = '50% 50%';
+    
+}
+
 
 
 /*
