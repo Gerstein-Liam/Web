@@ -96,7 +96,7 @@ function ShowModal()  {
 
    if(ModalLoaded==0){
       ModalLoaded=1;
-      AttachModals();
+      //AttachModals();
    }
    document.getElementById("myModal").style.display = "block";
  }
@@ -132,4 +132,8 @@ function ShowModal()  {
 
   }
 
+
+  function WhichButton(event) {
+   alert("You pressed button: " + event.button)
+ }
 
