@@ -1,5 +1,10 @@
 //Hebergement
 https://hidora.com/stacks/
+
+
+
+//Node js
+https://www.w3schools.com/nodejs/nodejs_filesystem.asp
 //Charts
 https://www.amcharts.com/
 //inputs
@@ -12,6 +17,12 @@ https://www.dyn-web.com/javascript/arrays/add.php
 https://www.w3schools.com/tags/tryit.asp?filename=tryhtml_link_target
 https://inkscape.org/fr/doc/tutorials/basic/tutorial-basic.html
 https://www.w3schools.com/charsets/ref_html_entities_4.asp
+
+
+
+
+
+
 ----------------------------Sample code-------------------------
 Attach element:
 var btn = document.getElementById("PersonFilter");
