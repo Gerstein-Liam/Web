@@ -132,8 +132,42 @@ function ShowModal()  {
 
   }
 
+  function showCoords(event){
 
-  function WhichButton(event) {
-   alert("You pressed button: " + event.button)
+   alert("aEVent");
+
+  }
+
+
+  function OpenRightClickModal(event) {
+
+   
+ // alert("You pressed button: " + event.button + "Position X: " + event.clientX + " Y " +  event.clientY);
+
+   
+ event.preventDefault();
+   let padding_left=(event.clientX)+'px ';
+   let padding_top=(event.clientY)+'px ';
+
+
+   document.getElementById("RightClickModal").style.paddingLeft= padding_left;
+ 
+   document.getElementById("RightClickModal").style.paddingTop=padding_top;
+
+
+document.getElementById("RightClickModal").style.display="block";
  }
+
+
+ function CloseRightClickModal() {
+
+
+ document.getElementById("RightClickModal").style.display="none";
+  }
+
+
+
+window.addEventListener('contextmenu', function (e) {
+   e.preventDefault();
+ }, false);
 
