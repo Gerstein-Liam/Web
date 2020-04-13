@@ -1,5 +1,16 @@
-
-
+class Modal {
+    constructor(modal) {
+      this.modal = modal;
+    }
+    OpenModal(){
+        document.getElementById(this.modal).style.display = "block";
+    }
+    CloseModal(){
+        document.getElementById(this.modal).style.display = "none";
+    }
+} 
+PersonFilterModal= new Modal("myModal");
+/*
 //Filter modal
 function OpenPersonFilterModal() {
     document.getElementById("myModal").style.display = "block";
@@ -7,6 +18,7 @@ function OpenPersonFilterModal() {
 function ClosePersonFilterModal() {
     document.getElementById("myModal").style.display = "none";
 }
+*/
 //Right click sur une Person
 function OpenPersonRightClickModal(event) {
     // alert("You pressed button: " + event.button + "Position X: " + event.clientX + " Y " +  event.clientY);
@@ -20,10 +32,7 @@ function OpenPersonRightClickModal(event) {
 function ClosePersonRightClickModal() {
     document.getElementById("RightClickModal").style.display = "none";
 }
-
-
 /*      Maybe change when app located in server, KEEP IT !!!!!!!
-
 var ModalLoaded = 0;
 function ShowModal() {
     if (ModalLoaded == 0) {
@@ -32,7 +41,6 @@ function ShowModal() {
     }
     document.getElementById("myModal").style.display = "block";
 }
-
 function AttachModals() {
     //Attach bt, attach span in the future
     console.log("Starting");
