@@ -16,20 +16,39 @@ function LoadHTML(req, res, filepath) {
     res.end();
   });
 }
-
-
-
+function LoadJS(req, res, filepath) {
+ //fs.readFile('client_ajax.js', function (err, data) {
+  fs.readFile(filepath, function (err, data) {
+   if(err){
+    console.log("ErrorOccured");
+    }
+    else
+    {
+      res.writeHead(200, { 'Content-Type': 'text/script' });
+      res.write(data);
+      res.end();
+    }
+  });
+}
 var http = require('http');
 var fs = require('fs');
 http.createServer(function (req, res) {
+  console.log(req.url.substring(1));
   if (req.method === "GET") {
     console.log("GetMethod");
     if (req.url === ("/")) {
-      LoadHTML(req, res, 'demofile1.html');
+      console.log("LoadIndex");
+      LoadHTML(req, res, 'index.html');
     }
     else {
-      if (req.url === ("/other")) {
+      if (req.url === ("/divcontent")) {
+        console.log("AjaxQuery");
         LoadHTML(req, res, 'otherfile.html');
+      }
+      else
+      {
+        console.log("Look for ClientJS");
+       LoadJS(req, res, req.url.substring(1));
       }
     }
   }
