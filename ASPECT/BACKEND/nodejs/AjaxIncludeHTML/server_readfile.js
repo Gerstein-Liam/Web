@@ -9,9 +9,22 @@ http.createServer(function (req, res) {
   });
 }).listen(8080);
 */
+
+
+
+
 function LoadHTML(req, res, filepath) {
   fs.readFile(filepath, function (err, data) {
     res.writeHead(200, { 'Content-Type': 'text/html' });
+    str=data.toString();
+    
+
+
+    console.log(str);
+    
+  
+
+    console.log(str.includes("w3-include-html"));
     res.write(data);
     res.end();
   });
