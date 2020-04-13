@@ -1,14 +1,16 @@
+
 class Modal {
     constructor(modal) {
-      this.modal = modal;
+        this.modal = modal;
     }
-    OpenModal(){
+    OpenModal() {
         document.getElementById(this.modal).style.display = "block";
     }
-    CloseModal(){
+    CloseModal() {
         document.getElementById(this.modal).style.display = "none";
     }
-} 
+}
+
 PersonFilterModal= new Modal("myModal");
 /*
 //Filter modal
