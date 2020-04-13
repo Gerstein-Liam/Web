@@ -1,73 +1,45 @@
-<div id="RightClickModal" class="modal_rightclick"  >
-
-    <div class="modal_rightclick_content">
-       
-        Right click model
-        <span class="close" onclick="CloseRightClickModal()" >&times;</span>
-      
-      </div>
+<div id="RightClickModal" class="modal_rightclick">
+  <div class="modal_rightclick_content">
+    Right click model
+    <span class="close" onclick="CloseRightClickModal()">&times;</span>
   </div>
-
-
-
-
-<!--
-<div id="myModal" class="modal"  >
-
-    <div class="modal-content">
-        <span class="close" onclick="CloseModal()" >&times;</span>
-        <p>PERSON FILTER</p>
-      </div>
+</div>
+<div id="myModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="CloseModal()">&times;</span>
+    <h1 style="color: blue; font-family: system-ui; text-align: center; font-size:small; padding-bottom: 20px;">FILTER
+    </h1>
+    <tr>
+      <th> <label for="cars">Country</label> </th>
+      <th>
+        <select id="fcountry" name="country" form="find_testimy_criterias" onchange="UpdateResult()">
+          <option value="%">Any</option>
+          <option value="usa">UnitedStates</option>
+          <option value="france">France</option>
+        </select>
+      </th>
+    </tr>
+    <tr>
+      <th> <label for="cars">Sector</label> </th>
+      <th>
+        <select id="fsector" name="sector" form="find_testimy_criterias" onchange="UpdateResult()">
+          <option value="%">Any</option>
+          <option value="civil">Civil</option>
+          <option value="army">Army</option>
+          <option value="politics">Politics</option>
+          <option value="scientits">Scientits</option>
+        </select>
+      </th>
+    </tr>
+    <tr>
+      <th> <label for="cars">Observation Type</label> </th>
+      <th>
+        <select id="fobs" name="observation_type" form="find_testimy_criterias" onchange="UpdateResult()">
+          <option value="%">Any</option>
+          <option value="direct">Direct</option>
+          <option value="indirect">Indirect</option>
+        </select>
+      </th>
+    </tr>
   </div>
--->
-
-  <div id="myModal" class="modal"  >
-    <div class="modal-content">
-         <span class="close" onclick="CloseModal()" >&times;</span>
-        <h1 style="color: blue; font-family: system-ui; text-align: center; font-size:small; padding-bottom: 20px;" >FILTER  </h1>
-       
-
-
-        <tr>
-            <th> <label for="cars">Country</label> </th>
-            <th>
-              <select id="fcountry" name="country" form="find_testimy_criterias" onchange="UpdateResult()">
-                <option value="%">Any</option>
-                <option value="usa">UnitedStates</option>
-                <option value="france">France</option>
-              </select>
-            </th>
-          </tr>
-          <tr>
-            <th> <label for="cars">Sector</label> </th>
-            <th>
-              <select id="fsector" name="sector" form="find_testimy_criterias" onchange="UpdateResult()">
-                <option value="%">Any</option>
-                <option value="civil">Civil</option>
-                <option value="army">Army</option>
-                <option value="politics">Politics</option>
-                <option value="scientits">Scientits</option>
-              </select>
-            </th>
-          </tr>
-          <tr>
-            <th> <label for="cars">Observation Type</label> </th>
-            <th>
-              <select id="fobs" name="observation_type" form="find_testimy_criterias" onchange="UpdateResult()">
-                <option value="%">Any</option>
-                <option value="direct">Direct</option>
-                <option value="indirect">Indirect</option>
-              </select>
-            </th>
-          </tr>
-
-
-     
-      </div>
-  </div>
-
-
-
-
-
-
+</div>
