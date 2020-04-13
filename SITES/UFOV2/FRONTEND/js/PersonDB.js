@@ -1,14 +1,14 @@
 
 
 //Filter modal
-function ShowModal() {
+function OpenPersonFilterModal() {
     document.getElementById("myModal").style.display = "block";
 }
-function CloseModal() {
+function ClosePersonFilterModal() {
     document.getElementById("myModal").style.display = "none";
 }
 //Right click sur une Person
-function OpenRightClickModal(event) {
+function OpenPersonRightClickModal(event) {
     // alert("You pressed button: " + event.button + "Position X: " + event.clientX + " Y " +  event.clientY);
     event.preventDefault();
     let padding_left = (event.clientX) + 'px ';
@@ -17,7 +17,7 @@ function OpenRightClickModal(event) {
     document.getElementById("RightClickModal").style.paddingTop = padding_top;
     document.getElementById("RightClickModal").style.display = "block";
 }
-function CloseRightClickModal() {
+function ClosePersonRightClickModal() {
     document.getElementById("RightClickModal").style.display = "none";
 }
 
