@@ -24,7 +24,7 @@ function LoadJS(req, res, filepath) {
     }
     else
     {
-      res.writeHead(200, { 'Content-Type': 'text/script' });
+      res.writeHead(200, { 'Content-Type': 'text/javascript' });
       res.write(data);
       res.end();
     }
@@ -35,21 +35,39 @@ var fs = require('fs');
 http.createServer(function (req, res) {
   console.log(req.url.substring(1));
   if (req.method === "GET") {
-    console.log("GetMethod");
+    //console.log("GetMethod");
     if (req.url === ("/")) {
       console.log("LoadIndex");
       LoadHTML(req, res, 'index.html');
     }
     else {
-      if (req.url === ("/divcontent")) {
-        console.log("AjaxQuery");
-        LoadHTML(req, res, 'otherfile.html');
+      if (req.url === ("/i_from_index.html")) {
+        console.log("IncFromIndex");
+        LoadHTML(req, res, 'i_from_index.html');
       }
       else
       {
-        console.log("Look for ClientJS");
-       LoadJS(req, res, req.url.substring(1));
+        
+        
+        if (req.url === ("/i_from_include.html")) {
+          console.log("IncFromInclude");
+          LoadHTML(req, res, req.url.substring(1));
+        }
+        else
+        {
+         // console.log("IncFromInclude");
+         // console.log("Look for ClientJS");
+          LoadJS(req, res, req.url.substring(1));
+        
+        
+        }
+        
+       
+      
+      
+      
+      
       }
     }
   }
-}).listen(8080);
+}).listen(8081);
