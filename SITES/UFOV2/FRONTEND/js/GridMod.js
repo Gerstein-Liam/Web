@@ -185,6 +185,7 @@ function RightAreaGridMod__Split() {
 }
 function RightAreaGridMod__ExpandBottom() {
     document.getElementById("documents-grid-organisation").style.gridTemplateRows = '0% 100%';
+    
 }
 /*
 let MenuFSM = "Open";
