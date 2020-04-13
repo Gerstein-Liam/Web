@@ -1,4 +1,64 @@
-function ChangeTableLayout() {
+// Modificateur des container APP et Welcom"
+function SiteGrid_Mod(cmd) {
+    var elem = document.getElementById("page-grids-organisation");
+    var pos = 0;
+    var id;
+    if (cmd == "show_welcome") {
+       // alert("Display welcome");
+       id = setInterval(show_welcome, 30);
+    }
+    else {
+       // alert("Display app");
+       id = setInterval(show_app, 30);
+    }
+    function show_app() {
+       if (pos == 100) {
+          clearInterval(id);
+          // alert("Hello press F11 to improve experience");
+       } else {
+          pos++;
+          let row = (100 - pos) + '% ' + (pos) + '% ';
+          elem.style.gridTemplateRows = row;
+          console.log(row);
+       }
+    }
+    function show_welcome() {
+       if (pos == 100) {
+          clearInterval(id);
+          //   alert("Hello press F11 to improve experience");
+       } else {
+          pos++;
+          let row = (pos) + '% ' + (100 - pos) + '% ';
+          elem.style.gridTemplateRows = row;
+          console.log(row);
+       }
+    }
+}
+// Modificateur des container MidArea et RightArea"
+function MaximizeMidArea() {
+    CurrentStatus = document.getElementById("workspace-grids-organisation").style.gridTemplateColumns;
+    if (CurrentStatus == "7% 93% 0%") {
+        document.getElementById("workspace-grids-organisation").style.gridTemplateColumns = "7% 46% 47%";
+        //  alert("MaxMidtoIDLE");
+    }
+    else {
+        document.getElementById("workspace-grids-organisation").style.gridTemplateColumns = "7% 93% 0%";
+        //alert("IdleToMaxMid");
+    }
+}
+function MaximizeRightArea() {
+    CurrentStatus = document.getElementById("workspace-grids-organisation").style.gridTemplateColumns;
+    if (CurrentStatus == "7% 0% 93%") {
+        document.getElementById("workspace-grids-organisation").style.gridTemplateColumns = "7% 46% 47%";
+        //  alert("MaxRighttoIDLE");
+    }
+    else {
+        document.getElementById("workspace-grids-organisation").style.gridTemplateColumns = "7% 0% 93%";
+        // alert("IdleToMaxRight");
+    }
+}
+// Modificateur du contenu de MidArea:  table "Person,Event,List"
+function MidAreaGridsMod() {
     console.log("On change");
     let PersonTableCheckBox__Status = document.getElementById("person_check_box").checked << 0;
     let EventTableCheckBox__Status = document.getElementById("event_check_box").checked << 1;
@@ -13,26 +73,25 @@ function ChangeTableLayout() {
     let PersonGroup = (true << 2) | (false << 1) | (true << 0);
     let EventGroup = (true << 2) | (true << 1) | (false << 0);
     let AllWindows = (true << 2) | (true << 1) | (true << 0);
-     if(CheckBoxesStatus == NoWindows){
+    if (CheckBoxesStatus == NoWindows) {
         document.getElementById("ma-top-container").style.display = "none";
         document.getElementById("ma-mid-container").style.display = "none";
         document.getElementById("ma-bottom-container").style.display = "none";
-     }
-     else
-     {
+    }
+    else {
         document.getElementById("ma-top-container").style.display = "inline-block";
         document.getElementById("ma-mid-container").style.display = "inline-block";
-        document.getElementById("ma-bottom-container").style.display ="inline-block";
-     }
+        document.getElementById("ma-bottom-container").style.display = "inline-block";
+    }
     switch (CheckBoxesStatus) {
         case NoWindows:
             console.log("No windows");
             document.getElementById("mid-area-grids-organisations").style.gridTemplateRows = '0% 0% 0%';
-          /*
-            document.getElementById("ma-top-container").style.display = "none";
-            document.getElementById("ma-mid-container").style.display = "none";
-            document.getElementById("ma-bottom-container").style.display = "none";
-            */
+            /*
+              document.getElementById("ma-top-container").style.display = "none";
+              document.getElementById("ma-mid-container").style.display = "none";
+              document.getElementById("ma-bottom-container").style.display = "none";
+              */
             break;
         case AllWindows:
             console.log("AllWindows");
@@ -40,107 +99,93 @@ function ChangeTableLayout() {
             document.getElementById("db-grids-organisation").style.gridTemplateRows = '10% 90%';
             document.getElementById("evt-grids-organisation").style.gridTemplateRows = '10% 90%';
             document.getElementById("grp-grids-organisation").style.gridTemplateRows = '10% 90%';
-           /*
-            document.getElementById("ma-top-container").style.display = "inline-block";
-            document.getElementById("ma-mid-container").style.display = "inline-block";
-            document.getElementById("ma-bottom-container").style.display = "inline-block";
-            */
+            /*
+             document.getElementById("ma-top-container").style.display = "inline-block";
+             document.getElementById("ma-mid-container").style.display = "inline-block";
+             document.getElementById("ma-bottom-container").style.display = "inline-block";
+             */
             break;
         case OnlyPerson:
             console.log("Person");
             document.getElementById("mid-area-grids-organisations").style.gridTemplateRows = '100% 0% 0%';
-            document.getElementById("db-grids-organisation").style.gridTemplateRows  = '4% 96%';
+            document.getElementById("db-grids-organisation").style.gridTemplateRows = '4% 96%';
             document.getElementById("evt-grids-organisation").style.gridTemplateRows = '4% 96%';
             document.getElementById("grp-grids-organisation").style.gridTemplateRows = '4% 96%';
-            var x=document.getElementById("mas-grids-organisation");
+            var x = document.getElementById("mas-grids-organisation");
             console.log(x);
-           /*
-            document.getElementById("ma-top-container").style.display = "inline-block";
-            document.getElementById("ma-mid-container").style.display = "none";
-            document.getElementById("ma-bottom-container").style.display = "none";
-            */
+            /*
+             document.getElementById("ma-top-container").style.display = "inline-block";
+             document.getElementById("ma-mid-container").style.display = "none";
+             document.getElementById("ma-bottom-container").style.display = "none";
+             */
             break;
         case OnlyEvent:
             console.log("Event");
             document.getElementById("mid-area-grids-organisations").style.gridTemplateRows = '0% 100% 0%';
-            document.getElementById("db-grids-organisation").style.gridTemplateRows  = '4% 96%';
+            document.getElementById("db-grids-organisation").style.gridTemplateRows = '4% 96%';
             document.getElementById("evt-grids-organisation").style.gridTemplateRows = '4% 96%';
             document.getElementById("grp-grids-organisation").style.gridTemplateRows = '4% 96%';
-            var x=document.getElementById("mas-grids-organisation");
+            var x = document.getElementById("mas-grids-organisation");
             console.log(x);
-           /*
-            document.getElementById("ma-top-container").style.display = 'none';
-            document.getElementById("ma-mid-container").style.display = 'inline-block';
-            document.getElementById("ma-bottom-container").style.display = 'none';
-          */
+            /*
+             document.getElementById("ma-top-container").style.display = 'none';
+             document.getElementById("ma-mid-container").style.display = 'inline-block';
+             document.getElementById("ma-bottom-container").style.display = 'none';
+           */
             break;
         case OnlyGroup:
             console.log("Group");
             document.getElementById("mid-area-grids-organisations").style.gridTemplateRows = '0% 0% 100%';
-            document.getElementById("db-grids-organisation").style.gridTemplateRows  = '4% 96%';
+            document.getElementById("db-grids-organisation").style.gridTemplateRows = '4% 96%';
             document.getElementById("evt-grids-organisation").style.gridTemplateRows = '4% 96%';
             document.getElementById("grp-grids-organisation").style.gridTemplateRows = '4% 96%';
-            var x=document.getElementById("mas-grids-organisation");
+            var x = document.getElementById("mas-grids-organisation");
             console.log(x);
-           /*
-            document.getElementById("ma-top-container").style.display = 'none';
-            document.getElementById("ma-mid-container").style.display = 'none';
-            document.getElementById("ma-bottom-container").style.display = 'inline-block';
-           */
+            /*
+             document.getElementById("ma-top-container").style.display = 'none';
+             document.getElementById("ma-mid-container").style.display = 'none';
+             document.getElementById("ma-bottom-container").style.display = 'inline-block';
+            */
             break;
         case PersonEvent:
             console.log("PersonEvent");
             document.getElementById("mid-area-grids-organisations").style.gridTemplateRows = '50% 50% 0%';
-            document.getElementById("db-grids-organisation").style.gridTemplateRows  = '6% 94%';
+            document.getElementById("db-grids-organisation").style.gridTemplateRows = '6% 94%';
             document.getElementById("evt-grids-organisation").style.gridTemplateRows = '6% 94%';
             document.getElementById("grp-grids-organisation").style.gridTemplateRows = '6% 94%';
             break;
         case PersonGroup:
             console.log("PersonGroup");
             document.getElementById("mid-area-grids-organisations").style.gridTemplateRows = '50% 0% 50%';
-            document.getElementById("db-grids-organisation").style.gridTemplateRows  = '6% 94%';
+            document.getElementById("db-grids-organisation").style.gridTemplateRows = '6% 94%';
             document.getElementById("evt-grids-organisation").style.gridTemplateRows = '6% 94%';
             document.getElementById("grp-grids-organisation").style.gridTemplateRows = '6% 94%';
             break;
         case EventGroup:
             console.log("EventGroup");
             document.getElementById("mid-area-grids-organisations").style.gridTemplateRows = '0% 50% 50%';
-            document.getElementById("db-grids-organisation").style.gridTemplateRows  = '6% 94%';
+            document.getElementById("db-grids-organisation").style.gridTemplateRows = '6% 94%';
             document.getElementById("evt-grids-organisation").style.gridTemplateRows = '6% 94%';
             document.getElementById("grp-grids-organisation").style.gridTemplateRows = '6% 94%';
             break;
         default: console.log("Other");
         // code block
     }
-    if( CheckBoxesStatus== OnlyPerson |  CheckBoxesStatus== OnlyEvent   |  CheckBoxesStatus== OnlyGroup){
+    if (CheckBoxesStatus == OnlyPerson | CheckBoxesStatus == OnlyEvent | CheckBoxesStatus == OnlyGroup) {
         console.log("Uno");
-    } 
+    }
 }
 
-function  ExpandTop(){
-
-
-    document.getElementById("documents-grid-organisation").style.gridTemplateRows  = '100% 0%';
-    
+// Modificateur du contenu de RightArea:  DocumentList, aDocument
+function RightAreaGridMod__ExpandTop() {
+    document.getElementById("documents-grid-organisation").style.gridTemplateRows = '100% 0%';
 }
-
-function  ExpandBottom(){
-
-
-    document.getElementById("documents-grid-organisation").style.gridTemplateRows  = '0% 100%';
-    
+function RightAreaGridMod__Split() {
+    document.getElementById("documents-grid-organisation").style.gridTemplateRows = '50% 50%';
 }
-
-
-function  Split(){
-
-
-    document.getElementById("documents-grid-organisation").style.gridTemplateRows  = '50% 50%';
-    
+function RightAreaGridMod__ExpandBottom() {
+    document.getElementById("documents-grid-organisation").style.gridTemplateRows = '0% 100%';
 }
-
-
-
 /*
 let MenuFSM = "Open";
 function CloseMainMenu() {
@@ -208,49 +253,3 @@ function RowTwoDiplay(obj) {
     }
 }
 */
-
-
-function MaximizeMidArea(){
-
-CurrentStatus=document.getElementById("workspace-grids-organisation").style.gridTemplateColumns;
-
-if(CurrentStatus=="7% 93% 0%"){
-    document.getElementById("workspace-grids-organisation").style.gridTemplateColumns = "7% 46% 47%";
-  //  alert("MaxMidtoIDLE");
-}
-else
-{
-
-document.getElementById("workspace-grids-organisation").style.gridTemplateColumns = "7% 93% 0%";
-
-//alert("IdleToMaxMid");
-}
-
-
-
-   
-
-
-}
-
-
-
-function MaximizeRightArea(){
-
-    CurrentStatus=document.getElementById("workspace-grids-organisation").style.gridTemplateColumns;
-    if(CurrentStatus=="7% 0% 93%"){
-        document.getElementById("workspace-grids-organisation").style.gridTemplateColumns = "7% 46% 47%";
-      //  alert("MaxRighttoIDLE");
-    }
-    else
-    {
-    
-      document.getElementById("workspace-grids-organisation").style.gridTemplateColumns = "7% 0% 93%";
-     // alert("IdleToMaxRight");
-
-    
-    }
-   
-   
-    
-}
