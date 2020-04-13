@@ -1,0 +1,55 @@
+/*
+var http = require('http');
+var fs = require('fs');
+http.createServer(function (req, res) {
+  fs.readFile('demofile1.html', function (err, data) {
+    res.writeHead(200, { 'Content-Type': 'text/html' });
+    res.write(data);
+    res.end();
+  });
+}).listen(8080);
+*/
+function LoadHTML(req, res, filepath) {
+  fs.readFile(filepath, function (err, data) {
+    res.writeHead(200, { 'Content-Type': 'text/html' });
+    res.write(data);
+    res.end();
+  });
+}
+function LoadJS(req, res, filepath) {
+ //fs.readFile('client_ajax.js', function (err, data) {
+  fs.readFile(filepath, function (err, data) {
+   if(err){
+    console.log("ErrorOccured");
+    }
+    else
+    {
+      res.writeHead(200, { 'Content-Type': 'text/script' });
+      res.write(data);
+      res.end();
+    }
+  });
+}
+var http = require('http');
+var fs = require('fs');
+http.createServer(function (req, res) {
+  console.log(req.url.substring(1));
+  if (req.method === "GET") {
+    console.log("GetMethod");
+    if (req.url === ("/")) {
+      console.log("LoadIndex");
+      LoadHTML(req, res, 'index.html');
+    }
+    else {
+      if (req.url === ("/divcontent")) {
+        console.log("AjaxQuery");
+        LoadHTML(req, res, 'otherfile.html');
+      }
+      else
+      {
+        console.log("Look for ClientJS");
+       LoadJS(req, res, req.url.substring(1));
+      }
+    }
+  }
+}).listen(8080);
