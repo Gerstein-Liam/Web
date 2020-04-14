@@ -3,11 +3,26 @@ const { Console } = require('console');
 var filepath = "index.html"
 var balise_prefixe = "include-html";
 var balise_entiere;
-function CreateHTML(file){
+
+var finalhtml= CreateHTML("index.html");
+
 var str;
-    fs.readFile(file, function (err, data) {
-        str = data.toString();
-         console.log(str);
+
+
+fs.readFile(filepath, function (err, data)
+{
+
+    CreateHTML(data.toString());
+    
+});
+   
+
+
+
+
+
+
+function CreateHTML(str){
         var TagBeginDefine = "<div include-html=\"";
         var TagEndDefine = "\"></div>";
         var TagBeginIndex;
@@ -30,9 +45,7 @@ var str;
                 var include= incdata.toString();
                 str=str.replace( FullTag, include);
                 console.log(str);
+                CreateHTML(str);
             });
-        }
-    });
-    return str;
+ }
 }
-var finalhtml= CreateHTML("index.html");
