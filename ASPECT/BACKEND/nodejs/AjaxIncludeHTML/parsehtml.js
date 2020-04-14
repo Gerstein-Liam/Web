@@ -24,10 +24,19 @@ fs.readFile(filepath, function (err, data) {
         FullTag = str.substring(TagBeginIndex, TagEndIndex);
         console.log("Full Tag=== " + FullTag);
         FileName = str.substring((str.search(TagBeginDefine) + TagBeginDefine.length), str.search(TagEndDefine));
-        console.log("FileName=== " + FileName);
+        console.log("FileName=== " + FileName.substring);
 
-        str=str.replace( FullTag, "FILETOINCLUDE");
-        console.log(str);
+      
+      
+
+        fs.readFile(FileName, function (err, incdata) {
+            var include= incdata.toString();
+            str=str.replace( FullTag, include);
+            console.log(str);
+
+        });
+     
+       
        
     }
     // console.log(str.charAt(PositionFile) + str.charAt(PositionFile + 1) + str.charAt(PositionFile + 2) + str.charAt(PositionFile + 3) + str.charAt(PositionFile + 4) + str.charAt(PositionFile + 5) + str.charAt(PositionFile + 6) + str.charAt(PositionFile + 7));
