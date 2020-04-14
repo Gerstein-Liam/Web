@@ -6,30 +6,25 @@
 <!DOCTYPE html
     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <HTML>
-
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-  
     <script src="./client_js/client_ajax.js"></script>
     <link rel="stylesheet" type="text/css" href="style.css" />
     <title>Console: canvas</title>
 </head>
-
 <body>
     <h1> Console: canvas</h1>
     
 
 <label for="command">CMD</label><br>
 <input type="text" id="command" name="command"><br>
-<button class="bt_send_command" id="bt_send_command" onclick="CheckJavascript()" >Send Command</button>
+<button class="bt_send_command" id="bt_send_command" onclick="LoadHTMLBlock(' ','./API')" >Send Command</button>
 
 
 
     <p> OUTPUT FIELD</p>
+
+<div id="ConsoleReponse"  >   </div>
 </body>
-
 </html>
-
-

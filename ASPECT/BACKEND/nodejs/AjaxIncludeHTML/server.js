@@ -1,10 +1,5 @@
 var htmlBuilder= require("./custom_node_modules/htmlBuilder");
-
-
-
-
 htmlBuilder.HTMLBuild("index_seed.html");
-
 function HTML_Query(req, res, filepath) {
   fs.readFile(filepath, function (err, data) {
     res.writeHead(200, { 'Content-Type': 'text/html' });
@@ -40,36 +35,57 @@ function CSS_Query(req, res, filepath) {
      }
    });
  }
+
+
+
+ function API_Query(req, res) {
+  
+      console.log("CALL TO API");
+      res.writeHead(200, { 'Content-Type': 'text' });
+       res.write("API Response");
+       res.end();
+
+ }
+
+
+
+
+
 var http = require('http');
 var fs = require('fs');
+const { Console } = require("console");
 http.createServer(function (req, res) {
-
   //To permit refresh
   htmlBuilder.HTMLBuild("index_seed.html");
-
   console.log(req.url.substring(1));
   if (req.method === "GET") {
     //console.log("GetMethod");
-    if (req.url === ("/")) {
-      console.log("LoadIndex");
-      HTML_Query(req, res, 'index.html');
+    if (req.url === ("/API")) {
+      API_Query(req, res); 
     }else
     {
-      if (req.url.includes(".html")) {
-        console.log("Client request for HTML document");
-      }else
+      if (req.url === ("/")){
+        console.log("LoadIndex");
+        HTML_Query(req, res, 'index.html');
+      }
+      else
       {
-        if (req.url.includes(".js")) {
-          JSLIB_Query(req, res, req.url.substring(1));
-          console.log("Client request for JAVASCRIPT document");
+        if (req.url.includes(".html")) {
+          console.log("Client request for HTML document");
         }else
         {
-          if (req.url.includes(".css")) {
-            CSS_Query(req, res, req.url.substring(1));
+          if (req.url.includes(".js")) {
+            JSLIB_Query(req, res, req.url.substring(1));
             console.log("Client request for JAVASCRIPT document");
           }else
           {
-            console.log("Client request for other (Image,etc)");
+            if (req.url.includes(".css")) {
+              CSS_Query(req, res, req.url.substring(1));
+              console.log("Client request for JAVASCRIPT document");
+            }else
+            {
+              console.log("Client request for other (Image,etc)");
+            }
           }
         }
       }
