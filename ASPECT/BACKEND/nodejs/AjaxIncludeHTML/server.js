@@ -1,23 +1,15 @@
+var http = require('http');
 var htmlBuilder= require("./custom_node_modules/htmlBuilder");
 var hq= require("./custom_node_modules/html_queries");
 var capi= require("./custom_node_modules/api_request");
-
-
-htmlBuilder.HTMLBuild("index_seed.html");
-
-var http = require('http');
-var fs = require('fs');
-const { Console } = require("console");
-
+htmlBuilder.HTMLBuild("index_seed.html");     //On crée le fichier HTML generé en debut d'execution (bloquand)
 http.createServer(function (req, res) {
-  //To permit refresh
-  htmlBuilder.HTMLBuild("index_seed.html");
+  htmlBuilder.HTMLBuild("index_seed.html");   //On refresh tout le contenu HTML, comme ca tu peux developper le HTML,CSS,Javascript coté client,  sans redemarrer le serveur
   console.log(req.url.substring(1));
   if (req.method === "GET") {
-    //console.log("GetMethod");
     if (req.url.includes("API")) {
-
-      capi.apirequest(req, res); 
+      console.log("Client request console api");
+      capi.apirequest(req, res);        //C'est dans cette fonction (module api_request) que tu va executer du code sur la console et renvoye la reponse
     }else
     {
       if (req.url === ("/")){
@@ -28,7 +20,8 @@ http.createServer(function (req, res) {
       {
         if (req.url.includes(".html")) {
           console.log("Client request for HTML document");
-        }else
+        }
+        else
         {
           if (req.url.includes(".js")) {
             hq.htmlqueries.JSLIB_Query(req, res, req.url.substring(1));

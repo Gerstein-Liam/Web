@@ -1,6 +1,4 @@
 function RequestAPI(id, url) {
-    
-
     var cmd = document.getElementById("command").value;
     var apirequest = url + "?command=" + cmd;
     console.log("requested URL: " + url);
@@ -19,8 +17,3 @@ function RequestAPI(id, url) {
     xmlhttp.open("GET", apirequest, true);
     xmlhttp.send();
 }
-/*
-function CheckJavascript() {
- alert("Javascript File correctly loaded");
-}
-*/
