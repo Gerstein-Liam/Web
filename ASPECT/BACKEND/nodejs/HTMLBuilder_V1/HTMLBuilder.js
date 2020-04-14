@@ -1,9 +1,22 @@
+exports.HTMLBuild=BuildHTML;
 var fs = require('fs');
 const { Console } = require('console');
-var filepath = "index_seed.html"
+//var filepath = "index_seed.html"
 var TemplatedHTML;
 var FinalHTML="";
-console.log("-------------START------------------");
+//console.log("-------------START------------------");
+function BuildHTML(filepath){
+    try{
+        TemplatedHTML=fs.readFileSync(filepath, "utf-8");
+    }
+    catch(err){
+        console.log("Check FileName");
+    }
+    finally{
+        FinalHTML=GenerateHTML_ForClient(TemplatedHTML);
+    }
+    fs.writeFileSync("index.html",FinalHTML);
+}
 function GenerateHTML_ForClient(str) {
     var TagBeginDefine = "<div include-html=\"";
     var TagEndDefine = "\"></div>";
@@ -25,25 +38,13 @@ function GenerateHTML_ForClient(str) {
         str = str.replace(FullTag, include);
         // console.log(str);
         return GenerateHTML_ForClient(str);
+    
+    
+    
     }
     else { 
-        //console.log(str);
-        //console.log(FinalHTML);
+   
         return str;
-       // FinalHTML=str;
-         //console.log(FinalHTML);
+    
      }
 }
-try{
-    TemplatedHTML=fs.readFileSync(filepath, "utf-8");
-}
-catch(err){
-    console.log("error");
-}
-finally{
-    FinalHTML=GenerateHTML_ForClient(TemplatedHTML);
-}
-console.log(FinalHTML);
-fs.writeFileSync("index.html",FinalHTML);
-console.log("-------------END OF Creation------------------");
-console.log("-------------Now created server------------------");
