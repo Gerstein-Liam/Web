@@ -1,4 +1,6 @@
 function RequestAPI(id, url) {
+    
+
     var cmd = document.getElementById("command").value;
     var apirequest = url + "?command=" + cmd;
     console.log("requested URL: " + url);
