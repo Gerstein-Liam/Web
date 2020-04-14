@@ -1,22 +1,15 @@
 var fs = require('fs');
 const { Console } = require('console');
-var filepath = "index.html"
-var balise_prefixe = "include-html";
-var balise_entiere;
-var myHTML;
-let FinalHTML="";
-
-
+var filepath = "index_seed.html"
+var TemplatedHTML;
+var FinalHTML="";
 console.log("-------------START------------------");
-
-function CreateHTML(str) {
+function GenerateHTML_ForClient(str) {
     var TagBeginDefine = "<div include-html=\"";
     var TagEndDefine = "\"></div>";
     var TagBeginIndex;
     var TagEndIndex;
     var FullTag;
-    var FileNameBeginIndex;
-    var FileNameEndIndex;
     var FileName;
     var TmpPART;
     if (str.includes(TagBeginDefine)) {
@@ -31,7 +24,7 @@ function CreateHTML(str) {
         var include = fs.readFileSync(FileName, "utf-8");
         str = str.replace(FullTag, include);
         // console.log(str);
-        return CreateHTML(str);
+        return GenerateHTML_ForClient(str);
     }
     else { 
         //console.log(str);
@@ -42,19 +35,15 @@ function CreateHTML(str) {
      }
 }
 try{
-    myHTML=fs.readFileSync(filepath, "utf-8");
+    TemplatedHTML=fs.readFileSync(filepath, "utf-8");
 }
 catch(err){
     console.log("error");
 }
 finally{
-
-    FinalHTML=CreateHTML(myHTML);
+    FinalHTML=GenerateHTML_ForClient(TemplatedHTML);
 }
-
 console.log(FinalHTML);
-
-fs.writeFileSync("buildeldhtml.html",FinalHTML);
-
-
-console.log("-------------END------------------");
+fs.writeFileSync("index.html",FinalHTML);
+console.log("-------------END OF Creation------------------");
+console.log("-------------Now created server------------------");
