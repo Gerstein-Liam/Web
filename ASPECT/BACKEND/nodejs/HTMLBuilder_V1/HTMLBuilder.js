@@ -38,13 +38,8 @@ function GenerateHTML_ForClient(str) {
         str = str.replace(FullTag, include);
         // console.log(str);
         return GenerateHTML_ForClient(str);
-    
-    
-    
     }
     else { 
-   
         return str;
-    
      }
 }
