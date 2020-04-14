@@ -18,3 +18,9 @@ function LoadHTMLBlock(id, url) {
 }
 
 
+
+function CheckJavascript() {
+ alert("Javascript File correctly loaded");
+}
+
+
