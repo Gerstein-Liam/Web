@@ -1,8 +1,6 @@
 <!--                             
-  http://ufodb/layout/grid-basis/
-  https://www.educba.com/html5-vs-javascript/  
-   -->
-<!--     -->
+ CANVAS CONSOLE SCRAPPER
+-->
 <!DOCTYPE html
     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <HTML>
@@ -11,20 +9,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="./client_js/client_ajax.js"></script>
     <link rel="stylesheet" type="text/css" href="style.css" />
-    <title>Console: canvas</title>
+    <title>Console: Canvas</title>
 </head>
 <body>
-    <h1> Console: canvas</h1>
-    
+    <div class="app-grids-organisation">
+        <div class="input_section">
+            <h1> Console: Canvas</h1>
+            <label for="command">CMD</label><br>
+<table>
+        <tr>
+            <td><input type="text" id="command" name="command"></td>
+            <td><button class="bt_send_command" id="bt_send_command" onclick="RequestAPI(' ','./API')" >Send Command</button></td>
+        </tr>
+</table>
 
-<label for="command">CMD</label><br>
-<input type="text" id="command" name="command"><br>
-<button class="bt_send_command" id="bt_send_command" onclick="LoadHTMLBlock(' ','./API')" >Send Command</button>
-
-
-
-    <p> OUTPUT FIELD</p>
+        </div>   
+        
+        <div class="output_section">
+            <p> OUTPUT FIELD</p>
 
 <div id="ConsoleReponse"  >   </div>
+        </div>   
+    </div>
 </body>
 </html>

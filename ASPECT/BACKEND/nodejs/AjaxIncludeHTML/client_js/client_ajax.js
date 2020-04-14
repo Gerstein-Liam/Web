@@ -1,6 +1,7 @@
-function LoadHTMLBlock(id, url) {
-   
-    console.log("requested URL: "+ url);
+function RequestAPI(id, url) {
+    var cmd = document.getElementById("command").value;
+    var apirequest = url + "?command=" + cmd;
+    console.log("requested URL: " + url);
     if (window.XMLHttpRequest) {
         // code for IE7+, Firefox, Chrome, Opera, Safari
         xmlhttp = new XMLHttpRequest();
@@ -13,14 +14,11 @@ function LoadHTMLBlock(id, url) {
             document.getElementById("ConsoleReponse").innerHTML = this.responseText;
         }
     };
-    xmlhttp.open("GET", url, true);
+    xmlhttp.open("GET", apirequest, true);
     xmlhttp.send();
 }
-
-
-
+/*
 function CheckJavascript() {
  alert("Javascript File correctly loaded");
 }
-
-
+*/

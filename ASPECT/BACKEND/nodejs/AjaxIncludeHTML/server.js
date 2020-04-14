@@ -35,22 +35,13 @@ function CSS_Query(req, res, filepath) {
      }
    });
  }
-
-
-
  function API_Query(req, res) {
-  
-      console.log("CALL TO API");
-      res.writeHead(200, { 'Content-Type': 'text' });
-       res.write("API Response");
+       console.log("CALL TO API");
+       res.writeHead(200, { 'Content-Type': 'text' });
+       res.write("Your API Request : ");
+       res.write(req.url);
        res.end();
-
  }
-
-
-
-
-
 var http = require('http');
 var fs = require('fs');
 const { Console } = require("console");
@@ -60,8 +51,8 @@ http.createServer(function (req, res) {
   console.log(req.url.substring(1));
   if (req.method === "GET") {
     //console.log("GetMethod");
-    if (req.url === ("/API")) {
-      API_Query(req, res); 
+    if (req.url.includes("API")) {
+        API_Query(req, res); 
     }else
     {
       if (req.url === ("/")){
@@ -92,9 +83,3 @@ http.createServer(function (req, res) {
     }
   }
 }).listen(8080);
-/*
-if (req.url === ("/")) {
-  console.log("LoadIndex");
-  HTML_Query(req, res, 'index.html');
-}
-*/
