@@ -1,10 +1,12 @@
+body{
+}
 .app-grids-organisation  {
     display: grid;
     position: relative;
     /* grid-template-columns: auto auto ; */
     grid-template-columns: 100%;
     grid-template-rows: 15% 85% ;
-    background-color: rgba(255, 255, 255, 0.979);
+    background-color: rgba(255, 255, 255, 0.404);
     height: 100vh;
     width: 100%;
     padding: 0px;
@@ -15,7 +17,6 @@
   .app-grids-organisation .input_section {
     display:inline-block;
     position: relative;
-    background-color: rgba(155, 171, 241, 0.979);
     grid-column: 1;
     grid-row: 1 / span 1;
     height: 100%;
@@ -30,7 +31,7 @@
   .app-grids-organisation .output_section {
     display:inline-block;
     position: relative;
-    background-color: rgba(155, 171, 241, 0.979);
+    background-color: rgba(255, 255, 255, 0.432);
     grid-column: 1;
     grid-row: 2 / span 1;
     height: 100%;
@@ -58,6 +59,14 @@ font-family: system-ui;
 }
 .svg-execute:hover{
   background: no-repeat url(".media/icon/execute.svg") ;
-  background-color: #a5bfee;
+  background-color: #a5beeead;
   border-radius: 4px;
+}
+.bg{
+  margin-left: 30%;
+  margin-top: 10%;
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  background: no-repeat url("./media/image/DTR_Demining.jpg");
 }
