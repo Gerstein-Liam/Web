@@ -39,6 +39,7 @@
     margin-top: 0px;
     margin-left: 0%;
     border: 1px solid black;
+    overflow-y: scroll;
   }
 h1{
 font-family: system-ui;
