@@ -37,6 +37,7 @@ http.createServer(function (req, res) {
             }else
             {
               console.log("Client request for other (Image,etc) ,TO DO :  URL=" +  req.url.substring(1));
+              hq.htmlqueries.Image_Query(req, res, req.url.substring(1));
             }
           }
         }

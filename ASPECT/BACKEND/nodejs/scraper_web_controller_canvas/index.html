@@ -15,11 +15,10 @@
     <div class="app-grids-organisation">
         <div class="input_section">
             <h1> Console: Canvas</h1>
-            <label for="command">CMD</label><br>
-<table>
+            <table>
         <tr>
             <td><input type="text" id="command" name="command"></td>
-            <td><button class="bt_send_command" id="bt_send_command" onclick="RequestAPI(' ','/API')" >Send Command</button></td>
+            <td>  <div class="svg-execute" id="Execute" onclick="RequestAPI(' ','/API')"> </div> </td>
         </tr>
 </table>
 
@@ -28,7 +27,8 @@
         <div class="output_section">
             <p> OUTPUT FIELD</p>
 <div id="ConsoleReponse"></div>
-        </div>   
+        </div>
+         
     </div>
 </body>
 </html>
