@@ -3,7 +3,28 @@ var url = require('url');
 var htmlBuilder= require("./custom_node_modules/htmlBuilder");
 var hq= require("./custom_node_modules/html_queries");
 var capi= require("./custom_node_modules/api_request");
+
 htmlBuilder.HTMLBuild("index_seed.html");     //On crée le fichier HTML generé en debut d'execution (bloquand)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 http.createServer(function (req, res) {
   htmlBuilder.HTMLBuild("index_seed.html");   //On refresh tout le contenu HTML, comme ca tu peux developper le HTML,CSS,Javascript coté client,  sans redemarrer le serveur
  // console.log(req.url.substring(1));
