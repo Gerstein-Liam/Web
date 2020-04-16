@@ -33,11 +33,11 @@ font-size: larger;
   top:5%; 
   margin-left: 20%; 
   box-sizing: content-box;
-  background: no-repeat url("../FRONTEND/media/icon/filter_out.svg") ;
+  background: no-repeat url("./media/icon/filter_out.svg") ;
   padding-bottom: 10px;
 }
 .svg-tools:hover{
-  background: no-repeat url("../FRONTEND/media/icon/filter_in.svg") ;
+  background: no-repeat url(".media/icon/filter_in.svg") ;
   background-color: #ffffff;
   border-radius: 4px;
 }
@@ -51,10 +51,10 @@ font-size: larger;
   top:5%; 
   margin-left: 20%; 
   box-sizing: content-box;
-  background: no-repeat url("../FRONTEND/media/icon/add_out_icon.svg") ;
+  background: no-repeat url("./media/icon/add_out_icon.svg") ;
 }
 .svg-add:hover{
-  background: no-repeat url("../FRONTEND/media/icon/add_in_icon.svg") ;
+  background: no-repeat url("./media/icon/add_in_icon.svg") ;
   background-color: #ffffff;
   border-radius: 4px;
 }
