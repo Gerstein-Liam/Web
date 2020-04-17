@@ -1,6 +1,7 @@
 <div class="ma-top-container" id="ma-top-container">
   <!-- The Modal -->
   <div include-html="./html/person_filter_modal.html"></div>
+  <div include-html="./html/person_add_modal.html"></div>
   <div class="db-grids-organisation" id="db-grids-organisation">
     <div class="database-title-container" id="database-title-container">
       <h1 style="color: blue; font-family: system-ui; text-align: center;">PERSONS-LIST </h1>
@@ -8,7 +9,7 @@
     <div class="database-table-container" id="database-table-container">
       <table id="customers">
         <tr>
-          <th>Name</th>
+          <th>Lastname</th>
           <th>Firstname</th>
           <th>Fonctions</th>
           <th>Domain</th>
@@ -160,7 +161,8 @@
 
           <!--     <div class="svg-tools" id="PersonFilter" onclick="OpenPersonFilterModal()"> </div>                   -->
       <div class="svg-tools" id="PersonFilter" onclick="PersonFilterModal.OpenModal()"> </div>
-      <div class="svg-add" id="PersonAdd" > </div>
+      <div class="svg-add" id="PersonAdd" onclick="AddPersonModal.OpenModal()" > </div>
+   
     </div>
   </div>
 </div>

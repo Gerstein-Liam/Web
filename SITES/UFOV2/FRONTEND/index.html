@@ -9,13 +9,15 @@
 
 <head>
    <meta charset="utf-8" />
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
    <link rel="stylesheet" type="text/css" href="style.css" />
    <script src="https://www.w3schools.com/lib/w3.js"></script>
    <script src="./js/ww3_includehtml_util.js"></script>
    <script src="./js/startup.js"></script>
    <script src="./js/GridMod.js"></script>
+
    <script src="./js/PersonDB.js"></script>
+   <script src="./js/admin.js"></script>
    <title>UFO DATABASE</title>
 </head>
 
@@ -112,6 +114,41 @@
     </tr>
   </div>
 </div>
+  <div id="AddPersonModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="AddPersonModal.CloseModal()">&times;</span>
+        <h1 style="color: rgb(255, 0, 0); font-family: system-ui; text-align: center; font-size:small; padding-bottom: 20px;">ADD
+            PERSON
+        </h1>
+        <input type="text" id="lastname" value="lastname"   onfocus="this.value=''" name="command"><br>
+        <input type="text" id="firstname" value="firstname" onfocus="this.value=''" name="command"><br>
+        <input type="text" id="fonction" value="fonction"   onfocus="this.value=''" name="command"><br>
+        <select id="domain" name="domain" form="find_testimy_criterias" onchange="UpdateResult()">
+            <option value="%">Domain</option>
+            <option value="civil">Civil</option>
+            <option value="army">Army</option>
+            <option value="politics">Politics</option>
+            <option value="scientits">Scientits</option>
+        </select><br>
+        <select id="country" name="country" form="find_testimy_criterias" onchange="UpdateResult()">
+            <option value="%">Country</option>
+            <option value="usa">UnitedStates</option>
+            <option value="france">France</option>
+        </select><br>
+       
+        <select id="implication" name="implication" form="find_testimy_criterias" onchange="UpdateResult()">
+            <option value="%">Implication</option>
+            <option value="direct">Direct</option>
+            <option value="indirect">Indirect</option>
+        </select><br>
+        <select id="implication" name="implication" form="find_testimy_criterias" onchange="UpdateResult()">
+            <option value="%">Position</option>
+            <option value="direct">Pro</option>
+            <option value="indirect">Contra</option>
+        </select>
+        <button> Save    </button>
+    </div>
+</div>
   <div class="db-grids-organisation" id="db-grids-organisation">
     <div class="database-title-container" id="database-title-container">
       <h1 style="color: blue; font-family: system-ui; text-align: center;">PERSONS-LIST </h1>
@@ -119,7 +156,7 @@
     <div class="database-table-container" id="database-table-container">
       <table id="customers">
         <tr>
-          <th>Name</th>
+          <th>Lastname</th>
           <th>Firstname</th>
           <th>Fonctions</th>
           <th>Domain</th>
@@ -271,7 +308,8 @@
 
           <!--     <div class="svg-tools" id="PersonFilter" onclick="OpenPersonFilterModal()"> </div>                   -->
       <div class="svg-tools" id="PersonFilter" onclick="PersonFilterModal.OpenModal()"> </div>
-      <div class="svg-add" id="PersonAdd" > </div>
+      <div class="svg-add" id="PersonAdd" onclick="AddPersonModal.OpenModal()" > </div>
+   
     </div>
   </div>
 </div>
