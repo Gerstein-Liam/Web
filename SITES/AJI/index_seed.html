@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+   <meta charset="utf-8" />
+
+   <meta name="viewport" content="width=device-width,initial-scale=1.0,  maximum-scale=1.0, user-scalable=no" />
+<head>
+   <style>
+      /*https://www.youtube.com/watch?time_continue=4&v=-vo0HzNHL3U&feature=emb_logo*/
+      body {
+         background-color: rgb(145, 163, 218);
+         width: 100vw;
+         height: 100%;
+      }
+      @media only screen and (max-width: 1000px) {
+         .welcome {
+            font-family: system-ui;
+            font-size: 100px;
+            color: white;
+         }
+         .logo {
+            position: fixed;
+            --image-width: 250px;
+            --image-heigth: 120px;
+            width: var(--image-width);
+            height: var(--image-heigth);
+            top: calc(50% - (var(--image-heigth) / 2));
+            left: calc(50% - (var(--image-width) / 2));
+            background: no-repeat url("./media/icon/aji_flogo_w300_h140.svg");
+            background-size: contain;
+            border: 1px solid black;
+         }
+         button {
+            display: none;
+            position: fixed;
+            --image-width: 400px;
+            --image-heigth: 200px;
+            width: var(--image-width);
+            height: var(--image-heigth);
+            top: calc(90% - (var(--image-heigth) / 1));
+            left: calc(50% - (var(--image-width) / 2));
+            background-color: rgb(0, 102, 255);
+            border-radius: 30px;
+         }
+         .slogan {
+            display: none;
+         }
+      }
+      @media only screen and (min-device-width: 1000px) {
+         .welcome {
+            --image-heigth: 370px;
+            font-family: system-ui;
+            font-size: 40px;
+            color: white;
+         }
+         .logo {
+            position: fixed;
+            --image-width: 800px;
+            width: var(--image-width);
+            height: var(--image-heigth);
+            top: calc(50% - (var(--image-heigth) / 2));
+            left: calc(50% - (var(--image-width) / 2));
+            background: no-repeat url("./media/icon/aji_flogo_w800_h370.svg");
+            background-size: contain;
+         }
+         .logo .slogan {
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            color:rgb(14, 18, 255);
+            display: block;
+            position: absolute;
+            top:  calc(var(--image-heigth) - 100px);
+         }
+         button {
+            position: fixed;
+            --image-width: 300px;
+            --image-heigth: 300px;
+            width: var(--image-width);
+            height: var(--image-heigth);
+            top: calc(50% - (var(--image-heigth) / 2));
+            left: calc(85% - (var(--image-width) / 2));
+            background-color: rgb(10, 173, 32);
+            border: 3px solid rgb(10, 173, 32);
+ 
+         }
+      }
+   </style>
+</head>
+<body>
+   <div class="welcome logo"> <h1 class="slogan"> Travel with buddies </h1></div>
+   <button class="welcome bt" onclick="alert('NextPage')">ENTER</button>
+</body>
+</html>
