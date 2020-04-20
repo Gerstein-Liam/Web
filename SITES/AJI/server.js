@@ -3,12 +3,9 @@ var url = require('url');
 var htmlBuilder= require("./custom_node_modules/htmlBuilder");
 var hq= require("./custom_node_modules/html_queries");
 var capi= require("./custom_node_modules/api_request");
-
-
-
-htmlBuilder.HTMLBuild("index_desktop_seed.html","index_desktop.html");     //On crée le fichier HTML generé en debut d'execution (bloquand)
+htmlBuilder.HTMLBuild("index_seed.html");     //On crée le fichier HTML generé en debut d'execution (bloquand)
 http.createServer(function (req, res) {
-  htmlBuilder.HTMLBuild("index_seed.html","index_desktop.html");   //On refresh tout le contenu HTML, comme ca tu peux developper le HTML,CSS,Javascript coté client,  sans redemarrer le serveur
+  htmlBuilder.HTMLBuild("index_seed.html");   //On refresh tout le contenu HTML, comme ca tu peux developper le HTML,CSS,Javascript coté client,  sans redemarrer le serveur
  // console.log(req.url.substring(1));
   if (req.method === "GET") {
     if (req.url.includes("API")) {
@@ -17,19 +14,8 @@ http.createServer(function (req, res) {
     }else
     {
       if (req.url === ("/")){
-
-        if (req.headers['user-agent'].includes("Windows NT")) {
-          console.log("request of index.html :  URL=" +  req.url.substring(1));
-          hq.htmlqueries.HTML_Query(req, res, 'index_desktop.html');
-          console.log("Windows desktop");
-        }
-        else {
-          if (req.headers['user-agent'].includes("Android")) {
-            hq.htmlqueries.HTML_Query(req, res, 'index_mobile.html');
-            console.log("Android device");
-          }
-        }
-      
+        console.log("request of index.html :  URL=" +  req.url.substring(1));
+        hq.htmlqueries.HTML_Query(req, res, 'index.html');
       }
       else
       {
@@ -41,11 +27,13 @@ http.createServer(function (req, res) {
           if (req.url.includes(".js")) {
             console.log("Client request for JAVASCRIPT document : URL="+  req.url.substring(1));
             hq.htmlqueries.JSLIB_Query(req, res, req.url.substring(1));
+            
           }else
           {
             if (req.url.includes(".css")) {
               console.log("Client request for CSS document   :  URL=" +  req.url.substring(1));
               hq.htmlqueries.CSS_Query(req, res, req.url.substring(1));
+             
             }else
             {
               console.log("Client request for other (Image,etc) ,TO DO :  URL=" +  req.url.substring(1));
@@ -56,4 +44,4 @@ http.createServer(function (req, res) {
       }
     }
   }
-}).listen(8081);
+}).listen(8080);
