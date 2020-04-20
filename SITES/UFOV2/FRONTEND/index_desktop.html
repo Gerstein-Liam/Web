@@ -121,7 +121,7 @@
         <h1 style="color: rgb(255, 0, 0); font-family: system-ui; text-align: center; font-size:small; padding-bottom: 20px;">ADD
             PERSON
         </h1>
-        <input type="text" id="lastname" value="lastname"   onfocus="this.value=''" name="command"><br>
+        <input type="text" id="lastname" value="lastname"   onfocus="this.value=''" name="command">
         <input type="text" id="firstname" value="firstname" onfocus="this.value=''" name="command"><br>
         <input type="text" id="fonction" value="fonction"   onfocus="this.value=''" name="command"><br>
         <select id="domain" name="domain" form="find_testimy_criterias" onchange="UpdateResult()">
@@ -131,7 +131,7 @@
             <option value="Politic">Politics</option>
             <option value="Science">Scientits</option>
         </select><br>
-        <select id="country" name="country" form="find_testimy_criterias" onchange="UpdateResult()">
+        <select id="country" name="country" form="find_testimy_criterias" onchange="document.getElementById('save_status').innerHTML=' ';">
             <option value="%">Country</option>
             <option value="United States">United States</option>
             <option value="France">France</option>
@@ -149,6 +149,9 @@
             <option value="Expectant">Expectant</option>
         </select>
         <button  onclick="AddPerson()" >Save</button>
+
+
+        <div class="save_status" id="save_status"> DOING  </div>
     </div>
 </div>
   <div class="db-grids-organisation" id="db-grids-organisation">

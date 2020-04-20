@@ -19,7 +19,7 @@ function RequestAPI_PostMethod(id, url ,parameters) {
             console.log(this.responseText);
 
         
-           // document.getElementById(id).innerHTML = this.responseText;
+            document.getElementById(id).innerHTML = this.responseText;
         }
     };
     xmlhttp.open("POST", url, true);
@@ -48,6 +48,6 @@ var paras = `command=addperson&LASTNAME=${lastname}&FIRSTNAME=${firstname}&FONCT
 console.log(`LASTNAME= ${lastname}  FIRSTNAME=${firstname}  FONCTION= ${fonction} `);
 console.log(`DOMAIN= ${domain}  COUNTRY=${country}  IMPLICATION= ${implication}  POSITION ${position} `);
 
-RequestAPI_PostMethod("bla", "/API" ,paras);
+RequestAPI_PostMethod("save_status", "/API" ,paras);
 
 }
