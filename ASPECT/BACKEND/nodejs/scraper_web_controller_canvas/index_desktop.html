@@ -9,17 +9,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="./client_js/client_ajax.js"></script>
     <link rel="stylesheet" type="text/css" href="style.css" />
-    <title>Console: Canvas</title>
+    <title>Console: Canvas : Desktop</title>
 </head>
 <body>
     <div class="bg">  </div>  
     <div class="app-grids-organisation">
         <div class="input_section">
-            <h1> Console: Canvas</h1>
-            <div include-html="./html/input.html"></div>
+            <h1> Console: Canvas : Desktop version</h1>
+            <table>
+        <tr>
+            <td><input type="text" id="command" name="command"></td>
+            <td>  <div class="svg-execute" id="Execute" onclick="RequestAPI_GetMethod(' ','/API')"> </div> </td>
+        </tr>
+</table>
+
         </div>   
         <div class="output_section">
-            <div include-html="./html/output.html"></div>
+            <p> OUTPUT FIELD</p>
+<div id="ConsoleReponse"></div>
         </div>
     </div>
 </body>
