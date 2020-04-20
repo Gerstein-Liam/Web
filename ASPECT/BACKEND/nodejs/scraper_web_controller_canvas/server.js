@@ -12,43 +12,23 @@ http.createServer(function (req, res) {
   switch(req.method){
     case "GET": console.log("Get Method");
                 if (req.url.includes("API")) {
-                  capi.apirequest(req, res);       
+                  capi.apirequest.API_Query_Get(req, res);       
                 } else {
                   WebApplication__GetRequests(req,res);
                 }
     break;
     case "POST": console.log("Post Method");
-                WebApplication__PostRequests(req,res);
-    break;
+                if (req.url.includes("API")) {
+                  capi.apirequest.API_Query_Post(req, res);       
+                } else {
+                  res.writeHead(200, { 'Content-Type': 'text/html' });
+                  res.write("Something wrong");
+                  res.end();
+                }
+                 break;
     default: break;
   }
 }).listen(8080);
-
-function WebApplication__PostRequests(req,res){
-  //https://nodejs.dev/making-http-requests-with-nodejs
-  let body = '';
-        // very important to handle errors
-        req.on('error', (err) => {
-            if(err) {
-                response.writeHead(500, {'Content-Type': 'text/html'});
-                response.write('An error occurred');
-                response.end();
-            }
-        });
-        // read chunks of POST data
-        req.on('data', chunk => {
-            body += chunk.toString();
-        });
-        // when complete POST data is received
-        req.on('end', () => {
-            // use parse() method
-            body = querystring.parse(body);
-            // { name: 'John', gender: 'MALE', email: 'john@gmail.com' }
-            console.log(body);
-            console.log(body.command);
-            // rest of the code
-        });
-}
 function WebApplication__GetRequests(req,res){
   if (req.url === ("/")) {
     //  console.log("request of index.html :  URL=" + req.url.substring(1));
@@ -66,18 +46,14 @@ function WebApplication__GetRequests(req,res){
     }
     else {
       if (req.url.includes(".html")) {
-        //console.log("Client request for HTML document,other than index.html :  URL=" + req.url.substring(1));
       }
       else {
         if (req.url.includes(".js")) {
-       //   console.log("Client request for JAVASCRIPT document : URL=" + req.url.substring(1));
           hq.htmlqueries.JSLIB_Query(req, res, req.url.substring(1));
         } else {
           if (req.url.includes(".css")) {
-          //  console.log("Client request for CSS document   :  URL=" + req.url.substring(1));
             hq.htmlqueries.CSS_Query(req, res, req.url.substring(1));
           } else {
-           // console.log("Client request for other (Image,etc) ,TO DO :  URL=" + req.url.substring(1));
             hq.htmlqueries.Image_Query(req, res, req.url.substring(1));
           }
         }
