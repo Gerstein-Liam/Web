@@ -126,28 +126,29 @@
         <input type="text" id="fonction" value="fonction"   onfocus="this.value=''" name="command"><br>
         <select id="domain" name="domain" form="find_testimy_criterias" onchange="UpdateResult()">
             <option value="%">Domain</option>
-            <option value="civil">Civil</option>
-            <option value="army">Army</option>
-            <option value="politics">Politics</option>
-            <option value="scientits">Scientits</option>
+            <option value="Civil">Civil</option>
+            <option value="Army">Army</option>
+            <option value="Politic">Politics</option>
+            <option value="Science">Scientits</option>
         </select><br>
         <select id="country" name="country" form="find_testimy_criterias" onchange="UpdateResult()">
             <option value="%">Country</option>
-            <option value="usa">UnitedStates</option>
-            <option value="france">France</option>
+            <option value="United States">United States</option>
+            <option value="France">France</option>
         </select><br>
        
         <select id="implication" name="implication" form="find_testimy_criterias" onchange="UpdateResult()">
             <option value="%">Implication</option>
-            <option value="direct">Direct</option>
-            <option value="indirect">Indirect</option>
+            <option value="Direct">Direct</option>
+            <option value="Indirect">Indirect</option>
         </select><br>
-        <select id="implication" name="implication" form="find_testimy_criterias" onchange="UpdateResult()">
+        <select id="position" name="implication" form="find_testimy_criterias" onchange="UpdateResult()">
             <option value="%">Position</option>
-            <option value="direct">Pro</option>
-            <option value="indirect">Contra</option>
+            <option value="Believer">Believer</option>
+            <option value="Skeptical">Skeptical</option>
+            <option value="Expectant">Expectant</option>
         </select>
-        <button> Save    </button>
+        <button  onclick="AddPerson()" >Save</button>
     </div>
 </div>
   <div class="db-grids-organisation" id="db-grids-organisation">

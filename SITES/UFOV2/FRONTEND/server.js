@@ -1,9 +1,10 @@
+//npm install querystring
 var http = require('http');
+var querystring = require('querystring');
 var url = require('url');
 var htmlBuilder = require("./custom_node_modules/htmlBuilder");
 var hq = require("./custom_node_modules/html_queries");
 var capi = require("./custom_node_modules/api_request");
-const { Console } = require('console');
 htmlBuilder.HTMLBuild("index_desktop_seed.html","index_desktop.html");  
 http.createServer(function (req, res) {
   htmlBuilder.HTMLBuild("index_desktop_seed.html","index_desktop.html");  
@@ -11,22 +12,23 @@ http.createServer(function (req, res) {
   switch(req.method){
     case "GET": console.log("Get Method");
                 if (req.url.includes("API")) {
-                  capi.apirequest(req, res);       
+                  capi.apirequest.API_Query_Get(req, res);       
                 } else {
                   WebApplication__GetRequests(req,res);
                 }
     break;
     case "POST": console.log("Post Method");
-    break;
+                if (req.url.includes("API")) {
+                  capi.apirequest.API_Query_Post(req, res);       
+                } else {
+                  res.writeHead(200, { 'Content-Type': 'text/html' });
+                  res.write("Something wrong");
+                  res.end();
+                }
+                 break;
     default: break;
   }
 }).listen(8080);
-
-
-
-
-
-
 function WebApplication__GetRequests(req,res){
   if (req.url === ("/")) {
     //  console.log("request of index.html :  URL=" + req.url.substring(1));
@@ -44,18 +46,14 @@ function WebApplication__GetRequests(req,res){
     }
     else {
       if (req.url.includes(".html")) {
-        //console.log("Client request for HTML document,other than index.html :  URL=" + req.url.substring(1));
       }
       else {
         if (req.url.includes(".js")) {
-       //   console.log("Client request for JAVASCRIPT document : URL=" + req.url.substring(1));
           hq.htmlqueries.JSLIB_Query(req, res, req.url.substring(1));
         } else {
           if (req.url.includes(".css")) {
-          //  console.log("Client request for CSS document   :  URL=" + req.url.substring(1));
             hq.htmlqueries.CSS_Query(req, res, req.url.substring(1));
           } else {
-           // console.log("Client request for other (Image,etc) ,TO DO :  URL=" + req.url.substring(1));
             hq.htmlqueries.Image_Query(req, res, req.url.substring(1));
           }
         }
