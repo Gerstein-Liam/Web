@@ -52,7 +52,8 @@ function RequestAPI_PostMethod_LoadPersonList(url ,parameters) {
            var ligne;
             for (let i = 0; i <= (obj.length - 1); i++) {
               var ligne = document.createElement("tr");
-              ligne.setAttribute('onmousedown','OpenPersonRightClickModal(event)')
+              ligne.setAttribute('onmousedown','OpenPersonRightClickModal(event)');
+             
               var _firstname = document.createElement("td");
               _firstname.innerHTML = obj[i].Firstname;
               var _lastname = document.createElement("td");
