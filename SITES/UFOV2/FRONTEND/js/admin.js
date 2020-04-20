@@ -1,6 +1,10 @@
 AddPersonModal= new Modal("AddPersonModal");
 //https://www.w3schools.com/js/js_objects.asp
 //https://www.geeksforgeeks.org/remove-all-the-child-elements-of-a-dom-node-in-javascript/
+//https://github.com/getify/You-Dont-Know-JS/blob/2nd-ed/README.md
+//https://javascript.developpez.com/actu/146280/Comprendre-les-Promises-en-JavaScript-TypeScript-article-de-yahiko/
+//https://www.pierre-giraud.com/javascript-apprendre-coder-cours/promesse-promise/
+//https://www.youtube.com/watch?v=uUZxHkcidps
 function RequestAPI_PostMethod(id, url ,parameters) {
     console.log("requested URL: " + url);
     if (window.XMLHttpRequest) {
