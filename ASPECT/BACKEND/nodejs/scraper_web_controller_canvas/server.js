@@ -8,9 +8,8 @@ htmlBuilder.HTMLBuild("index_seed.html");     //On crée le fichier HTML generé
 http.createServer(function (req, res) {
   htmlBuilder.HTMLBuild("index_seed.html");   //On refresh tout le contenu HTML, comme ca tu peux developper le HTML,CSS,Javascript coté client,  sans redemarrer le serveur
   // console.log(req.url.substring(1));
-  if (req.method === "GET") {
-  // console.log(req.headers['user-agent']);
-   
+  switch(req.method){
+    case "GET": console.log("Get Method");
     if (req.headers['user-agent'].includes("Windows NT")) {
       console.log("Windows desktop");
     }
@@ -19,7 +18,6 @@ http.createServer(function (req, res) {
         console.log("Android device");
       }
     }
-    
     //  console.log(req);
     if (req.url.includes("API")) {
      // console.log("Client request console api");
@@ -49,5 +47,9 @@ http.createServer(function (req, res) {
         }
       }
     }
+    break;
+    case "POST": console.log("Post Method");
+    break;
+    default: break;
   }
 }).listen(8080);
