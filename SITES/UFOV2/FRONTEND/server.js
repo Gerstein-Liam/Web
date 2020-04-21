@@ -38,6 +38,8 @@ function WebApplication__GetRequests(req,res){
         console.log("Windows desktop");
       }
       else {
+
+        //https://deviceatlas.com/blog/mobile-browser-user-agent-strings
         if (req.headers['user-agent'].includes("Android")) {
           hq.htmlqueries.HTML_Query(req, res, 'index_mobile.html');
           console.log("Android device");
