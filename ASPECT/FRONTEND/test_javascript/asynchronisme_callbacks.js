@@ -1,5 +1,5 @@
 //http://dummy.restapiexample.com/
-function AjaxGet(url, onsuccess, onfailed) {
+function AjaxGet_WithCallback(url, onsuccess, onfailed) {
     //console.log(`function executed   ${url}`);
     var req = new XMLHttpRequest()
     req.open('GET', url, true)
@@ -27,8 +27,8 @@ function a__OnSuccess_SecondJSON(success_reponse) {
     console.table(obj);
     document.getElementById("SecondJson").innerHTML=success_reponse;
 }
-function Bt(){
-var ajax = AjaxGet;
+function Bt_CallbackTest(){
+var ajax = AjaxGet_WithCallback;
 var On_SuccessCallback_1 = a__OnSuccess_FirstJSON;
 var On_SuccessCallback_2 = a__OnSuccess_SecondJSON;
 ajax('https://jsonplaceholder.typicode.com/users', function (success_rep_1) {
