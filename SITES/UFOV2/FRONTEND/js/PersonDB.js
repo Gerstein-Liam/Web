@@ -33,6 +33,15 @@ function OpenPersonRightClickModal(event,id) {
         document.getElementById("RightClickModal").style.paddingTop = padding_top;
         document.getElementById("RightClickModal").style.display = "block";
         console.log(`Row ID= ${id}`);
+        var entries=document.getElementById(id).children;
+
+      //  console.table([entries]);
+       // console.log(`Lastname ${entries[0].innerHTML}`);
+        var obj_entri= {LASTNAME:`${entries[0].innerHTML}`, FIRSTNAME:`${entries[1].innerHTML}`, FONCTIONS:`${entries[2].innerHTML}`, DOMAIN:`${entries[3].innerHTML}`,COUNTRY:`${entries[4].innerHTML}`};
+
+
+        
+        console.table([obj_entri]);
     }
    
 }

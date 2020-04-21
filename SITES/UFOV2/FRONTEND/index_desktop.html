@@ -6,7 +6,6 @@
 <!DOCTYPE html
    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <HTML>
-
 <head>
    <meta charset="utf-8" />
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -21,7 +20,6 @@
    <script src="./js/startup.js"></script>
    <title>UFO DATABASE:DESKTOP</title>
 </head>
-
 <body onload="Startup()">
    <div class="page-grids-organisation" id="page-grids-organisation">
       <div class="welcome-container" id="welcome-container">
@@ -70,12 +68,24 @@
     <div class="mid-area-grids-organisations" id="mid-area-grids-organisations">
         <div class="ma-top-container" id="ma-top-container">
   <!-- The Modal -->
-  <div id="RightClickModal" class="modal_rightclick">
+  
+
+
+
+<div id="RightClickModal" class="modal_rightclick">
   <div class="modal_rightclick_content">
-    Right click model
+
+    <div id="RClick_Person_Content"></div>
+    
     <span class="close" onclick="ClosePersonRightClickModal()">&times;</span>
   </div>
 </div>
+
+
+
+
+
+
 <div id="myModal" class="modal">
   <div class="modal-content">
     <span class="close" onclick="PersonFilterModal.CloseModal()">&times;</span>
@@ -163,8 +173,6 @@
       <h1 style="color: blue; font-family: system-ui; text-align: center;">PERSONS-LIST </h1>
     </div>
     <div class="database-table-container" id="database-table-container">
-       
-
       <table id="customers">
         <tr>
           <th>Lastname</th>
@@ -174,23 +182,16 @@
           <th>Country</th>
           <th>Implication</th>
           <th>Position</th>
-        
-      
         </tr>
-      
-      
       </table>
-
     </div>
     <div class="database-tools-container" id="database-tools-container">
       <!--
           <div  class="svg-search"  onmousedown="PersonFilter()"  >  </div>
           -->
-
           <!--     <div class="svg-tools" id="PersonFilter" onclick="OpenPersonFilterModal()"> </div>                   -->
       <div class="svg-tools" id="PersonFilter" onclick="PersonFilterModal.OpenModal()"> </div>
       <div class="svg-add" id="PersonAdd" onclick="AddPersonModal.OpenModal()" > </div>
-   
     </div>
   </div>
 </div>
@@ -954,5 +955,4 @@
    </div>
    <script>//includeHTML();</script>
 </body>
-
 </html>
