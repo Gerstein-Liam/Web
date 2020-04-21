@@ -6,9 +6,18 @@ http://dummy.restapiexample.com/
 <head>
   <title>Test javascript</title>
   <script src="./logging.js"></script>
+  <script src="./asynchronisme_callbacks.js"></script>
+<style>
+body{
+  width: 100%;
+  height: 100vh;
+}
+</style>
 </head>
-<body onload="log_example()">
- <button onclick="" > Test </button>
-  <div id="DOM"></div>
+<body >
+ <div style="height: 10vh;  background-color: rgb(135, 136, 222) ;"> <button onclick="Bt()" > Test </button>  </div>
+ <div  style="width: 50%; height: 90vh; float: left;  background-color: rgb(167, 222, 135) ;"> <h2> FirstRequest </h2> <div id="FirstJson"  ></div>  </div>
+ <div  style="width: 50%; float: left; height: 90vh; background-color: rgb(168, 135, 222) ;">   <h2> SecondRequest </h2> <div id="SecondJson"  ></div>  </div>
+ <div id="DOM"></div>
 </body>
 </html>
