@@ -43,14 +43,29 @@ var getJSONs = async function () {
     return reps
     // Un throw permettra de reject la promesse
   }
+  function Bt_PromisesAsyncAwait(){
+    getJSONs().then(reponses => {
+        On_SuccessCallback_1 (reponses[0]);
+        On_SuccessCallback_2 (reponses[1]);
+    }
+        ).catch(error =>{console.log(`A XHR Failed : ${error}`) })
+
+    
+    console.log("Still Running after inititing ajax");
+}
+
+/*  
 function Bt_PromisesAsyncAwait(){
     getJSONs().then(reponses => {
         On_SuccessCallback_1 (reponses[0]);
         On_SuccessCallback_2 (reponses[1]);
     }
         ).catch(error =>{console.log(error) })
+
+    
     console.log("Still Running after inititing ajax");
 }
+*/
 function Bt_PromisesAllTest(){
 }
 function Bt_PromisesTest() {
