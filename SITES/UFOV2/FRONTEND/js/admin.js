@@ -44,7 +44,8 @@ function InitTable()
             var ligne;
             for (let i = 0; i <= (obj.length - 1); i++) {
                 var ligne = document.createElement("tr");
-                ligne.setAttribute('onmousedown', 'OpenPersonRightClickModal(event)');
+                ligne.setAttribute('onmousedown', 'OpenPersonRightClickModal(event,this.id)');
+                ligne.setAttribute('id', `row-${i}`);
                 var _firstname = document.createElement("td");
                 _firstname.innerHTML = obj[i].Firstname;
                 var _lastname = document.createElement("td");
