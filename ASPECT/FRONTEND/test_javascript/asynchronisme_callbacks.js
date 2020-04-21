@@ -19,37 +19,30 @@ function a__OnSuccess_FirstJSON(success_reponse) {
     var obj = JSON.parse(success_reponse);
     console.log("On Success callback");
     console.table(obj);
-
     document.getElementById("FirstJson").innerHTML=success_reponse;
 }
-
 function a__OnSuccess_SecondJSON(success_reponse) {
     var obj = JSON.parse(success_reponse);
     console.log("On Success callback");
     console.table(obj);
-
     document.getElementById("SecondJson").innerHTML=success_reponse;
 }
-
-
 function Bt(){
-
-
 var ajax = AjaxGet;
 var On_SuccessCallback_1 = a__OnSuccess_FirstJSON;
 var On_SuccessCallback_2 = a__OnSuccess_SecondJSON;
-ajax('https://jsonplaceholder.typicode.com/users', function (success_rep) {
-    On_SuccessCallback_1(success_rep);
-    ajax('https://jsonplaceholder.typicode.com/posts', function (success_rep) { On_SuccessCallback_2(success_rep); }, function (failed_rep) {
-        console.log(failed_rep);
-    })
-}, function (failed_rep) {
-    console.log(failed_rep);
+ajax('https://jsonplaceholder.typicode.com/users', function (success_rep_1) {
+    On_SuccessCallback_1(success_rep_1);
+    ajax('https://jsonplaceholder.typicode.com/posts', function (success_rep_2) { On_SuccessCallback_2(success_rep_2); }, 
+    
+    function (failed_rep_2) {
+        console.log(failed_rep_2);
+    });
+}, function (failed_rep_1) {
+    console.log(failed_rep_1);
 });
 console.log("Running");
-
 }
-
 /*               Dev state=2
 //http://dummy.restapiexample.com/
 function AjaxGet(url, onsuccess, onfailed) {
