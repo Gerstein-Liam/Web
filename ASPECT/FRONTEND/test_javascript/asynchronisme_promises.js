@@ -1,3 +1,6 @@
+//https://www.grafikart.fr/tutoriels/promise-async-await-875
+
+
 function AjaxGet_WithPromises(url) {
     return new Promise(function (resolve, reject) {
         var req = new XMLHttpRequest();
