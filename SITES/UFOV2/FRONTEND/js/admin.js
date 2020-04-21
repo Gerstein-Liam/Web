@@ -22,6 +22,8 @@ function AddPerson() {
     ajaxpost("/API", paras)
         .then(function (response) {
             console.log("Promise reponse");
+            erasetable();
+            InitTable();
             document.getElementById("save_status").innerHTML = response;
         })
         .catch(function (error) {
