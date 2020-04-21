@@ -1,6 +1,4 @@
 //https://www.grafikart.fr/tutoriels/promise-async-await-875
-
-
 function AjaxGet_WithPromises(url) {
     return new Promise(function (resolve, reject) {
         var req = new XMLHttpRequest();
@@ -32,10 +30,30 @@ function a__OnSuccess_SecondJSON(success_reponse) {
     console.table(obj);
     document.getElementById("SecondJson").innerHTML = success_reponse;
 }
+var ajax = AjaxGet_WithPromises;
+var On_SuccessCallback_1 = a__OnSuccess_FirstJSON;
+var On_SuccessCallback_2 = a__OnSuccess_SecondJSON;
+///////////////////////////////////////////////////////////
+var getJSONs = async function () {
+    // Plutot que d'utilise le then on peut attendre la résolution
+    let rep1= await ajax('https://jsonplaceholder.typicode.com/users');
+    let rep2= await ajax('https://jsonplaceholder.typicode.com/posts');
+    // Return permettra le resolve de la promesse
+    var reps= [rep1,rep2]
+    return reps
+    // Un throw permettra de reject la promesse
+  }
+function Bt_PromisesAsyncAwait(){
+    getJSONs().then(reponses => {
+        On_SuccessCallback_1 (reponses[0]);
+        On_SuccessCallback_2 (reponses[1]);
+    }
+        ).catch(error =>{console.log(error) })
+    console.log("Still Running after inititing ajax");
+}
+function Bt_PromisesAllTest(){
+}
 function Bt_PromisesTest() {
-    var ajax = AjaxGet_WithPromises;
-    var On_SuccessCallback_1 = a__OnSuccess_FirstJSON;
-    var On_SuccessCallback_2 = a__OnSuccess_SecondJSON;
     ajax("https://jsonplaceholder.typicode.com/users")
         .then(function (resolve_response_1) {
             On_SuccessCallback_1(resolve_response_1);
