@@ -3,7 +3,7 @@
     position: absolute;
     display: grid;
     /* grid-template-columns: auto auto ; */
-    grid-template-rows: 0% 100%;
+    grid-template-rows: 100% 0%;
     background-color: rgba(198, 209, 208, 0.356);
     padding: 0px;
     grid-gap: 0%;
@@ -29,7 +29,7 @@
 
     position: relative;
     /* The image used */
-    background-image: url("../../media/image/earth_banner.jpg");
+    background-image: url("../../media/image/mw_beach.jpg");
     /* Full height */
     height: 100%; 
     width: 100%;
@@ -49,9 +49,9 @@
       height: var(--image-heigth);
       top: calc(50% - (var(--image-heigth) / 2));
       left: calc(50% - (var(--image-width) / 2));
-      background: no-repeat url("../../media/icon/ufo_fact.svg");
+      background: no-repeat url("../../media/icon/ufo_fact_1.svg");
       background-size: contain;
-      background-color: rgb(0, 0, 0);
+      background-color: rgba(0, 0, 0, 0);
     }
    
 
