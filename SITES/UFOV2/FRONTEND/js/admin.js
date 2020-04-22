@@ -40,7 +40,7 @@ function InitTable()
              var obj = JSON.parse(response);
             console.log(obj);
             var result = "";
-            var table = document.getElementById("customers");
+            var table = document.getElementById("table-persons");
             var ligne;
             for (let i = 0; i <= (obj.length - 1); i++) {
                 var ligne = document.createElement("tr");
