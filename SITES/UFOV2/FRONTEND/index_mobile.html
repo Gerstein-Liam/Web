@@ -1,15 +1,98 @@
-<!DOCTYPE html>
-<html>
-   <meta charset="utf-8" />
+<!--                             
+  http://ufodb/layout/grid-basis/
+  https://www.educba.com/html5-vs-javascript/  
+   -->
+<!--     -->
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<HTML>
 
-   <meta name="viewport" content="width=device-width,initial-scale=1.0,  maximum-scale=1.0, user-scalable=no" />
 <head>
-    <title>UFO DATABASE: MOBILE</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <style>
+    body {
+      height: 100%;
+      width: 100%;
+      background-color: rgb(0, 0, 0);
+      margin: 0;
+      padding: 0;
+    }
+
+    .logo {
+      position: absolute;
+      --image-heigth: 110px;
+      --image-width: 180px;
+      width: var(--image-width);
+      height: var(--image-heigth);
+      top: calc((50% * 1.66) - (var(--image-heigth) / 2));
+      left: calc(50% - (var(--image-width) / 2));
+      background: no-repeat url("./media/icon/ufo_fact.svg");
+      background-size: contain;
+      background-color: rgb(0, 0, 0);
+    }
+
+    .welcome_message {
+      position: absolute;
+      --image-heigth: 150px;
+      --image-width: 90%;
+      width: var(--image-width);
+      height: var(--image-heigth);
+      top: 0px;
+      left: calc(50% - (var(--image-width) / 2));
+      background-color: rgba(85, 79, 79, 0.349);
+      border: 1px solid rgba(85, 79, 79, 0.349);
+      box-sizing: border-box;
+      padding-left: 8px;
+      padding-right: 8px;
+      display: block;
+    }
+
+    h1 {
+      font-size: 15px;
+      text-align: center;
+      text-transform: uppercase;
+      color: rgb(255, 255, 255);
+      font-family: system-ui;
+    }
+
+    p {
+      text-indent: 0px;
+      text-align: justify;
+      letter-spacing: 2px;
+      color: rgb(255, 255, 255);
+      font-family: system-ui;
+    }
+
+    .row-logo {
+      position: relative;
+      width: 100%;
+      height: 60vh;
+      background-color: rgb(0, 0, 0);
+    }
+
+    .row-msg {
+      position: relative;
+      width: 100%;
+      height: 40vh;
+      background-color: rgba(0, 0, 0, 0);
+    }
+  </style>
+  <title>UFO DATABASE: Mobile</title>
 </head>
+
 <body>
-
-
-  <h1 class="slogan"> The purpose of this web application is hardly adaptable to mobile device, please use a Desktop device (Windows,Linux,Mac) </h1>
- 
+  <div class="row-logo">
+    <div class="logo">
+    </div>
+  </div>
+  <div class="row-msg">
+    <div class="welcome_message">
+      <h1>Welcome</h1>
+      <p>This app will NEVER be adapted to small device (mobile, tablet).
+        <p style="text-align: center; "> PLEASE USE A DESKTOP COMPUTER
+    </div>
+  </div>
 </body>
+
 </html>

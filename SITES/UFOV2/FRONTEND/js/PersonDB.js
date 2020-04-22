@@ -22,6 +22,7 @@ function ClosePersonFilterModal() {
 }
 */
 //Right click sur une Person
+// https://hackernoon.com/copying-text-to-clipboard-with-javascript-df4d4988697f
 function OpenPersonRightClickModal(event,id) {
     // alert("You pressed button: " + event.button + "Position X: " + event.clientX + " Y " +  event.clientY);
     event.preventDefault();
@@ -40,7 +41,7 @@ function OpenPersonRightClickModal(event,id) {
         var obj_entri= {LASTNAME:`${entries[0].innerHTML}`, FIRSTNAME:`${entries[1].innerHTML}`, FONCTIONS:`${entries[2].innerHTML}`, DOMAIN:`${entries[3].innerHTML}`,COUNTRY:`${entries[4].innerHTML}`};
 
 
-        
+
         console.table([obj_entri]);
     }
    
