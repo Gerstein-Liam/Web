@@ -1,6 +1,6 @@
  
- @import url("../css/ma-grid.css");
- 
+ @import url("grid-ma-areas.css");
+ @import url("../area-elements/mid-area-elements.css");
  
   .mid-area-grids-organisations  {
     display: grid;

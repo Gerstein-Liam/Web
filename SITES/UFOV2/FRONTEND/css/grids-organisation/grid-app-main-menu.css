@@ -3,22 +3,12 @@ height: 100%;
 box-sizing: border-box;
 border-color:rgb(138, 139, 139);
 border-width: 1px;
-
-
 border-top-style: none;
 border-right-style: none;
 border-bottom-style:  solid;
 border-left-style: none;
-
-
 }
-
-
-
-  
 .main-menu-container .logo {
-    
-  
   float: left;
   display: block;
   position: relative; 
@@ -27,29 +17,19 @@ border-left-style: none;
   top:10px; 
   margin-left: 15px; 
   box-sizing: content-box;
-  background: no-repeat url("../media/icon/globe.svg") ;
- 
+  background: no-repeat url("../../media/icon/globe.svg") ;
  background-color: rgb(255, 255, 255);
   animation: mymove 5s;
-
   animation-iteration-count: infinite;
   border-radius: 100%;
 }
-
-
-
 @keyframes mymove2 {
   from {
         transform: rotate(0deg);   }
   to {
-    
     transform: rotate(360deg);
-  
-  
-  
   }
 }
-
 @keyframes mymove {
 from {transform: rotateX(0deg) rotate(360deg); }
 to { transform: rotateX(360deg) rotate(0deg); }
@@ -57,7 +37,6 @@ to { transform: rotateX(360deg) rotate(0deg); }
 .main-menu-container ul {
     float: right;
     height: 100%;
- 
     position: relative;
     list-style-type: none;
     margin: 0;
@@ -66,12 +45,10 @@ to { transform: rotateX(360deg) rotate(0deg); }
     background-color: rgb(255, 255, 255)
   }
   .main-menu-container li {
-    
     padding-right:1px;
     display: inline;
   }
   .main-menu-container li a {
-   
     font-family: system-ui;
     font-style: normal;
     font-size: 20px;
@@ -82,18 +59,14 @@ to { transform: rotateX(360deg) rotate(0deg); }
     padding: 100% 0px;
     text-decoration: none;
   }
-
 /*
   .main-menu-container li a:hover:not(.active) {
     background-color: #111;
   }
   */
-
   .main-menu-container li a:hover {
     background-color: rgb(213, 220, 231);
-  
   }
   .main-menu-container .active {
     background-color: rgb(253, 255, 253);
- 
   }

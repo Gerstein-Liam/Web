@@ -1,9 +1,9 @@
 
-@import url("../css/grid-ws-right.css");
-@import url("../css/grid-ws-midarea.css");
-@import url("../css/grid-ws-leftarea.css");
+@import url("grid-ws-right.css");
+@import url("grid-ws-midarea.css");
+@import url("grid-ws-leftarea.css");
 
-@import url("../css/tables.css");
+
 
 
 .workspace-grids-organisation  {

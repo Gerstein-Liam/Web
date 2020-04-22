@@ -80,7 +80,7 @@ function InitTable()
 
 function erasetable()
 {
-    let table = document.getElementById("customers");
+    let table = document.getElementById("table-persons");
     let i;
     let l=table.children.length;
     for (i = 0; i < (l -1) ; i++) {

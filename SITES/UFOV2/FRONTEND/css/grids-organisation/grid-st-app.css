@@ -1,3 +1,9 @@
+
+
+ @import url("grid-app-main-menu.css");
+ @import url("grid-app-workspace.css");
+
+
 .app-grids-organisation  {
     display: grid;
     position: relative;

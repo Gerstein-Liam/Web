@@ -44,6 +44,7 @@ function OpenPersonRightClickModal(event,id) {
 
         console.table([obj_entri]);
     }
+    
    
 }
 function ClosePersonRightClickModal() {
