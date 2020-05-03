@@ -13,7 +13,7 @@ http.createServer(async function (req, res) {
       webcontentservice._s_WebContentRequest(req, res);
       break;
     case "POST": console.log("Post Method");
-      if (req.url.includes("JSON_A")) {
+      if (req.url.includes("DB_REQUEST")) {
         console.log("SERVER CONTROLLER: POST api request");
         var http_resp;
         try {

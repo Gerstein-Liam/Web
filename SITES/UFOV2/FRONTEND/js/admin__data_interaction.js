@@ -25,6 +25,9 @@ function AddPerson() {
         });
 }
 */
+
+
+/*
 function InitTable() {
     var post_para = {
       COMMAND: "LOAD PERSON-LIST"
@@ -104,6 +107,9 @@ function InitTable() {
     }).catch(function (ajax_error) { console.log(ajax_error) });
     }
   }
+
+
+  */
 function erasetable() {
     let table = document.getElementById("table-persons");
     let i;
