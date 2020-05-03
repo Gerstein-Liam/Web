@@ -113,8 +113,14 @@ function AjaxPostJSON(_url, _postpara, _OnSuccess, _OnError) {
     this._OnError = _OnError;
 }
 AjaxPostJSON.prototype.ExecutePOST =_ExecuteAjaxPostJson;
+
+
 var post_para = {
     COMMAND: "LOAD PERSON-LIST"
   }
-GetPersonData_And_BuildTable= new AjaxPostJSON("DB_REQUEST",post_para,_BuildPersonTable, function (err){  alert(err);} );
+
+ 
+
+
+GetPersonData_And_BuildTable= new AjaxPostJSON( "DB_REQUEST",post_para,_BuildPersonTable, function (err){  alert(err);} );
 //()=> {alert("AjaxError")}
