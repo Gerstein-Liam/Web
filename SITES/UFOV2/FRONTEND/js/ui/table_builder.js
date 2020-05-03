@@ -1,3 +1,11 @@
+function erasetable() {
+    let table = document.getElementById("table-persons");
+    let i;
+    let l = table.children.length;
+    for (i = 0; i < (l - 1); i++) {
+        table.lastChild.remove();
+    }
+}
 function BuildPersonTable(json){
     var result = "";
     var table = document.getElementById("table-persons");
@@ -47,4 +55,4 @@ var _BuildPersonTable=BuildPersonTable;
 var post_para = {
     COMMAND: "LOAD PERSON-LIST"
   }
-GetPersonData_And_BuildTable= new AjaxPostJSON( "DB_REQUEST",post_para,_BuildPersonTable, function (err){  alert(err);});
+GetPersonData_And_BuildTable= new AjaxPostJSON("DB_REQUEST",post_para,_BuildPersonTable, function (err){  alert(err);});

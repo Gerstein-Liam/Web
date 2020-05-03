@@ -33,12 +33,14 @@ function AddPerson() {
   console.log(_json);
   if (window.fetch) {
     console.log("Fetch supported");
-    fetch("/JSON_A", {
+    fetch("DB_REQUEST", {
       method: 'post',
       body: _json})
         .then(function (server_response) {
           erasetable();
-          InitTable();
+         // InitTable();
+
+         GetPersonData_And_BuildTable.ExecutePOST(null,null);
           document.getElementById("save_status").innerHTML = response;
         }.bind(this))
         .catch(function (ajax_error) {
@@ -47,7 +49,7 @@ function AddPerson() {
   else {
     console.log("Fetch not supporteb by browser");
     var update_ajaxpost = AjaxPOST_XMLHttpRequest_Promises;
-    update_ajaxpost("/JSON_A", _json).then(function (server_response) { console.log(server_response) }).catch(function (ajax_error) { console.log(ajax_error) });
+    update_ajaxpost("DB_REQUEST", _json).then(function (server_response) { console.log(server_response) }).catch(function (ajax_error) { console.log(ajax_error) });
   }
 }
 function GetPersonInfoOfRow(Row_No) {
@@ -95,7 +97,7 @@ function PersonSubmitChange() {
   console.log(_json);
   if (window.fetch) {
     console.log("Fetch supported");
-    fetch("/JSON_A", {
+    fetch("DB_REQUEST", {
       method: 'post',
       body: _json})
         .then(function (server_response) {
@@ -110,7 +112,7 @@ function PersonSubmitChange() {
   else {
     console.log("Fetch not supporteb by browser");
     var update_ajaxpost = AjaxPOST_XMLHttpRequest_Promises;
-    update_ajaxpost("/JSON_A", _json).then(function (server_response) { console.log(server_response) }).catch(function (ajax_error) { console.log(ajax_error) });
+    update_ajaxpost("DB_REQUEST", _json).then(function (server_response) { console.log(server_response) }).catch(function (ajax_error) { console.log(ajax_error) });
   }
 }
 function PersonSubmitDelete() {
@@ -123,7 +125,7 @@ function PersonSubmitDelete() {
   console.log(_json);
   if (window.fetch) {
     console.log("Fetch supported");
-    fetch("/JSON_A", {
+    fetch("DB_REQUEST", {
       method: 'post',
       body: _json})
         .then(function (server_response) {
@@ -136,7 +138,7 @@ function PersonSubmitDelete() {
   else {
     console.log("Fetch not supporteb by browser");
     var update_ajaxpost = AjaxPOST_XMLHttpRequest_Promises;
-    update_ajaxpost("/JSON_A", _json).then(function (server_response) { console.log(server_response) }).catch(function (ajax_error) { console.log(ajax_error) });
+    update_ajaxpost("DB_REQUEST", _json).then(function (server_response) { console.log(server_response) }).catch(function (ajax_error) { console.log(ajax_error) });
   }
 }
 function UpdatePerson__OnServorError() {
@@ -163,12 +165,14 @@ function UpdatePerson__OnServorOK(person_update) {
     POSITION: `${person_update.POSITION}`
   };
   erasetable();
-  InitTable();
+ // InitTable();
+ GetPersonData_And_BuildTable.ExecutePOST(null,null);
 }
 function UpdatePerson__OnServorDeleteOK() {
   document.getElementById('modal_rightclick_content').getElementsByClassName('db_status')[0].innerHTML="Deleted";
   erasetable();
-  InitTable();
+ // InitTable();
+ GetPersonData_And_BuildTable.ExecutePOST(null,null);
 }
 function UpdatePerson__OnFieldChange() {
   document.getElementById('modal_rightclick_content').getElementsByClassName('db_status')[0].innerHTML="IDLE";
