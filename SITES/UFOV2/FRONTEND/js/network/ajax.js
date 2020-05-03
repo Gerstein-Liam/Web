@@ -1,4 +1,4 @@
-function AjaxPOST_WithPromises(url, parameters) {
+function AjaxPOST_XMLHttpRequest_Promises(url, parameters) {
     return new Promise(function (resolve, reject) {
         console.log("requested URL: " + url);
         if (window.XMLHttpRequest) {
@@ -27,3 +27,4 @@ function AjaxPOST_WithPromises(url, parameters) {
     }
     )
 }
+

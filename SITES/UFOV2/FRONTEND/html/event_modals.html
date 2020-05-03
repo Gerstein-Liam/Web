@@ -1,0 +1,22 @@
+<!--   ------------------------------------------------------ADD------------------------------------------------------     -->
+<div id="AddEventModal" class="modal">
+    <div class="add_modal add_event_modal">
+        <span class="close" onclick="AddEventModal.CloseModal()">&times;</span>
+        <h1 style="color: rgb(255, 0, 0); font-family: system-ui; text-align: center; font-size:small; padding-bottom: 20px;">EVENT
+        </h1>
+        <input type="text" id="name" value="name"   onfocus="this.value=''" name="command">
+        <input type="text" id="date" value="date" onfocus="this.value=''" name="command"><br>
+        <select id="country" name="country" form="find_testimy_criterias" onchange="document.getElementById('save_status').innerHTML=' ';">
+            <option value="%">Country</option>
+            <option value="United States">United States</option>
+            <option value="France">France</option>
+        </select><br>
+        <select id="type" name="type" form="find_testimy_criterias" onchange="UpdateResult()">
+            <option value="%">Type</option>
+            <option value="Observation">Observation</option>
+            <option value="Conference">Conference</option>
+        </select><br>
+        <input type="submit" value="Submit"  onclick="AddPerson()">
+        <div class="save_status" id="save_status"> DOING  </div>
+    </div>
+  </div>

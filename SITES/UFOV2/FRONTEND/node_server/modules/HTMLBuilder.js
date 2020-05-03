@@ -1,7 +1,7 @@
 exports.HTMLBuild=BuildHTML;
 var fs = require('fs');
 const { Console } = require('console');
-//var filepath = "index_seed.html"
+
 var TemplatedHTML;
 var FinalHTML="";
 //console.log("-------------START------------------");

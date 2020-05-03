@@ -1,0 +1,118 @@
+<!--   ------------------------------------------------------ADD------------------------------------------------------     -->
+<div id="AddPersonModal" class="modal">
+  <div class="add_modal add_person_modal">
+      <span class="close" onclick="AddPersonModal.CloseModal()">&times;</span>
+      <h1 style="color: rgb(255, 0, 0); font-family: system-ui; text-align: center; font-size:small; padding-bottom: 20px;">
+          ADD PERSON
+      </h1>
+      <input type="text" id="lastname"  value="lastname" onfocus="this.value=''" name="command">
+      <input type="text" id="firstname" value="firstname" onfocus="this.value=''" name="command">
+      <br>
+      <input type="text" id="fonction" value="fonction" onfocus="this.value=''" name="command">
+      <br>
+      <select id="domain" name="domain" form="find_testimy_criterias" onchange="UpdateResult()">
+          <option value="%">Domain</option>
+          <option value="Civil">Civil</option>
+          <option value="Army">Army</option>
+          <option value="Politic">Politics</option>
+          <option value="Science">Scientits</option>
+      </select>
+      <br>
+      <select id="country" name="country" form="find_testimy_criterias" onchange="document.getElementById('save_status').innerHTML=' ';">
+          <option value="%">Country</option>
+          <option value="United States">United States</option>
+          <option value="France">France</option>
+      </select>
+      <br>
+      <select id="implication" name="implication" form="find_testimy_criterias" onchange="UpdateResult()">
+          <option value="%">Implication</option>
+          <option value="Direct">Direct</option>
+          <option value="Indirect">Indirect</option>
+      </select>
+      <br>
+      <select id="position" name="implication" form="find_testimy_criterias" onchange="UpdateResult()">
+          <option value="%">Position</option>
+          <option value="Believer">Believer</option>
+          <option value="Skeptical">Skeptical</option>
+          <option value="Expectant">Expectant</option>
+      </select>
+      <input type="submit" value="SAVE" onclick="AddPerson()">
+      <div class="save_status" id="save_status"> DOING </div>
+  </div>
+</div>
+<!--   ------------------------------------------------------FILTER------------------------------------------------------     -->
+<div id="FilterPersonModal" class="modal">
+  <div class="filter_modal filter_person_modal">
+      <span class="close" onclick="PersonFilterModal.CloseModal()">&times;</span>
+      <h1 style="color: blue; font-family: system-ui; text-align: center; font-size:small; padding-bottom: 20px;">FILTER
+      </h1>
+      <select id="fcountry" name="country" form="find_testimy_criterias" onchange="UpdateResult()">
+          <option value="%">Any</option>
+          <option value="usa">UnitedStates</option>
+          <option value="france">France</option>
+      </select>
+      <select id="fsector" name="sector" form="find_testimy_criterias" onchange="UpdateResult()">
+          <option value="%">Any</option>
+          <option value="civil">Civil</option>
+          <option value="army">Army</option>
+          <option value="politics">Politics</option>
+          <option value="scientits">Scientits</option>
+      </select>
+      <select id="fobs" name="observation_type" form="find_testimy_criterias" onchange="UpdateResult()">
+          <option value="%">Any</option>
+          <option value="direct">Direct</option>
+          <option value="indirect">Indirect</option>
+      </select>
+      <input type="submit" value="COMPUTE" onclick="AddPerson()">
+  </div>
+</div>
+<!--   ------------------------------------------------------RIGHT CLICK------------------------------------------------------     -->
+<div id="RightClickModal" class="modal_rightclick">
+    <div class="modal_rightclick_content" id="modal_rightclick_content">
+        <span class="close " onclick="PersonRightClickModal.CF_CloseModal() ">&times;</span>
+        <h1 style="color: rgb(0, 0, 0); font-family: system-ui; text-align: center; font-size:small; padding-bottom: 20px; ">
+          MODIFICATION
+      </h1> 
+        <input type="text" class="_lastname"  onfocus="PersonRightClickModal._OnFieldChange()">
+        <input type="text" class="_firstname" onfocus="PersonRightClickModal._OnFieldChange()">
+        <br>
+        <input type="text" class="_fonction" onfocus="PersonRightClickModal._OnFieldChange()">
+        <br>
+        <select class="_domain" onfocus="PersonRightClickModal._OnFieldChange()" >
+            <option value="%">Domain</option>
+            <option value="Civil">Civil</option>
+            <option value="Army">Army</option>
+            <option value="Politic">Politics</option>
+            <option value="Science">Scientits</option>
+        </select>
+        <br>
+        <select class="_country" onfocus="PersonRightClickModal._OnFieldChange()" > 
+            <option value="%">Country</option>
+            <option value="United States">United States</option>
+            <option value="France">France</option>
+        </select>
+        <br>
+        <select class="_implication" onfocus="PersonRightClickModal._OnFieldChange()">
+            <option value="%">Implication</option>
+            <option value="Direct">Direct</option>
+            <option value="Indirect">Indirect</option>
+        </select>
+        <br>
+        <select class="_position" onfocus="PersonRightClickModal._OnFieldChange()">
+            <option value="%">Position</option>
+            <option value="Believer">Believer</option>
+            <option value="Skeptical">Skeptical</option>
+            <option value="Expectant">Expectant</option>
+<!--
+  <option value="%">Position</option>
+            <option value="Neutral">Neutral</option>
+            <option value="Skeptic">Skeptic</option>
+            <option value="Believer">Believer</option>
+-->
+        </select>
+        <input type="submit"  value="UPDATE" id="UpdateBT" onclick="PersonRightClickModal.OnSubmitFunction()" >
+        <input type="submit"  value="CHECK OLD VALUE" id="UpdateBT" onclick="PersonRightClickModal.CF_CheckValue()" >
+        <input type="submit"  value="DELETE" id="UpdateBT" onclick="PersonRightClickModal.OnSubmitFunction_Delete()" >
+        <div class="db_status" id="db_status"> IDLE </div>
+    </div>
+</div>

@@ -6,58 +6,75 @@
 <!DOCTYPE html
    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <HTML>
+
 <head>
-   <meta charset="utf-8" />
-   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-   <link rel="stylesheet" type="text/css" href="style.css" />
-   <script src="https://www.w3schools.com/lib/w3.js"></script>
-   <script src="./js/ww3_includehtml_util.js"></script>
-   <script src="./js/ajax.js"></script>
-   <script src="./js/GridMod.js"></script>
-   <script src="./js/PersonDB.js"></script>
-   <script src="./js/admin.js"></script>
-   <script src="./js/startup.js"></script>
-   <title>UFO DATABASE:DESKTOP</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <link rel="icon" href="./media/icon/globe.svg" type="image/gif" sizes="20x20">
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <script src="https://www.w3schools.com/lib/w3.js"></script>
+    <script src="./js/ww3_includehtml_util.js"></script>
+    <script src="./js/network/ajax.js"></script>
+    <script src="./js/ui/ui_gridlayout.js"></script>
+    <script src="./js/ui/ui_modals.js"></script>
+    <script src="./js/admin__data_interaction.js"></script>
+    <script src="./js/PersonDB.js"></script>
+
+    <script src="./js/startup.js"></script>
+    <title>UFO DATABASE:DESKTOP</title>
 </head>
+
 <body onload="Startup()">
-   <div class="page-grids-organisation" id="page-grids-organisation">
-      <div class="welcome-container" id="welcome-container">
-         <div class="bg" id="bg">
-            <div class="logo">   </div>
-            <img src="media/icon/arrow_down_without_line.svg" style="width: 10%;height: 10%;  margin-top: 44%;  float:right; margin-right: 45%;" onmousedown="SiteGrid_Mod()"></img>
-         </div>
-      </div>
-      <div class="app-container" id="app-container">
-         <div class="app-grids-organisation" id="app-grids-organisation">
-            <div class="main-menu-container" id="main-menu-container">
-  <div class="logo" id="logo" onmousedown="SiteGrid_Mod('show_welcome')">
-  </div>
-  <ul>
-    <li style="margin-right: 10px;"><a class="active" value="show_welcome">HOME</a></li>
-    <li style="margin-right: 10px;"><a href="#s">DATABASE</a></li>
-    <li style="margin-right: 10px;"><a href="#contact">STATS</a></li>
-  </ul>
+    <div class="page-grids-organisation" id="page-grids-organisation">
+        <div class="welcome-container" id="welcome-container">
+            <div class="bg" id="bg">
+                <div class="logo"> </div>
+                <img src="media/icon/arrow_down_without_line.svg" style="width: 10%;height: 10%;  margin-top: 44%;  float:right; margin-right: 45%;" onmousedown="SiteGrid_Mod()"></img>
+            </div>
+        </div>
+        <div class="app-container" id="app-container">
+            <div class="app-grids-organisation" id="app-grids-organisation">
+                <div class="main-menu-container" id="main-menu-container">
+    <div class="logo" id="logo" onmousedown="SiteGrid_Mod('show_welcome')">
+    </div>
+    <ul>
+        <li style="margin-right: 10px;"><a class="active" value="show_welcome">HOME</a></li>
+        <li style="margin-right: 10px;"><a href="#s">DATABASE</a></li>
+        <li style="margin-right: 10px;"><a href="#contact">STATS</a></li>
+    </ul>
 </div>
-            <!--MAIN MENU-->
-            <div class="workspace-container" id="workspace-container">
+                <!--MAIN MENU-->
+                <div class="workspace-container" id="workspace-container">
    <div class="workspace-grids-organisation" id="workspace-grids-organisation">
       <div class="left-area-container" id="left-area-containe">
     <div class="Menu-container" id="Menu-container">
         <table>
             <tr>
-                <th style="font-family: system-ui;" colspan="value">SHOW|HIDE</th>
+                <td style="font-family: system-ui; vertical-align: center; ">PERSONS</td>
+                <td>
+                     <label class="switch">
+                        <input type="checkbox" id="person_check_box" onchange="MidAreaGridsMod()">
+                        <span class="slider round"></span>
+                      </label>
+                </td>
             </tr>
             <tr>
-                <td style="font-family: system-ui;">PERSONS</td>
-                <td><input type="checkbox" id="person_check_box" onchange="MidAreaGridsMod()" name="vehicle1" value="Bike"></td>
+                <td style="font-family: system-ui;  vertical-align: center; ">EVENTS</td>
+                <td>
+                    <label class="switch">
+                        <input type="checkbox" id="event_check_box" onchange="MidAreaGridsMod()">
+                        <span class="slider round"></span>
+                      </label>
+                </td>
             </tr>
             <tr>
-                <td style="font-family: system-ui;">EVENTS</td>
-                <td><input type="checkbox" id="event_check_box" onchange="MidAreaGridsMod()" name="vehicle1"   value="Bike"></td>
-            </tr>
-            <tr>
-                <td style="font-family: system-ui;">GROUPS</td>
-                <td><input type="checkbox" id="group_check_box" onchange="MidAreaGridsMod()" name="vehicle1"   value="Bike"></td>
+                <td style="font-family: system-ui; vertical-align: center;">GROUPS</td>
+                <td>
+                    <label class="switch">
+                        <input type="checkbox" id="group_check_box" onchange="MidAreaGridsMod()">
+                        <span class="slider round"></span>
+                    </label>  
+                </td>
             </tr>
         </table>
         </li>
@@ -66,133 +83,147 @@
       <div class="mid-area-container" id="mid-area-containe">
     <div class="mid-area-grids-organisations" id="mid-area-grids-organisations">
         <div class="ma-top-container" id="ma-top-container">
-  <!-- The Modal -->
-  
-
-
-
-<div id="RightClickModal" class="modal_rightclick">
-  <div class="modal_rightclick_content">
-
-    <div id="RClick_Person_Content"></div>
-    
-    <span class="close" onclick="ClosePersonRightClickModal()">&times;</span>
+    <!-- The Modal -->
+    <div class="db-grids-organisation" id="db-grids-organisation">
+        <div class="database-title-container" id="database-title-container">
+            <h1 style="color: blue; font-family: system-ui; text-align: center;">PERSONS-LIST </h1>
+        </div>
+        <div class="database-table-container" id="database-table-container">
+            <table class="table" id="table-persons">
+                <tr>
+                    <th>Lastname</th>
+                    <th>Firstname</th>
+                    <th>Fonctions</th>
+                    <th>Domain</th>
+                    <th>Country</th>
+                    <th>Implication</th>
+                    <th>Position</th>
+                </tr>
+            </table>
+        </div>
+        <div class="database-tools-container" id="database-tools-container">
+            <div class="svg-tools" id="PersonFilter" onclick="PersonFilterModal.OpenModal()"> </div>
+            <div class="svg-add" id="PersonAdd" onclick="AddPersonModal.OpenModal()"> </div>
+        </div>
+    </div>
+</div>
+<!--   ------------------------------------------------------ADD------------------------------------------------------     -->
+<div id="AddPersonModal" class="modal">
+  <div class="add_modal add_person_modal">
+      <span class="close" onclick="AddPersonModal.CloseModal()">&times;</span>
+      <h1 style="color: rgb(255, 0, 0); font-family: system-ui; text-align: center; font-size:small; padding-bottom: 20px;">
+          ADD PERSON
+      </h1>
+      <input type="text" id="lastname"  value="lastname" onfocus="this.value=''" name="command">
+      <input type="text" id="firstname" value="firstname" onfocus="this.value=''" name="command">
+      <br>
+      <input type="text" id="fonction" value="fonction" onfocus="this.value=''" name="command">
+      <br>
+      <select id="domain" name="domain" form="find_testimy_criterias" onchange="UpdateResult()">
+          <option value="%">Domain</option>
+          <option value="Civil">Civil</option>
+          <option value="Army">Army</option>
+          <option value="Politic">Politics</option>
+          <option value="Science">Scientits</option>
+      </select>
+      <br>
+      <select id="country" name="country" form="find_testimy_criterias" onchange="document.getElementById('save_status').innerHTML=' ';">
+          <option value="%">Country</option>
+          <option value="United States">United States</option>
+          <option value="France">France</option>
+      </select>
+      <br>
+      <select id="implication" name="implication" form="find_testimy_criterias" onchange="UpdateResult()">
+          <option value="%">Implication</option>
+          <option value="Direct">Direct</option>
+          <option value="Indirect">Indirect</option>
+      </select>
+      <br>
+      <select id="position" name="implication" form="find_testimy_criterias" onchange="UpdateResult()">
+          <option value="%">Position</option>
+          <option value="Believer">Believer</option>
+          <option value="Skeptical">Skeptical</option>
+          <option value="Expectant">Expectant</option>
+      </select>
+      <input type="submit" value="SAVE" onclick="AddPerson()">
+      <div class="save_status" id="save_status"> DOING </div>
   </div>
 </div>
-
-
-
-
-
-
-<div id="myModal" class="modal">
-  <div class="modal-content">
-    <span class="close" onclick="PersonFilterModal.CloseModal()">&times;</span>
-    <h1 style="color: blue; font-family: system-ui; text-align: center; font-size:small; padding-bottom: 20px;">FILTER
-    </h1>
-    <tr>
-      <th> <label for="cars">Country</label> </th>
-      <th>
-        <select id="fcountry" name="country" form="find_testimy_criterias" onchange="UpdateResult()">
+<!--   ------------------------------------------------------FILTER------------------------------------------------------     -->
+<div id="FilterPersonModal" class="modal">
+  <div class="filter_modal filter_person_modal">
+      <span class="close" onclick="PersonFilterModal.CloseModal()">&times;</span>
+      <h1 style="color: blue; font-family: system-ui; text-align: center; font-size:small; padding-bottom: 20px;">FILTER
+      </h1>
+      <select id="fcountry" name="country" form="find_testimy_criterias" onchange="UpdateResult()">
           <option value="%">Any</option>
           <option value="usa">UnitedStates</option>
           <option value="france">France</option>
-        </select>
-      </th>
-    </tr>
-    <tr>
-      <th> <label for="cars">Sector</label> </th>
-      <th>
-        <select id="fsector" name="sector" form="find_testimy_criterias" onchange="UpdateResult()">
+      </select>
+      <select id="fsector" name="sector" form="find_testimy_criterias" onchange="UpdateResult()">
           <option value="%">Any</option>
           <option value="civil">Civil</option>
           <option value="army">Army</option>
           <option value="politics">Politics</option>
           <option value="scientits">Scientits</option>
-        </select>
-      </th>
-    </tr>
-    <tr>
-      <th> <label for="cars">Observation Type</label> </th>
-      <th>
-        <select id="fobs" name="observation_type" form="find_testimy_criterias" onchange="UpdateResult()">
+      </select>
+      <select id="fobs" name="observation_type" form="find_testimy_criterias" onchange="UpdateResult()">
           <option value="%">Any</option>
           <option value="direct">Direct</option>
           <option value="indirect">Indirect</option>
-        </select>
-      </th>
-
-      <th>
-       <button onclick="erasetable()" > ERASE TABLE </button>
-      </th>
-    </tr>
+      </select>
+      <input type="submit" value="COMPUTE" onclick="AddPerson()">
   </div>
 </div>
-  <div id="AddPersonModal" class="modal">
-    <div class="modal-content">
-        <span class="close" onclick="AddPersonModal.CloseModal()">&times;</span>
-        <h1 style="color: rgb(255, 0, 0); font-family: system-ui; text-align: center; font-size:small; padding-bottom: 20px;">ADD
-            PERSON
-        </h1>
-        <input type="text" id="lastname" value="lastname"   onfocus="this.value=''" name="command">
-        <input type="text" id="firstname" value="firstname" onfocus="this.value=''" name="command"><br>
-        <input type="text" id="fonction" value="fonction"   onfocus="this.value=''" name="command"><br>
-        <select id="domain" name="domain" form="find_testimy_criterias" onchange="UpdateResult()">
+<!--   ------------------------------------------------------RIGHT CLICK------------------------------------------------------     -->
+<div id="RightClickModal" class="modal_rightclick">
+    <div class="modal_rightclick_content" id="modal_rightclick_content">
+        <span class="close " onclick="PersonRightClickModal.CF_CloseModal() ">&times;</span>
+        <h1 style="color: rgb(0, 0, 0); font-family: system-ui; text-align: center; font-size:small; padding-bottom: 20px; ">
+          MODIFICATION
+      </h1> 
+        <input type="text" class="_lastname"  onfocus="PersonRightClickModal._OnFieldChange()">
+        <input type="text" class="_firstname" onfocus="PersonRightClickModal._OnFieldChange()">
+        <br>
+        <input type="text" class="_fonction" onfocus="PersonRightClickModal._OnFieldChange()">
+        <br>
+        <select class="_domain" onfocus="PersonRightClickModal._OnFieldChange()" >
             <option value="%">Domain</option>
             <option value="Civil">Civil</option>
             <option value="Army">Army</option>
             <option value="Politic">Politics</option>
             <option value="Science">Scientits</option>
-        </select><br>
-        <select id="country" name="country" form="find_testimy_criterias" onchange="document.getElementById('save_status').innerHTML=' ';">
+        </select>
+        <br>
+        <select class="_country" onfocus="PersonRightClickModal._OnFieldChange()" > 
             <option value="%">Country</option>
             <option value="United States">United States</option>
             <option value="France">France</option>
-        </select><br>
-       
-        <select id="implication" name="implication" form="find_testimy_criterias" onchange="UpdateResult()">
+        </select>
+        <br>
+        <select class="_implication" onfocus="PersonRightClickModal._OnFieldChange()">
             <option value="%">Implication</option>
             <option value="Direct">Direct</option>
             <option value="Indirect">Indirect</option>
-        </select><br>
-        <select id="position" name="implication" form="find_testimy_criterias" onchange="UpdateResult()">
+        </select>
+        <br>
+        <select class="_position" onfocus="PersonRightClickModal._OnFieldChange()">
             <option value="%">Position</option>
             <option value="Believer">Believer</option>
             <option value="Skeptical">Skeptical</option>
             <option value="Expectant">Expectant</option>
+<!--
+  <option value="%">Position</option>
+            <option value="Neutral">Neutral</option>
+            <option value="Skeptic">Skeptic</option>
+            <option value="Believer">Believer</option>
+-->
         </select>
-        <button  onclick="AddPerson()" >Save</button>
-
-
-        <div class="save_status" id="save_status"> DOING  </div>
+        <input type="submit"  value="UPDATE" id="UpdateBT" onclick="PersonRightClickModal.OnSubmitFunction()" >
+        <input type="submit"  value="CHECK OLD VALUE" id="UpdateBT" onclick="PersonRightClickModal.CF_CheckValue()" >
+        <input type="submit"  value="DELETE" id="UpdateBT" onclick="PersonRightClickModal.OnSubmitFunction_Delete()" >
+        <div class="db_status" id="db_status"> IDLE </div>
     </div>
-</div>
-  <div class="db-grids-organisation" id="db-grids-organisation">
-    <div class="database-title-container" id="database-title-container">
-      <h1 style="color: blue; font-family: system-ui; text-align: center;">PERSONS-LIST </h1>
-    </div>
-    <div class="database-table-container" id="database-table-container">
-      <table class="table"  id="table-persons">
-        <tr>
-          <th>Lastname</th>
-          <th>Firstname</th>
-          <th>Fonctions</th>
-          <th>Domain</th>
-          <th>Country</th>
-          <th>Implication</th>
-          <th>Position</th>
-        </tr>
-      </table>
-    </div>
-    <div class="database-tools-container" id="database-tools-container">
-      <!--
-          <div  class="svg-search"  onmousedown="PersonFilter()"  >  </div>
-          -->
-          <!--     <div class="svg-tools" id="PersonFilter" onclick="OpenPersonFilterModal()"> </div>                   -->
-      <div class="svg-tools" id="PersonFilter" onclick="PersonFilterModal.OpenModal()"> </div>
-      <div class="svg-add" id="PersonAdd" onclick="AddPersonModal.OpenModal()" > </div>
-    </div>
-  </div>
 </div>
         <div class="ma-mid-container" id="ma-mid-container">
   <div class="evt-grids-organisation" id="evt-grids-organisation">
@@ -485,10 +516,33 @@
     </div>
     <div class="database-tools-container" id="database-tools-container">
       <div class="svg-tools" id="PersonFilter" onclick="PersonFilterModal.OpenModal()"> </div>
-      <div class="svg-add" id="PersonAdd" > </div>
+      <div class="svg-add" id="PersonAdd" onclick="AddEventModal.OpenModal()" > </div>
     </div>
   </div>
 </div>
+
+<!--   ------------------------------------------------------ADD------------------------------------------------------     -->
+<div id="AddEventModal" class="modal">
+    <div class="add_modal add_event_modal">
+        <span class="close" onclick="AddEventModal.CloseModal()">&times;</span>
+        <h1 style="color: rgb(255, 0, 0); font-family: system-ui; text-align: center; font-size:small; padding-bottom: 20px;">EVENT
+        </h1>
+        <input type="text" id="name" value="name"   onfocus="this.value=''" name="command">
+        <input type="text" id="date" value="date" onfocus="this.value=''" name="command"><br>
+        <select id="country" name="country" form="find_testimy_criterias" onchange="document.getElementById('save_status').innerHTML=' ';">
+            <option value="%">Country</option>
+            <option value="United States">United States</option>
+            <option value="France">France</option>
+        </select><br>
+        <select id="type" name="type" form="find_testimy_criterias" onchange="UpdateResult()">
+            <option value="%">Type</option>
+            <option value="Observation">Observation</option>
+            <option value="Conference">Conference</option>
+        </select><br>
+        <input type="submit" value="Submit"  onclick="AddPerson()">
+        <div class="save_status" id="save_status"> DOING  </div>
+    </div>
+  </div>
         <div class="ma-bottom-container" id="ma-bottom-container">
   <div class="grp-grids-organisation" id="grp-grids-organisation">
     <div class="database-title-container" id="database-title-container">
@@ -948,10 +1002,13 @@
 </div>  
 
 
-            <!--WORKSPACE-->
-         </div>
-      </div>
-   </div>
-   <script>includeHTML();</script>
+                <!--WORKSPACE-->
+            </div>
+        </div>
+    </div>
+    <script>
+        includeHTML();
+    </script>
 </body>
+
 </html>

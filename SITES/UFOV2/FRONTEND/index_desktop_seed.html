@@ -6,36 +6,44 @@
 <!DOCTYPE html
    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <HTML>
+
 <head>
-   <meta charset="utf-8" />
-   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-   <link rel="stylesheet" type="text/css" href="style.css" />
-   <script src="https://www.w3schools.com/lib/w3.js"></script>
-   <script src="./js/ww3_includehtml_util.js"></script>
-   <script src="./js/ajax.js"></script>
-   <script src="./js/GridMod.js"></script>
-   <script src="./js/PersonDB.js"></script>
-   <script src="./js/admin.js"></script>
-   <script src="./js/startup.js"></script>
-   <title>UFO DATABASE:DESKTOP</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <link rel="icon" href="./media/icon/globe.svg" type="image/gif" sizes="20x20">
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <script src="https://www.w3schools.com/lib/w3.js"></script>
+    <script src="./js/ww3_includehtml_util.js"></script>
+    <script src="./js/network/ajax.js"></script>
+    <script src="./js/ui/ui_gridlayout.js"></script>
+    <script src="./js/ui/ui_modals.js"></script>
+    <script src="./js/admin__data_interaction.js"></script>
+    <script src="./js/PersonDB.js"></script>
+
+    <script src="./js/startup.js"></script>
+    <title>UFO DATABASE:DESKTOP</title>
 </head>
+
 <body onload="Startup()">
-   <div class="page-grids-organisation" id="page-grids-organisation">
-      <div class="welcome-container" id="welcome-container">
-         <div class="bg" id="bg">
-            <div class="logo">   </div>
-            <img src="media/icon/arrow_down_without_line.svg" style="width: 10%;height: 10%;  margin-top: 44%;  float:right; margin-right: 45%;" onmousedown="SiteGrid_Mod()"></img>
-         </div>
-      </div>
-      <div class="app-container" id="app-container">
-         <div class="app-grids-organisation" id="app-grids-organisation">
-            <div include-html="./html/mainmenu.html"></div>
-            <!--MAIN MENU-->
-            <div include-html="./html/workspace.html"></div>
-            <!--WORKSPACE-->
-         </div>
-      </div>
-   </div>
-   <script>includeHTML();</script>
+    <div class="page-grids-organisation" id="page-grids-organisation">
+        <div class="welcome-container" id="welcome-container">
+            <div class="bg" id="bg">
+                <div class="logo"> </div>
+                <img src="media/icon/arrow_down_without_line.svg" style="width: 10%;height: 10%;  margin-top: 44%;  float:right; margin-right: 45%;" onmousedown="SiteGrid_Mod()"></img>
+            </div>
+        </div>
+        <div class="app-container" id="app-container">
+            <div class="app-grids-organisation" id="app-grids-organisation">
+                <div include-html="./html/mainmenu.html"></div>
+                <!--MAIN MENU-->
+                <div include-html="./html/workspace.html"></div>
+                <!--WORKSPACE-->
+            </div>
+        </div>
+    </div>
+    <script>
+        includeHTML();
+    </script>
 </body>
+
 </html>

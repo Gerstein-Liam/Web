@@ -15,7 +15,7 @@
     border-radius: 10px;
   }
   .Menu-container tr:hover  {
-    Background-color: rgb(6, 71, 192);
+    Background-color: rgba(6, 71, 192, 0);
   }
 
 
