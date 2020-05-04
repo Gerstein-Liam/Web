@@ -55,4 +55,4 @@ var _BuildPersonTable=BuildPersonTable;
 var post_para = {
     COMMAND: "LOAD PERSON-LIST"
   }
-var GetPersonData_And_BuildTable= new AjaxPostJSON("DB_REQUEST",post_para,_BuildPersonTable, function (err){  alert(err);});
+var GetPersonData_And_BuildTable= new AjaxPostJSON("DB_REQUEST",post_para,_BuildPersonTable, function (err){  console.log(err);});
