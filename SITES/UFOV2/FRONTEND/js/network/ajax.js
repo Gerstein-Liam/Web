@@ -1,5 +1,5 @@
 function AjaxPOST_XMLHttpRequest_Promises(url, parameters) {
-    return new Promise(function(resolve, reject) {
+    return new Promise(function (resolve, reject) {
         console.log("requested URL: " + url);
         if (window.XMLHttpRequest) {
             // code for IE7+, Firefox, Chrome, Opera, Safari
@@ -8,7 +8,7 @@ function AjaxPOST_XMLHttpRequest_Promises(url, parameters) {
             // code for IE6, IE5
             xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
         }
-        xmlhttp.onreadystatechange = function() {
+        xmlhttp.onreadystatechange = function () {
             console.log(`STATE=${this.readyState}    STATUS=${this.status} `);
             if (this.status != 0 && this.status != 200) {
                 reject(this.status);
@@ -38,42 +38,51 @@ function ExecuteAjaxPostJson(url, postpara) {
     if (window.fetch) {
         console.log("Fetch supported");
         fetch(Url, {
-                method: 'post',
-                body: _json
-            })
-            .then(function(response) {
-                console.log("FetchStatus:"+response.status);
-                if(response.status===200){
+            method: 'post',
+            body: _json
+        })
+            .then(function (response) {
+                console.log("FetchStatus:" + response.status);
+                if (response.status === 200) {
                     response.json().then(json_data => {
                         console.log("ON SUCCCESS AJAX");
                         this._OnSuccess(json_data);
-                     }).catch( err=>{ this._OnError(err)})
+                    }).catch(err => { 
+                        let CustomError = { ERROR: `${err}` }
+                        this._OnError(CustomError)
+                    })
                 }
-                else
-                { 
-                    this._OnError(response.status);
+                else {
+                    response.json().then(json_data => {
+                        console.log("ON SUCCCESS AJAX");
+                        this._OnError(json_data);
+                    }).catch(err => {
+                        let CustomError = { ERROR: `${err}` }
+                        this._OnError(CustomError)
+                    })
                 }
             }.bind(this))
-            .catch(function(error) {
-                console.log("Ajax Error:",error);
-                this._OnError(error);
+            .catch(function (error) {
+                console.log("Ajax Error:", error);
+                let CustomError = { ERROR: "FETCH ERROR:NO RESPONSE FROM SERVER" }
+                this._OnError(CustomError);
             }.bind(this));
     } else {
         console.log("Fetch not supporteb by browser");
         var update_ajaxpost = AjaxPOST_XMLHttpRequest_Promises;
-        update_ajaxpost(Url, _json).then(function(server_response) {
+        update_ajaxpost(Url, _json).then(function (server_response) {
             console.log(server_response)
-        }).catch(function(ajax_error) {
+        }).catch(function (ajax_error) {
             console.log(ajax_error)
         });
     }
 }
-var _ExecuteAjaxPostJson=ExecuteAjaxPostJson;
+var _ExecuteAjaxPostJson = ExecuteAjaxPostJson;
 function AjaxPostJSON(_url, _postpara, _OnSuccess, _OnError) {
     this._url = _url;
     this._postpara = _postpara;
     this._OnSuccess = _OnSuccess;
     this._OnError = _OnError;
 }
-AjaxPostJSON.prototype.ExecutePOST =_ExecuteAjaxPostJson;
+AjaxPostJSON.prototype.ExecutePOST = _ExecuteAjaxPostJson;
 //()=> {alert("AjaxError")}

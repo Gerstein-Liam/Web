@@ -16,7 +16,7 @@ function API_Query_Post__TestJSON(req) {
         req.on('error', (err) => {
             if (err) {
                 let CustomError_OnPost={
-                    ERROR: "POST-BODY-READ-ERROR"
+                    ERROR: "SERVER SAY:POST-BODY-READ-ERROR"
                 }
                 reject(JSON.stringify(CustomError_OnPost));
             }
@@ -25,7 +25,7 @@ function API_Query_Post__TestJSON(req) {
             var JSONPOST = JSON.parse(body);
             console.table([JSONPOST]);
             console.log("--API BEFORE AWAIT");
-            let CustomError_OnSQL={ERROR: "SQL-ERROR"}
+            let CustomError_OnSQL={ERROR: "SERVER SAY:SQL-ERROR"}
             switch (JSONPOST.COMMAND) {
                 case "LOAD PERSON-LIST":
                     console.log("--LOAD PERSON-LIST");

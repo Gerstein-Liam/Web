@@ -79,7 +79,7 @@ function OnClick_DeleteBT_PersonModal() {
 function OnServer_UpDelError_PersonModal(err) {
 
    //console.log(Err->Error)
-  document.getElementById('modal_rightclick_content').getElementsByClassName('db_status')[0].innerHTML=`Error ${err}`;
+  document.getElementById('modal_rightclick_content').getElementsByClassName('db_status')[0].innerHTML=`Error ${err.ERROR}`;
   document.getElementById('modal_rightclick_content').getElementsByClassName('_lastname')[0].value = this._OldValues.LASTNAME;
   document.getElementById('modal_rightclick_content').getElementsByClassName('_firstname')[0].value = this._OldValues.FIRSTNAME;
   document.getElementById('modal_rightclick_content').getElementsByClassName('_fonction')[0].value = this._OldValues.FONCTION;
