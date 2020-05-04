@@ -64,7 +64,7 @@ function ExecuteAjaxPostJson(url, postpara) {
             }.bind(this))
             .catch(function (error) {
                 console.log("Ajax Error:", error);
-                let CustomError = { ERROR: "FETCH ERROR:NO RESPONSE FROM SERVER" }
+                let CustomError = { ERROR: "CLIENT SAY:FETCH ERROR->NO RESPONSE FROM SERVER" }
                 this._OnError(CustomError);
             }.bind(this));
     } else {

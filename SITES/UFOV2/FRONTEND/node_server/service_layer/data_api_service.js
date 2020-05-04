@@ -35,7 +35,14 @@ function API_Query_Post__TestJSON(req) {
                 case "ADD PERSON":
                     console.log("--ADD PERSON");
                     console.table([JSONPOST.NEWPERSON]);
-                    try { http_response = await _Database._m_DBQuery_Promise(_Queries.ADD_PERSON, Object.values(JSONPOST.NEWPERSON)); }
+                    try { 
+                        
+                        await _Database._m_DBQuery_Promise(_Queries.ADD_PERSON, Object.values(JSONPOST.NEWPERSON)); 
+                        http_response={
+                            STATUS: "SERVER SAY: PERSON SAVED"
+                        }
+                    
+                    }
                     catch (err) {reject(JSON.stringify(CustomError_OnSQL));}
                     break;
                 case "UPDATE PERSON":
@@ -47,13 +54,28 @@ function API_Query_Post__TestJSON(req) {
                     var _old = Object.values(JSONPOST.OLD);
                     var _update = Object.values(JSONPOST.UPDATE);
                     var _values = _update.concat(_old);
-                    try { http_response = await _Database._m_DBQuery_Promise(_Queries.UPDATE_PERSON, _values); }
+                    try { 
+                        
+                        await _Database._m_DBQuery_Promise(_Queries.UPDATE_PERSON, _values);
+                        http_response={
+                            STATUS: "SERVER SAY: PERSON UPDATED"
+                        }
+                    
+                    
+                    }
                     catch (err) { reject(JSON.stringify(CustomError_OnSQL));}
                     break;
                 case "DELETE PERSON":
                     console.log("--DELETE PERSON");
                     console.table([JSONPOST.OLD]);
-                    try { http_response = await _Database._m_DBQuery_Promise(_Queries.DELETE_PERSON, Object.values(JSONPOST.OLD)); }
+                    try { 
+                        
+                        await _Database._m_DBQuery_Promise(_Queries.DELETE_PERSON, Object.values(JSONPOST.OLD)); 
+                    
+                        http_response={
+                            STATUS: "SERVER SAY: PERSON DELETED"
+                        }
+                    }
                     catch (err) { reject(JSON.stringify(CustomError_OnSQL));}
                     break;
                 default: console.log("Command not implemented");

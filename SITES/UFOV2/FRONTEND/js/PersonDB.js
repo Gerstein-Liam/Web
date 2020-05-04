@@ -20,7 +20,7 @@ function AddPerson() {
   let Ajax= new AjaxPostJSON("DB_REQUEST",post_para,function(res){
                                                                     erasetable("table-persons");
                                                                     GetPersonData_And_BuildTable.ExecutePOST(null,null);
-                                                                    document.getElementById("save_status").innerHTML = res;
+                                                                    document.getElementById("save_status").innerHTML = res.STATUS;
                                                                 }, function (err){
                                                                     alert(err);
                                                                 });
@@ -77,9 +77,7 @@ function OnClick_DeleteBT_PersonModal() {
   Ajax.ExecutePOST(null,null);
 }
 function OnServer_UpDelError_PersonModal(err) {
-
-   //console.log(Err->Error)
-  document.getElementById('modal_rightclick_content').getElementsByClassName('db_status')[0].innerHTML=`Error ${err.ERROR}`;
+  document.getElementById('modal_rightclick_content').getElementsByClassName('db_status')[0].innerHTML=err.ERROR;
   document.getElementById('modal_rightclick_content').getElementsByClassName('_lastname')[0].value = this._OldValues.LASTNAME;
   document.getElementById('modal_rightclick_content').getElementsByClassName('_firstname')[0].value = this._OldValues.FIRSTNAME;
   document.getElementById('modal_rightclick_content').getElementsByClassName('_fonction')[0].value = this._OldValues.FONCTION;
@@ -88,9 +86,8 @@ function OnServer_UpDelError_PersonModal(err) {
   document.getElementById('modal_rightclick_content').getElementsByClassName('_implication')[0].value = this._OldValues.IMPLICATION;
   document.getElementById('modal_rightclick_content').getElementsByClassName('_position')[0].value = this._OldValues.POSITION;
 }
-function OnServer_UpdateOK_PersonModal() {
-  document.getElementById('modal_rightclick_content').getElementsByClassName('db_status')[0].innerHTML="Saved";
-  console.log("ON SERVER OK");
+function OnServer_UpdateOK_PersonModal(res) { 
+  document.getElementById('modal_rightclick_content').getElementsByClassName('db_status')[0].innerHTML=res.STATUS;
   this._OldValues = {
     LASTNAME: `${this._UpdateValues.LASTNAME}`,
     FIRSTNAME: `${this._UpdateValues.FIRSTNAME}`,
@@ -104,8 +101,8 @@ function OnServer_UpdateOK_PersonModal() {
  // InitTable();
  GetPersonData_And_BuildTable.ExecutePOST(null,null);
 }
-function OnServer_DeleteOK_PersonModal() {
-  document.getElementById('modal_rightclick_content').getElementsByClassName('db_status')[0].innerHTML="Deleted";
+function OnServer_DeleteOK_PersonModal(res) {
+  document.getElementById('modal_rightclick_content').getElementsByClassName('db_status')[0].innerHTML=res.STATUS;
   erasetable("table-persons");
  // InitTable();
  GetPersonData_And_BuildTable.ExecutePOST(null,null);
