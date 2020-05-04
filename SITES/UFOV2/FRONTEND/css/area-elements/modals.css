@@ -127,3 +127,18 @@
     height: auto;
     border-radius: 10px;
 }
+
+.db_status{
+
+background-color:blue;
+text-align: center;
+font-size: small;
+font-family: system-ui;
+color: white;
+height: auto;
+width:  100%;
+/*margin-left: calc(50% - 20px);*/
+border: 1px solid black ;
+border-radius: 10px;
+
+}

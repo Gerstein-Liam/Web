@@ -73,6 +73,9 @@ function OnClick_DeleteBT_PersonModal() {
     Ajax.ExecutePOST(null, null);
 }
 function OnServer_UpDelError_PersonModal(err) {
+
+    document.getElementById('modal_rightclick_content').getElementsByClassName('db_status')[0].style.backgroundColor="red";
+
     document.getElementById('modal_rightclick_content').getElementsByClassName('db_status')[0].innerHTML = err.ERROR;
     document.getElementById('modal_rightclick_content').getElementsByClassName('_lastname')[0].value = this._OldValues.LASTNAME;
     document.getElementById('modal_rightclick_content').getElementsByClassName('_firstname')[0].value = this._OldValues.FIRSTNAME;
@@ -83,6 +86,7 @@ function OnServer_UpDelError_PersonModal(err) {
     document.getElementById('modal_rightclick_content').getElementsByClassName('_position')[0].value = this._OldValues.POSITION;
 }
 function OnServer_UpdateOK_PersonModal(res) {
+    document.getElementById('modal_rightclick_content').getElementsByClassName('db_status')[0].style.backgroundColor="green";
     document.getElementById('modal_rightclick_content').getElementsByClassName('db_status')[0].innerHTML = res.STATUS;
     this._OldValues = {
         LASTNAME: `${this._UpdateValues.LASTNAME}`,
@@ -98,12 +102,14 @@ function OnServer_UpdateOK_PersonModal(res) {
     GetPersonData_And_BuildTable.ExecutePOST(null, null);
 }
 function OnServer_DeleteOK_PersonModal(res) {
+    document.getElementById('modal_rightclick_content').getElementsByClassName('db_status')[0].style.backgroundColor="green";
     document.getElementById('modal_rightclick_content').getElementsByClassName('db_status')[0].innerHTML = res.STATUS;
     erasetable("table-persons");
     // InitTable();
     GetPersonData_And_BuildTable.ExecutePOST(null, null);
 }
 function OnFieldChange_PersonModal() {
+    document.getElementById('modal_rightclick_content').getElementsByClassName('db_status')[0].style.backgroundColor="blue";
     document.getElementById('modal_rightclick_content').getElementsByClassName('db_status')[0].innerHTML = "IDLE";
 }
 var _OnOpen_PersonModal = OnOpen_PersonModal;
