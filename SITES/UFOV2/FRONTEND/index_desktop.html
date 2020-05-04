@@ -116,8 +116,8 @@
       <h1 style="color: rgb(255, 0, 0); font-family: system-ui; text-align: center; font-size:small; padding-bottom: 20px;">
           ADD PERSON
       </h1>
-      <input type="text" id="lastname"  value="lastname" onfocus="this.value=''" name="command">
-      <input type="text" id="firstname" value="firstname" onfocus="this.value=''" name="command">
+      <input type="text" id="lastname"  value="lastname"  ondblclick="this.value=''"   onfocus="AddPersonModal.onFieldChange()" name="command">
+      <input type="text" id="firstname" value="firstname" ondblclick="this.value=''" onfocus="AddPersonModal.onFieldChange()"  name="command">
       <br>
       <input type="text" id="fonction" value="fonction" onfocus="this.value=''" name="command">
       <br>

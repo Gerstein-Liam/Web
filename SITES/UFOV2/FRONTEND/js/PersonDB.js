@@ -1,9 +1,27 @@
-PersonFilterModal = new ShowHide_FixedPosition('FilterPersonModal',null);
+PersonFilterModal = new ShowHide_FixedPosition('FilterPersonModal',null,null);
 /**********************************************ADD MODAL**************************************************************** */
-AddPersonModal = new ShowHide_FixedPosition('AddPersonModal',  function(){
-    document.getElementById('add_person_modal').getElementsByClassName('db_status')[0].style.backgroundColor="blue";
-    document.getElementById('add_person_modal').getElementsByClassName('db_status')[0].innerHTML = "IDLE";
-});
+AddPersonModal = new ShowHide_FixedPosition('AddPersonModal',  
+    function(){
+        document.getElementById('add_person_modal').getElementsByClassName('db_status')[0].style.backgroundColor="blue";
+        document.getElementById('add_person_modal').getElementsByClassName('db_status')[0].innerHTML = "IDLE";
+    },
+    function(element){
+       
+       
+       /*
+        console.log(element.type);
+
+        if(element.type==="text"){
+
+            console.log("Text Field");
+            this.value=" ";
+        }
+
+        */
+        document.getElementById('add_person_modal').getElementsByClassName('db_status')[0].style.backgroundColor="blue";
+        document.getElementById('add_person_modal').getElementsByClassName('db_status')[0].innerHTML = "IDLE";
+    }
+);
 function AddPerson() {
     var person_info = {
         LASTNAME: `${document.getElementById("lastname").value}`,
