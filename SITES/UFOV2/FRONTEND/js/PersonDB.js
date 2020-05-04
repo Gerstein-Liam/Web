@@ -1,19 +1,5 @@
 AddPersonModal = new ShowHide_FixedPosition('AddPersonModal', null);
 PersonFilterModal = new ShowHide_FixedPosition('FilterPersonModal', null);
-
-function erasetable() {
-  let table = document.getElementById("table-persons");
-  let i;
-  let l = table.children.length;
-  for (i = 0; i < (l - 1); i++) {
-      table.lastChild.remove();
-  }
-}
-
-
-
-
-
 function AddPerson() {
   var person_info = {
     LASTNAME: `${document.getElementById("lastname").value}`,
@@ -38,9 +24,7 @@ function AddPerson() {
       body: _json})
         .then(function (server_response) {
           erasetable();
-         // InitTable();
-
-         GetPersonData_And_BuildTable.ExecutePOST(null,null);
+          GetPersonData_And_BuildTable.ExecutePOST(null,null);
           document.getElementById("save_status").innerHTML = response;
         }.bind(this))
         .catch(function (ajax_error) {
