@@ -1,5 +1,5 @@
-function erasetable() {
-    let table = document.getElementById("table-persons");
+function erasetable(id_table) {
+    let table = document.getElementById(id_table);
     let i;
     let l = table.children.length;
     for (i = 0; i < (l - 1); i++) {

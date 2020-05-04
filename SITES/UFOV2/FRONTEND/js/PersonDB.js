@@ -148,13 +148,13 @@ function UpdatePerson__OnServorOK(person_update) {
     IMPLICATION: `${person_update.IMPLICATION}`,
     POSITION: `${person_update.POSITION}`
   };
-  erasetable();
+  erasetable("table-persons");
  // InitTable();
  GetPersonData_And_BuildTable.ExecutePOST(null,null);
 }
 function UpdatePerson__OnServorDeleteOK() {
   document.getElementById('modal_rightclick_content').getElementsByClassName('db_status')[0].innerHTML="Deleted";
-  erasetable();
+  erasetable("table-persons");
  // InitTable();
  GetPersonData_And_BuildTable.ExecutePOST(null,null);
 }
