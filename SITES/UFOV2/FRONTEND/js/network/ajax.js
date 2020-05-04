@@ -61,6 +61,8 @@ function ExecuteAjaxPostJson(url, postpara) {
         });
     }
 }
+
+
 var _ExecuteAjaxPostJson=ExecuteAjaxPostJson;
 function AjaxPostJSON(_url, _postpara, _OnSuccess, _OnError) {
     this._url = _url;
