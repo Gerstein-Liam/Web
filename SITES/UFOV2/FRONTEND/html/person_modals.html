@@ -1,6 +1,6 @@
 <!--   ------------------------------------------------------ADD------------------------------------------------------     -->
 <div id="AddPersonModal" class="modal">
-  <div class="add_modal add_person_modal">
+  <div class="add_modal add_person_modal" id="add_person_modal">
       <span class="close" onclick="AddPersonModal.CloseModal()">&times;</span>
       <h1 style="color: rgb(255, 0, 0); font-family: system-ui; text-align: center; font-size:small; padding-bottom: 20px;">
           ADD PERSON
@@ -46,7 +46,7 @@
           <option value="Expectant">Expectant</option>
       </select>
       <input type="submit" value="SAVE" onclick="AddPerson()">
-      <div class="save_status" id="save_status"> DOING </div>
+      <div class="db_status"> DOING </div>
   </div>
 </div>
 <!--   ------------------------------------------------------FILTER------------------------------------------------------     -->
@@ -129,6 +129,6 @@
         <input type="submit"  value="UPDATE" id="UpdateBT" onclick="PersonRightClickModal._OnUpdateClick()" >
  <!--       <input type="submit"  value="CHECK OLD VALUE" id="UpdateBT" onclick="PersonRightClickModal.CF_CheckValue()" >  -->
     
-        <div class="db_status" id="db_status"> IDLE </div>
+        <div class="db_status"> IDLE </div>
     </div>
 </div>

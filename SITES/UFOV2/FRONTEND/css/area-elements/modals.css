@@ -1,5 +1,4 @@
 /* The Modal (background) */
-
 .modal {
     display: none;
     /* Hidden by default */
@@ -24,10 +23,7 @@
     background-color: rgba(0,0,0,0.4); 
     */
 }
-
-
 /* Modal Content */
-
 .add_modal {
     position: absolute;
     background-color: #ffffff;
@@ -37,17 +33,14 @@
     width: 20%;
     border-radius: 10px;
 }
-
 .add_person_modal {
     top: 10%;
     left: 50%;
 }
-
 .add_event_modal {
     top: 40%;
     left: 50%;
 }
-
 .filter_modal {
     position: absolute;
     background-color: #ffffff;
@@ -57,34 +50,27 @@
     width: 20%;
     border-radius: 10px;
 }
-
 .filter_person_modal {
     top: 10%;
     left: 50%;
 }
-
 .filter_event_modal {
     top: 40%;
     left: 50%;
 }
-
 .close {
     color: #aaaaaa;
     float: left;
     font-size: 28px;
     font-weight: bold;
 }
-
 .close:hover,
 .close:focus {
     color: #000;
     text-decoration: none;
     cursor: pointer;
 }
-
-
 /* The Modal (background) */
-
 .modal_rightclick {
     display: none;
     /* Hidden by default */
@@ -111,10 +97,7 @@
       background-color: rgba(0,0,0,0.4); 
       */
 }
-
-
 /* Modal Content */
-
 .modal_rightclick_content {
     margin-top: 0px;
     margin-left: 0px;
@@ -127,9 +110,7 @@
     height: auto;
     border-radius: 10px;
 }
-
 .db_status{
-
 background-color:blue;
 text-align: center;
 font-size: small;
@@ -140,5 +121,4 @@ width:  100%;
 /*margin-left: calc(50% - 20px);
 border: 1px solid black ;*/
 border-radius: 10px;
-
 }

@@ -1,6 +1,9 @@
-PersonFilterModal = new ShowHide_FixedPosition('FilterPersonModal', null);
+PersonFilterModal = new ShowHide_FixedPosition('FilterPersonModal',null);
 /**********************************************ADD MODAL**************************************************************** */
-AddPersonModal = new ShowHide_FixedPosition('AddPersonModal', null);
+AddPersonModal = new ShowHide_FixedPosition('AddPersonModal',  function(){
+    document.getElementById('add_person_modal').getElementsByClassName('db_status')[0].style.backgroundColor="blue";
+    document.getElementById('add_person_modal').getElementsByClassName('db_status')[0].innerHTML = "IDLE";
+});
 function AddPerson() {
     var person_info = {
         LASTNAME: `${document.getElementById("lastname").value}`,
@@ -19,14 +22,22 @@ function AddPerson() {
     let Ajax = new AjaxPostJSON("DB_REQUEST", post_para, function (res) {
         erasetable("table-persons");
         GetPersonData_And_BuildTable.ExecutePOST(null, null);
-        document.getElementById("save_status").innerHTML = res.STATUS;
+
+        document.getElementById('add_person_modal').getElementsByClassName('db_status')[0].style.backgroundColor="green";
+        document.getElementById('add_person_modal').getElementsByClassName('db_status')[0].innerHTML = res.STATUS;
+   
     }, function (err) {
+        document.getElementById('add_person_modal').getElementsByClassName('db_status')[0].style.backgroundColor="red";
+        document.getElementById('add_person_modal').getElementsByClassName('db_status')[0].innerHTML = err.ERROR;
         alert(err);
     });
     Ajax.ExecutePOST(null, null);
 }
 /**********************************************UPDATE DELETE MODAL**************************************************************** */
 function OnOpen_PersonModal(Row_No) {
+    document.getElementById('modal_rightclick_content').getElementsByClassName('db_status')[0].style.backgroundColor="blue";
+    document.getElementById('modal_rightclick_content').getElementsByClassName('db_status')[0].innerHTML = "IDLE";
+    
     this._OldValues = {
         LASTNAME: `${document.getElementById('table-persons').getElementsByClassName('_lastname')[parseInt(Row_No, 10)].innerHTML}`,
         FIRSTNAME: `${document.getElementById('table-persons').getElementsByClassName('_firstname')[parseInt(Row_No, 10)].innerHTML}`,
