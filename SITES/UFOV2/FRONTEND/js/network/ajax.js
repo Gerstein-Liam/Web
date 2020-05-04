@@ -25,7 +25,6 @@ function AjaxPOST_XMLHttpRequest_Promises(url, parameters) {
         xmlhttp.send(parameters);
     })
 }
-
 function ExecuteAjaxPostJson(url, postpara) {
     let Url = url;
     let PostPara = postpara;
@@ -61,8 +60,6 @@ function ExecuteAjaxPostJson(url, postpara) {
         });
     }
 }
-
-
 var _ExecuteAjaxPostJson=ExecuteAjaxPostJson;
 function AjaxPostJSON(_url, _postpara, _OnSuccess, _OnError) {
     this._url = _url;
@@ -71,5 +68,4 @@ function AjaxPostJSON(_url, _postpara, _OnSuccess, _OnError) {
     this._OnError = _OnError;
 }
 AjaxPostJSON.prototype.ExecutePOST =_ExecuteAjaxPostJson;
-
 //()=> {alert("AjaxError")}
