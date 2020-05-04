@@ -10,43 +10,20 @@ function AddPerson() {
     IMPLICATION: `${document.getElementById("implication").value}`,
     POSITION: `${document.getElementById("position").value}`
   };
-  //console.table([person_update]);
+  //console.table([this._UpdateValues]);
   var post_para = {
     COMMAND: "ADD PERSON",
     NEWPERSON: person_info
   }
-  var _json = JSON.stringify(post_para);
-  console.log(_json);
-  if (window.fetch) {
-    console.log("Fetch supported");
-    fetch("DB_REQUEST", {
-      method: 'post',
-      body: _json})
-        .then(function (server_response) {
-            erasetable("table-persons");
-          GetPersonData_And_BuildTable.ExecutePOST(null,null);
-          document.getElementById("save_status").innerHTML = response;
-        }.bind(this))
-        .catch(function (ajax_error) {
-        }.bind(this));
-  } 
-  else {
-    console.log("Fetch not supporteb by browser");
-    var update_ajaxpost = AjaxPOST_XMLHttpRequest_Promises;
-    update_ajaxpost("DB_REQUEST", _json).then(function (server_response) { console.log(server_response) }).catch(function (ajax_error) { console.log(ajax_error) });
-  }
+  let Ajax= new AjaxPostJSON("DB_REQUEST",post_para,function(res){
+                                                                    erasetable("table-persons");
+                                                                    GetPersonData_And_BuildTable.ExecutePOST(null,null);
+                                                                    document.getElementById("save_status").innerHTML = res;
+                                                                }, function (err){
+                                                                    alert(err);
+                                                                });
+  Ajax.ExecutePOST(null,null);
 }
-
-
-
-
-
-
-
-
-
-
-
 //////////////////////MODAL WITH PROTOTYPE////////////////////////////////
 function OpenModal(event, row_id) {
     event.preventDefault();
@@ -81,6 +58,7 @@ function DependentModal(_ModalID, _OnOpen, _OnUpdateClick,_OnDeleteClick,_OnServ
     this._OnServer_Error=_OnServer_Error;
     this._OnFieldChange=_OnFieldChange;
     this._OldValues = 0;
+    this._UpdateValues=0;
     this.serverresp = 0;
 }
 DependentModal.prototype.CF_OpenModal = OpenM;
@@ -89,13 +67,6 @@ DependentModal.prototype.CF_CheckValue = function () {
     console.log(this._OldValues);
     console.log(this.serverresp);
 }
-
-
-
-
-
-
-
 function OnOpen_PersonModal(Row_No) {
   this._OldValues = {
     LASTNAME: `${document.getElementById('table-persons').getElementsByClassName('_lastname')[parseInt(Row_No, 10)].innerHTML}`,
@@ -116,7 +87,7 @@ function OnOpen_PersonModal(Row_No) {
   document.getElementById('modal_rightclick_content').getElementsByClassName('_position')[0].value = document.getElementById('table-persons').getElementsByClassName('_position')[parseInt(Row_No, 10)].innerHTML;
 }
 function OnClick_UpdateBT_PersonModal() {
-  var person_update = {
+   this._UpdateValues = {
     LASTNAME: `${document.getElementById('modal_rightclick_content').getElementsByClassName('_lastname')[0].value}`,
     FIRSTNAME: `${document.getElementById('modal_rightclick_content').getElementsByClassName('_firstname')[0].value}`,
     FONCTION: `${document.getElementById('modal_rightclick_content').getElementsByClassName('_fonction')[0].value}`,
@@ -125,65 +96,24 @@ function OnClick_UpdateBT_PersonModal() {
     IMPLICATION: `${document.getElementById('modal_rightclick_content').getElementsByClassName('_implication')[0].value}`,
     POSITION: `${document.getElementById('modal_rightclick_content').getElementsByClassName('_position')[0].value}`
   };
-  //console.table([person_update]);
   var post_para = {
     COMMAND: "UPDATE PERSON",
     OLD: this._OldValues,
-    UPDATE: person_update
+    UPDATE: this._UpdateValues
   }
-  console.log("REQUEST  OLD");
-  //console.table([post_para]);
-  console.table([post_para.OLD]);
-  console.log("REQUEST  NEW");
-  //console.table([post_para]);
-  console.table([post_para.UPDATE]);
-  var _json = JSON.stringify(post_para);
-  console.log(_json);
-  if (window.fetch) {
-    console.log("Fetch supported");
-    fetch("DB_REQUEST", {
-      method: 'post',
-      body: _json})
-        .then(function (server_response) {
-          console.log("Serveur OK");
-          console.table([this._OldValues]);
-          this._OnServer_UpdateOK(person_update);
-        }.bind(this))
-        .catch(function (ajax_error) {
-            this._OnServer_Error();
-        }.bind(this));
-  } 
-  else {
-    console.log("Fetch not supporteb by browser");
-    var update_ajaxpost = AjaxPOST_XMLHttpRequest_Promises;
-    update_ajaxpost("DB_REQUEST", _json).then(function (server_response) { console.log(server_response) }).catch(function (ajax_error) { console.log(ajax_error) });
-  }
+  let Ajax= new AjaxPostJSON("DB_REQUEST",post_para,this._OnServer_UpdateOK.bind(this), this._OnServer_Error.bind(this));
+  Ajax.ExecutePOST(null,null);
 }
 function OnClick_DeleteBT_PersonModal() {
-  //console.table([person_update]);
+  //console.table([this._UpdateValues]);
+ 
   var post_para = {
     COMMAND: "DELETE PERSON",
     OLD: this._OldValues
   }
-  var _json = JSON.stringify(post_para);
-  console.log(_json);
-  if (window.fetch) {
-    console.log("Fetch supported");
-    fetch("DB_REQUEST", {
-      method: 'post',
-      body: _json})
-        .then(function (server_response) {
-          this._OnServer_DeleteOK();
-        }.bind(this))
-        .catch(function (ajax_error) {
-            this._OnServer_Error();
-        }.bind(this));
-  } 
-  else {
-    console.log("Fetch not supporteb by browser");
-    var update_ajaxpost = AjaxPOST_XMLHttpRequest_Promises;
-    update_ajaxpost("DB_REQUEST", _json).then(function (server_response) { console.log(server_response) }).catch(function (ajax_error) { console.log(ajax_error) });
-  }
+  let Ajax= new AjaxPostJSON("DB_REQUEST",post_para,this._OnServer_DeleteOK.bind(this), this._OnServer_Error.bind(this));
+  Ajax.ExecutePOST(null,null);
+ 
 }
 function OnServer_UpDelError_PersonModal() {
   document.getElementById('modal_rightclick_content').getElementsByClassName('db_status')[0].innerHTML="Error on server";
@@ -196,17 +126,17 @@ function OnServer_UpDelError_PersonModal() {
   document.getElementById('modal_rightclick_content').getElementsByClassName('_implication')[0].value = this._OldValues.IMPLICATION;
   document.getElementById('modal_rightclick_content').getElementsByClassName('_position')[0].value = this._OldValues.POSITION;
 }
-function OnServer_UpdateOK_PersonModal(person_update) {
+function OnServer_UpdateOK_PersonModal() {
   document.getElementById('modal_rightclick_content').getElementsByClassName('db_status')[0].innerHTML="Saved";
   console.log("ON SERVER OK");
   this._OldValues = {
-    LASTNAME: `${person_update.LASTNAME}`,
-    FIRSTNAME: `${person_update.FIRSTNAME}`,
-    FONCTION: `${person_update.FONCTION}`,
-    DOMAIN: `${person_update.DOMAIN}`,
-    COUNTRY: `${person_update.COUNTRY}`,
-    IMPLICATION: `${person_update.IMPLICATION}`,
-    POSITION: `${person_update.POSITION}`
+    LASTNAME: `${this._UpdateValues.LASTNAME}`,
+    FIRSTNAME: `${this._UpdateValues.FIRSTNAME}`,
+    FONCTION: `${this._UpdateValues.FONCTION}`,
+    DOMAIN: `${this._UpdateValues.DOMAIN}`,
+    COUNTRY: `${this._UpdateValues.COUNTRY}`,
+    IMPLICATION: `${this._UpdateValues.IMPLICATION}`,
+    POSITION: `${this._UpdateValues.POSITION}`
   };
   erasetable("table-persons");
  // InitTable();
@@ -221,24 +151,13 @@ function OnServer_DeleteOK_PersonModal() {
 function OnFieldChange_PersonModal() {
   document.getElementById('modal_rightclick_content').getElementsByClassName('db_status')[0].innerHTML="IDLE";
 }
-
-
-
 var _OnOpen_PersonModal = OnOpen_PersonModal;
 var _OnClick_UpdateBT_PersonModal = OnClick_UpdateBT_PersonModal;
 var _OnClick_DeleteBT_PersonModal=OnClick_DeleteBT_PersonModal;
-
 var _OnFieldChange_PersonModal = OnFieldChange_PersonModal;
-
 var _OnServer_UpdateOK_PersonModal = OnServer_UpdateOK_PersonModal;
 var _OnServer_DeleteOK_PersonModal = OnServer_DeleteOK_PersonModal;
 var _OnServer_UpDelError_PersonModal = OnServer_UpDelError_PersonModal;
-
-
-
 var PersonRightClickModal = new DependentModal("RightClickModal", _OnOpen_PersonModal, _OnClick_UpdateBT_PersonModal,_OnClick_DeleteBT_PersonModal, _OnServer_UpdateOK_PersonModal,_OnServer_DeleteOK_PersonModal,_OnServer_UpDelError_PersonModal , _OnFieldChange_PersonModal);
-
-
-
 var CheckSeparation = new DependentModal("RightClickModal", function () { console.table([this._OldValues]) }, null);
 AddEventModal = new ShowHide_FixedPosition('AddEventModal', null);
