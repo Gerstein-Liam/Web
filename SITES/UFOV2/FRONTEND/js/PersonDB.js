@@ -23,7 +23,7 @@ function AddPerson() {
       method: 'post',
       body: _json})
         .then(function (server_response) {
-          erasetable();
+            erasetable("table-persons");
           GetPersonData_And_BuildTable.ExecutePOST(null,null);
           document.getElementById("save_status").innerHTML = response;
         }.bind(this))
@@ -36,8 +36,68 @@ function AddPerson() {
     update_ajaxpost("DB_REQUEST", _json).then(function (server_response) { console.log(server_response) }).catch(function (ajax_error) { console.log(ajax_error) });
   }
 }
-function GetPersonInfoOfRow(Row_No) {
-  this.oldvalues = {
+
+
+
+
+
+
+
+
+
+
+
+//////////////////////MODAL WITH PROTOTYPE////////////////////////////////
+function OpenModal(event, row_id) {
+    event.preventDefault();
+    console.log("Mouse Eevent");
+    if (event.button === 2) {
+        let padding_left = (event.clientX) + 'px ';
+        let padding_top = (event.clientY) + 'px ';
+        document.getElementById(this._ModalID).style.paddingLeft = padding_left;
+        document.getElementById(this._ModalID).style.paddingTop = padding_top;
+        document.getElementById(this._ModalID).style.display = "block";
+        if (this._OnOpen != null) {
+            this._OnOpen(row_id);
+        } else {
+            console.log("Function not defined");
+        }
+    } else {
+        console.log("Function not defined");
+    }
+}
+var OpenM = OpenModal;
+function CloseModal() {
+    document.getElementById(this._ModalID).style.display = "none";
+}
+var CloseM = CloseModal;
+function DependentModal(_ModalID, _OnOpen, _OnUpdateClick,_OnDeleteClick,_OnServer_UpdateOK,_OnServer_DeleteOK,_OnServer_Error, _OnFieldChange) {
+    this._ModalID = _ModalID;
+    this._OnOpen = _OnOpen;
+    this._OnUpdateClick = _OnUpdateClick;
+    this._OnDeleteClick = _OnDeleteClick;
+    this._OnServer_UpdateOK=_OnServer_UpdateOK;
+    this._OnServer_DeleteOK=_OnServer_DeleteOK;
+    this._OnServer_Error=_OnServer_Error;
+    this._OnFieldChange=_OnFieldChange;
+    this._OldValues = 0;
+    this.serverresp = 0;
+}
+DependentModal.prototype.CF_OpenModal = OpenM;
+DependentModal.prototype.CF_CloseModal = CloseM;
+DependentModal.prototype.CF_CheckValue = function () {
+    console.log(this._OldValues);
+    console.log(this.serverresp);
+}
+
+
+
+
+
+
+
+function OnOpen_PersonModal(Row_No) {
+  this._OldValues = {
     LASTNAME: `${document.getElementById('table-persons').getElementsByClassName('_lastname')[parseInt(Row_No, 10)].innerHTML}`,
     FIRSTNAME: `${document.getElementById('table-persons').getElementsByClassName('_firstname')[parseInt(Row_No, 10)].innerHTML}`,
     FONCTION: `${document.getElementById('table-persons').getElementsByClassName('_fonction')[parseInt(Row_No, 10)].innerHTML}`,
@@ -46,7 +106,7 @@ function GetPersonInfoOfRow(Row_No) {
     IMPLICATION: `${document.getElementById('table-persons').getElementsByClassName('_implication')[parseInt(Row_No, 10)].innerHTML}`,
     POSITION: `${document.getElementById('table-persons').getElementsByClassName('_position')[parseInt(Row_No, 10)].innerHTML}`
   };
-  console.table([this.oldvalues]);
+  console.table([this._OldValues]);
   document.getElementById('modal_rightclick_content').getElementsByClassName('_lastname')[0].value = document.getElementById('table-persons').getElementsByClassName('_lastname')[parseInt(Row_No, 10)].innerHTML;
   document.getElementById('modal_rightclick_content').getElementsByClassName('_firstname')[0].value = document.getElementById('table-persons').getElementsByClassName('_firstname')[parseInt(Row_No, 10)].innerHTML;
   document.getElementById('modal_rightclick_content').getElementsByClassName('_fonction')[0].value = document.getElementById('table-persons').getElementsByClassName('_fonction')[parseInt(Row_No, 10)].innerHTML;
@@ -55,7 +115,7 @@ function GetPersonInfoOfRow(Row_No) {
   document.getElementById('modal_rightclick_content').getElementsByClassName('_implication')[0].value = document.getElementById('table-persons').getElementsByClassName('_implication')[parseInt(Row_No, 10)].innerHTML;
   document.getElementById('modal_rightclick_content').getElementsByClassName('_position')[0].value = document.getElementById('table-persons').getElementsByClassName('_position')[parseInt(Row_No, 10)].innerHTML;
 }
-function PersonSubmitChange() {
+function OnClick_UpdateBT_PersonModal() {
   var person_update = {
     LASTNAME: `${document.getElementById('modal_rightclick_content').getElementsByClassName('_lastname')[0].value}`,
     FIRSTNAME: `${document.getElementById('modal_rightclick_content').getElementsByClassName('_firstname')[0].value}`,
@@ -68,7 +128,7 @@ function PersonSubmitChange() {
   //console.table([person_update]);
   var post_para = {
     COMMAND: "UPDATE PERSON",
-    OLD: this.oldvalues,
+    OLD: this._OldValues,
     UPDATE: person_update
   }
   console.log("REQUEST  OLD");
@@ -86,11 +146,11 @@ function PersonSubmitChange() {
       body: _json})
         .then(function (server_response) {
           console.log("Serveur OK");
-          console.table([this.oldvalues]);
+          console.table([this._OldValues]);
           this._OnServer_UpdateOK(person_update);
         }.bind(this))
         .catch(function (ajax_error) {
-            this._OnServerError();
+            this._OnServer_Error();
         }.bind(this));
   } 
   else {
@@ -99,11 +159,11 @@ function PersonSubmitChange() {
     update_ajaxpost("DB_REQUEST", _json).then(function (server_response) { console.log(server_response) }).catch(function (ajax_error) { console.log(ajax_error) });
   }
 }
-function PersonSubmitDelete() {
+function OnClick_DeleteBT_PersonModal() {
   //console.table([person_update]);
   var post_para = {
     COMMAND: "DELETE PERSON",
-    OLD: this.oldvalues
+    OLD: this._OldValues
   }
   var _json = JSON.stringify(post_para);
   console.log(_json);
@@ -116,7 +176,7 @@ function PersonSubmitDelete() {
           this._OnServer_DeleteOK();
         }.bind(this))
         .catch(function (ajax_error) {
-            this._OnServerError();
+            this._OnServer_Error();
         }.bind(this));
   } 
   else {
@@ -125,21 +185,21 @@ function PersonSubmitDelete() {
     update_ajaxpost("DB_REQUEST", _json).then(function (server_response) { console.log(server_response) }).catch(function (ajax_error) { console.log(ajax_error) });
   }
 }
-function UpdatePerson__OnServorError() {
+function OnServer_UpDelError_PersonModal() {
   document.getElementById('modal_rightclick_content').getElementsByClassName('db_status')[0].innerHTML="Error on server";
   console.log("ON SERVER ERROR");
-  document.getElementById('modal_rightclick_content').getElementsByClassName('_lastname')[0].value = this.oldvalues.LASTNAME;
-  document.getElementById('modal_rightclick_content').getElementsByClassName('_firstname')[0].value = this.oldvalues.FIRSTNAME;
-  document.getElementById('modal_rightclick_content').getElementsByClassName('_fonction')[0].value = this.oldvalues.FONCTION;
-  document.getElementById('modal_rightclick_content').getElementsByClassName('_domain')[0].value = this.oldvalues.DOMAIN;
-  document.getElementById('modal_rightclick_content').getElementsByClassName('_country')[0].value = this.oldvalues.COUNTRY;
-  document.getElementById('modal_rightclick_content').getElementsByClassName('_implication')[0].value = this.oldvalues.IMPLICATION;
-  document.getElementById('modal_rightclick_content').getElementsByClassName('_position')[0].value = this.oldvalues.POSITION;
+  document.getElementById('modal_rightclick_content').getElementsByClassName('_lastname')[0].value = this._OldValues.LASTNAME;
+  document.getElementById('modal_rightclick_content').getElementsByClassName('_firstname')[0].value = this._OldValues.FIRSTNAME;
+  document.getElementById('modal_rightclick_content').getElementsByClassName('_fonction')[0].value = this._OldValues.FONCTION;
+  document.getElementById('modal_rightclick_content').getElementsByClassName('_domain')[0].value = this._OldValues.DOMAIN;
+  document.getElementById('modal_rightclick_content').getElementsByClassName('_country')[0].value = this._OldValues.COUNTRY;
+  document.getElementById('modal_rightclick_content').getElementsByClassName('_implication')[0].value = this._OldValues.IMPLICATION;
+  document.getElementById('modal_rightclick_content').getElementsByClassName('_position')[0].value = this._OldValues.POSITION;
 }
-function UpdatePerson__OnServorOK(person_update) {
+function OnServer_UpdateOK_PersonModal(person_update) {
   document.getElementById('modal_rightclick_content').getElementsByClassName('db_status')[0].innerHTML="Saved";
   console.log("ON SERVER OK");
-  this.oldvalues = {
+  this._OldValues = {
     LASTNAME: `${person_update.LASTNAME}`,
     FIRSTNAME: `${person_update.FIRSTNAME}`,
     FONCTION: `${person_update.FONCTION}`,
@@ -152,22 +212,33 @@ function UpdatePerson__OnServorOK(person_update) {
  // InitTable();
  GetPersonData_And_BuildTable.ExecutePOST(null,null);
 }
-function UpdatePerson__OnServorDeleteOK() {
+function OnServer_DeleteOK_PersonModal() {
   document.getElementById('modal_rightclick_content').getElementsByClassName('db_status')[0].innerHTML="Deleted";
   erasetable("table-persons");
  // InitTable();
  GetPersonData_And_BuildTable.ExecutePOST(null,null);
 }
-function UpdatePerson__OnFieldChange() {
+function OnFieldChange_PersonModal() {
   document.getElementById('modal_rightclick_content').getElementsByClassName('db_status')[0].innerHTML="IDLE";
 }
-var UP__OnServErr = UpdatePerson__OnServorError;
-var UP__OnServOK = UpdatePerson__OnServorOK;
-var UP__OnServDeleteOK = UpdatePerson__OnServorDeleteOK;
-var GetPersonInfo_AtRow = GetPersonInfoOfRow;
-var SubmitPersonDelte=PersonSubmitDelete;
-var SubmitPersonChange = PersonSubmitChange;
-var UPerson_OnFieldChange = UpdatePerson__OnFieldChange;
-var PersonRightClickModal = new DependentModal("RightClickModal", GetPersonInfo_AtRow, SubmitPersonChange,SubmitPersonDelte, UP__OnServOK,UP__OnServDeleteOK,UP__OnServErr , UPerson_OnFieldChange);
-var CheckSeparation = new DependentModal("RightClickModal", function () { console.table([this.oldvalues]) }, null);
+
+
+
+var _OnOpen_PersonModal = OnOpen_PersonModal;
+var _OnClick_UpdateBT_PersonModal = OnClick_UpdateBT_PersonModal;
+var _OnClick_DeleteBT_PersonModal=OnClick_DeleteBT_PersonModal;
+
+var _OnFieldChange_PersonModal = OnFieldChange_PersonModal;
+
+var _OnServer_UpdateOK_PersonModal = OnServer_UpdateOK_PersonModal;
+var _OnServer_DeleteOK_PersonModal = OnServer_DeleteOK_PersonModal;
+var _OnServer_UpDelError_PersonModal = OnServer_UpDelError_PersonModal;
+
+
+
+var PersonRightClickModal = new DependentModal("RightClickModal", _OnOpen_PersonModal, _OnClick_UpdateBT_PersonModal,_OnClick_DeleteBT_PersonModal, _OnServer_UpdateOK_PersonModal,_OnServer_DeleteOK_PersonModal,_OnServer_UpDelError_PersonModal , _OnFieldChange_PersonModal);
+
+
+
+var CheckSeparation = new DependentModal("RightClickModal", function () { console.table([this._OldValues]) }, null);
 AddEventModal = new ShowHide_FixedPosition('AddEventModal', null);
