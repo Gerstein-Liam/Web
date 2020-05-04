@@ -76,9 +76,10 @@ function OnClick_DeleteBT_PersonModal() {
   let Ajax= new AjaxPostJSON("DB_REQUEST",post_para,this._OnServer_DeleteOK.bind(this), this._OnServer_Error.bind(this));
   Ajax.ExecutePOST(null,null);
 }
-function OnServer_UpDelError_PersonModal() {
-  document.getElementById('modal_rightclick_content').getElementsByClassName('db_status')[0].innerHTML="Error on server";
-  console.log("ON SERVER ERROR");
+function OnServer_UpDelError_PersonModal(err) {
+
+   //console.log(Err->Error)
+  document.getElementById('modal_rightclick_content').getElementsByClassName('db_status')[0].innerHTML=`Error ${err}`;
   document.getElementById('modal_rightclick_content').getElementsByClassName('_lastname')[0].value = this._OldValues.LASTNAME;
   document.getElementById('modal_rightclick_content').getElementsByClassName('_firstname')[0].value = this._OldValues.FIRSTNAME;
   document.getElementById('modal_rightclick_content').getElementsByClassName('_fonction')[0].value = this._OldValues.FONCTION;

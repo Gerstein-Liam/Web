@@ -42,13 +42,21 @@ function ExecuteAjaxPostJson(url, postpara) {
                 body: _json
             })
             .then(function(response) {
-                response.json().then(json_data => {
-                   console.log("ON SUCCCESS AJAX");
-                    this._OnSuccess(json_data);
-                }).catch( err=>{ this._OnError(err)})
+                console.log("FetchStatus:"+response.status);
+                if(response.status===200){
+                    response.json().then(json_data => {
+                        console.log("ON SUCCCESS AJAX");
+                        this._OnSuccess(json_data);
+                     }).catch( err=>{ this._OnError(err)})
+                }
+                else
+                { 
+                    this._OnError(response.status);
+                }
             }.bind(this))
             .catch(function(error) {
-                this._OnError(ajax_error);
+                console.log("Ajax Error:",error);
+                this._OnError(error);
             }.bind(this));
     } else {
         console.log("Fetch not supporteb by browser");
