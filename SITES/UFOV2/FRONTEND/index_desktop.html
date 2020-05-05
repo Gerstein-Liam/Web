@@ -166,24 +166,39 @@
       <span class="close" onclick="PersonFilterModal.CloseModal()">&times;</span>
       <h1 style="color: blue; font-family: system-ui; text-align: center; font-size:small; padding-bottom: 20px;">FILTER
       </h1>
-      <select id="fcountry" name="country" form="find_testimy_criterias" onchange="UpdateResult()">
-          <option value="%">Any</option>
-          <option value="usa">UnitedStates</option>
-          <option value="france">France</option>
+
+      <select id="fdomain" name="sector" form="find_testimy_criterias" onchange="PersonFilter()">
+        <option value="%">Domain</option>
+          <option value="Civil">Civil</option>
+          <option value="Army">Army</option>
+          <option value="Politic">Politics</option>
+          <option value="Science">Scientits</option>
       </select>
-      <select id="fsector" name="sector" form="find_testimy_criterias" onchange="UpdateResult()">
-          <option value="%">Any</option>
-          <option value="civil">Civil</option>
-          <option value="army">Army</option>
-          <option value="politics">Politics</option>
-          <option value="scientits">Scientits</option>
+      <select id="fcountry" name="country" form="find_testimy_criterias" onchange="PersonFilter()">
+        <option value="%">Country</option>
+        <option value="United States">United States</option>
+        <option value="France">France</option>
+        <option value="Peru">Peru</option>
+        <option value="Chili">Chili</option>
+        <option value="Canada">Canada</option>
+        <option value="Mexico">Mexico</option>
+        <option value="Japan">Japan</option>
+        <option value="Iran">Iran</option>
+        <option value="Belgium">Belgium</option>
+        <option value="United Kingdom">United Kingdom</option>
+    </select>
+      <select id="fimp" name="observation_type" form="find_testimy_criterias" onchange="PersonFilter()">
+          <option value="%">Implication</option>
+          <option value="Direct">Direct</option>
+          <option value="Indirect">Indirect</option>
       </select>
-      <select id="fobs" name="observation_type" form="find_testimy_criterias" onchange="UpdateResult()">
-          <option value="%">Any</option>
-          <option value="direct">Direct</option>
-          <option value="indirect">Indirect</option>
-      </select>
-      <input type="submit" value="COMPUTE" onclick="AddPerson()">
+      <select id="fpos" name="observation_type" form="find_testimy_criterias" onchange="PersonFilter()">
+        <option value="%">Position</option>
+        <option value="Believer">Believer</option>
+        <option value="Skeptical">Skeptical</option>
+        <option value="Expectant">Expectant</option>
+    </select>
+      <input type="submit" value="RESET" onclick="AddPerson()">
   </div>
 </div>
 <!--   ------------------------------------------------------RIGHT CLICK------------------------------------------------------     -->

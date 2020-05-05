@@ -1,4 +1,29 @@
 PersonFilterModal = new ShowHide_FixedPosition('FilterPersonModal', null, null);
+function PersonFilter() {
+    let _DomainQuery = document.getElementById("fdomain").value;
+    let _CountryQuery = document.getElementById("fcountry").value;
+    let _ImplicationQuery = document.getElementById("fimp").value;
+    let _PositionQuery = document.getElementById("fpos").value;
+    console.log(_DomainQuery);
+    let tmp = DB_PERSON;
+    //  console.log(tmp);
+    if (_DomainQuery != "%") {
+        tmp = tmp.filter(element => element.Domain === _DomainQuery)
+    }
+    if (_CountryQuery != "%") {
+        tmp = tmp.filter(element => element.Country === _CountryQuery)
+    }
+    if (_ImplicationQuery != "%") {
+        tmp = tmp.filter(element => element.Implication === _ImplicationQuery)
+    }
+    if (_PositionQuery != "%") {
+        tmp = tmp.filter(element => element.Position === _PositionQuery)
+    }
+    console.log("Filter result");
+    console.log(tmp);
+    erasetable("table-persons");
+    BuildPersonTable(tmp);
+}
 /**********************************************ADD MODAL**************************************************************** */
 AddPersonModal = new ShowHide_FixedPosition('AddPersonModal',
     function () {
