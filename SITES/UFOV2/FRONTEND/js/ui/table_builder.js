@@ -6,12 +6,16 @@ function erasetable(id_table) {
         table.lastChild.remove();
     }
 }
-function BuildPersonTable(json){
+var DB_PERSON;
+function StorePersonDB(json){
+    DB_PERSON=json;
+}
+function BuildPersonTable(_json){
     var result = "";
     var table = document.getElementById("table-persons");
     var ligne;
     var i=0;
-    for(const person of json){
+    for(const person of _json){
         var ligne = document.createElement("tr");
         ligne.setAttribute('onmousedown', 'PersonRightClickModal.CF_OpenModal(event,this.id)');
         ligne.setAttribute('id', `${i}`);
@@ -51,8 +55,10 @@ function BuildPersonTable(json){
     }
 }
 var _BuildPersonTable=BuildPersonTable;
-
 var post_para = {
     COMMAND: "LOAD PERSON-LIST"
   }
-var GetPersonData_And_BuildTable= new AjaxPostJSON("DB_REQUEST",post_para,_BuildPersonTable, function (err){  console.log(err);});
+var GetPersonData_And_BuildTable= new AjaxPostJSON("DB_REQUEST",post_para,function(json){
+                                                                                    DB_PERSON=json;
+                                                                                    BuildPersonTable(DB_PERSON);
+                                                                                                }, function (err){  console.log(err);});

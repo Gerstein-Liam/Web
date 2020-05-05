@@ -1,24 +1,19 @@
-PersonFilterModal = new ShowHide_FixedPosition('FilterPersonModal',null,null);
+PersonFilterModal = new ShowHide_FixedPosition('FilterPersonModal', null, null);
 /**********************************************ADD MODAL**************************************************************** */
-AddPersonModal = new ShowHide_FixedPosition('AddPersonModal',  
-    function(){
-        document.getElementById('add_person_modal').getElementsByClassName('db_status')[0].style.backgroundColor="blue";
+AddPersonModal = new ShowHide_FixedPosition('AddPersonModal',
+    function () {
+        document.getElementById('add_person_modal').getElementsByClassName('db_status')[0].style.backgroundColor = "blue";
         document.getElementById('add_person_modal').getElementsByClassName('db_status')[0].innerHTML = "IDLE";
     },
-    function(element){
-       
-       
-       /*
-        console.log(element.type);
-
-        if(element.type==="text"){
-
-            console.log("Text Field");
-            this.value=" ";
-        }
-
-        */
-        document.getElementById('add_person_modal').getElementsByClassName('db_status')[0].style.backgroundColor="blue";
+    function (element) {
+        /*
+         console.log(element.type);
+         if(element.type==="text"){
+             console.log("Text Field");
+             this.value=" ";
+         }
+         */
+        document.getElementById('add_person_modal').getElementsByClassName('db_status')[0].style.backgroundColor = "blue";
         document.getElementById('add_person_modal').getElementsByClassName('db_status')[0].innerHTML = "IDLE";
     }
 );
@@ -39,13 +34,13 @@ function AddPerson() {
     }
     let Ajax = new AjaxPostJSON("DB_REQUEST", post_para, function (res) {
         erasetable("table-persons");
-        GetPersonData_And_BuildTable.ExecutePOST(null, null);
-
-        document.getElementById('add_person_modal').getElementsByClassName('db_status')[0].style.backgroundColor="green";
+        DB_PERSON.push({ Lastname: `${person_info.LASTNAME}`, Firstname: `${person_info.FIRSTNAME}`, Fonction: `${person_info.FONCTION}`, Domain: `${person_info.DOMAIN}`, Country: `${person_info.COUNTRY}`, Implication: `${person_info.IMPLICATION}`, Position: `${person_info.POSITION}` })
+        erasetable("table-persons");
+        BuildPersonTable(DB_PERSON);
+        document.getElementById('add_person_modal').getElementsByClassName('db_status')[0].style.backgroundColor = "green";
         document.getElementById('add_person_modal').getElementsByClassName('db_status')[0].innerHTML = res.STATUS;
-   
     }, function (err) {
-        document.getElementById('add_person_modal').getElementsByClassName('db_status')[0].style.backgroundColor="red";
+        document.getElementById('add_person_modal').getElementsByClassName('db_status')[0].style.backgroundColor = "red";
         document.getElementById('add_person_modal').getElementsByClassName('db_status')[0].innerHTML = err.ERROR;
         alert(err);
     });
@@ -53,9 +48,8 @@ function AddPerson() {
 }
 /**********************************************UPDATE DELETE MODAL**************************************************************** */
 function OnOpen_PersonModal(Row_No) {
-    document.getElementById('modal_rightclick_content').getElementsByClassName('db_status')[0].style.backgroundColor="blue";
+    document.getElementById('modal_rightclick_content').getElementsByClassName('db_status')[0].style.backgroundColor = "blue";
     document.getElementById('modal_rightclick_content').getElementsByClassName('db_status')[0].innerHTML = "IDLE";
-    
     this._OldValues = {
         LASTNAME: `${document.getElementById('table-persons').getElementsByClassName('_lastname')[parseInt(Row_No, 10)].innerHTML}`,
         FIRSTNAME: `${document.getElementById('table-persons').getElementsByClassName('_firstname')[parseInt(Row_No, 10)].innerHTML}`,
@@ -102,9 +96,7 @@ function OnClick_DeleteBT_PersonModal() {
     Ajax.ExecutePOST(null, null);
 }
 function OnServer_UpDelError_PersonModal(err) {
-
-    document.getElementById('modal_rightclick_content').getElementsByClassName('db_status')[0].style.backgroundColor="red";
-
+    document.getElementById('modal_rightclick_content').getElementsByClassName('db_status')[0].style.backgroundColor = "red";
     document.getElementById('modal_rightclick_content').getElementsByClassName('db_status')[0].innerHTML = err.ERROR;
     document.getElementById('modal_rightclick_content').getElementsByClassName('_lastname')[0].value = this._OldValues.LASTNAME;
     document.getElementById('modal_rightclick_content').getElementsByClassName('_firstname')[0].value = this._OldValues.FIRSTNAME;
@@ -115,8 +107,18 @@ function OnServer_UpDelError_PersonModal(err) {
     document.getElementById('modal_rightclick_content').getElementsByClassName('_position')[0].value = this._OldValues.POSITION;
 }
 function OnServer_UpdateOK_PersonModal(res) {
-    document.getElementById('modal_rightclick_content').getElementsByClassName('db_status')[0].style.backgroundColor="green";
+    document.getElementById('modal_rightclick_content').getElementsByClassName('db_status')[0].style.backgroundColor = "green";
     document.getElementById('modal_rightclick_content').getElementsByClassName('db_status')[0].innerHTML = res.STATUS;
+    let index = DB_PERSON.findIndex(i => i.Lastname === `${this._OldValues.LASTNAME}` && i.Firstname === `${this._OldValues.FIRSTNAME}`);
+    console.log(index);
+    DB_PERSON[index].Firstname = "Daniel";
+    DB_PERSON[index].Lastname = `${this._UpdateValues.LASTNAME}`;
+    DB_PERSON[index].Firstname = `${this._UpdateValues.FIRSTNAME}`;
+    DB_PERSON[index].Fonction = `${this._UpdateValues.FONCTION}`;
+    DB_PERSON[index].Domain = `${this._UpdateValues.DOMAIN}`;
+    DB_PERSON[index].Country = `${this._UpdateValues.COUNTRY}`;
+    DB_PERSON[index].Implication = `${this._UpdateValues.IMPLICATION}`;
+    DB_PERSON[index].Position = `${this._UpdateValues.POSITION}`;
     this._OldValues = {
         LASTNAME: `${this._UpdateValues.LASTNAME}`,
         FIRSTNAME: `${this._UpdateValues.FIRSTNAME}`,
@@ -127,18 +129,21 @@ function OnServer_UpdateOK_PersonModal(res) {
         POSITION: `${this._UpdateValues.POSITION}`
     };
     erasetable("table-persons");
-    // InitTable();
-    GetPersonData_And_BuildTable.ExecutePOST(null, null);
+    BuildPersonTable(DB_PERSON);
 }
 function OnServer_DeleteOK_PersonModal(res) {
-    document.getElementById('modal_rightclick_content').getElementsByClassName('db_status')[0].style.backgroundColor="green";
+    document.getElementById('modal_rightclick_content').getElementsByClassName('db_status')[0].style.backgroundColor = "green";
     document.getElementById('modal_rightclick_content').getElementsByClassName('db_status')[0].innerHTML = res.STATUS;
+    let index = DB_PERSON.findIndex(i => i.Firstname === this._OldValues.FIRSTNAME && i.Lastname === this._OldValues.LASTNAME);
+    DB_PERSON.splice(index, 1);
+    console.log(DB_PERSON)
     erasetable("table-persons");
+    BuildPersonTable(DB_PERSON);
     // InitTable();
-    GetPersonData_And_BuildTable.ExecutePOST(null, null);
+    // GetPersonData_And_BuildTable.ExecutePOST(null, null);
 }
 function OnFieldChange_PersonModal() {
-    document.getElementById('modal_rightclick_content').getElementsByClassName('db_status')[0].style.backgroundColor="blue";
+    document.getElementById('modal_rightclick_content').getElementsByClassName('db_status')[0].style.backgroundColor = "blue";
     document.getElementById('modal_rightclick_content').getElementsByClassName('db_status')[0].innerHTML = "IDLE";
 }
 var _OnOpen_PersonModal = OnOpen_PersonModal;

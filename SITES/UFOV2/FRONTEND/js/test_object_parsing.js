@@ -29,3 +29,8 @@ console.log(obj);
 let recherche= "Daniel"
 filter_result= obj.filter( element => element.Firstname=== recherche)
 console.log(filter_result);
+
+
+
+obj.push({Lastname:"gerstein",Firstname:"Denis",Fonction:"Former air force general",Domain:"Army",Country:"France",Implication:"Indirect",Position:"Believer"})
+console.log(obj)

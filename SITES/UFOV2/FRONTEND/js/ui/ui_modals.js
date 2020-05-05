@@ -3,6 +3,7 @@ class ShowHide_FixedPosition {
         this.modal = modal;
         this.onOpenFunction = onOpenFunction;
         this.onFieldChange=onFieldChange;
+        
     }
     OpenModal() {
         document.getElementById(this.modal).style.display = "block";
