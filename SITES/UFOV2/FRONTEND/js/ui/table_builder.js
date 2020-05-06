@@ -40,6 +40,37 @@ function BuildPersonTable(_json){
         var _position = document.createElement("td");
         _position.setAttribute("class", "_position");
         _position.innerHTML = person.Position;
+        
+        var _col_bt_ressource = document.createElement("td");
+        _col_bt_ressource.setAttribute("class", "bt-td-th");
+        var _ButtonRessource=  document.createElement("button");
+        _ButtonRessource.setAttribute("class","button");
+        _ButtonRessource.innerHTML = "SHOW";
+
+        _col_bt_ressource.appendChild(_ButtonRessource);
+
+
+        var _col_bt_relatedevents = document.createElement("td");
+        _col_bt_relatedevents.setAttribute("class", "bt-td-th");
+        var _Button_RelatedEvent=  document.createElement("button");
+        _Button_RelatedEvent.setAttribute("class","button");
+        _Button_RelatedEvent.innerHTML = "SHOW";
+
+        _col_bt_relatedevents.appendChild(_Button_RelatedEvent);
+
+
+        
+   var _col_bt_relatedstudies = document.createElement("td");
+   _col_bt_relatedstudies.setAttribute("class", "bt-td-th");
+   var _Button_RelatedStudies=  document.createElement("button");
+   _Button_RelatedStudies.setAttribute("class","button");
+   _Button_RelatedStudies.innerHTML = "SHOW";
+
+   _col_bt_relatedstudies.appendChild(_Button_RelatedStudies);
+
+
+     
+      
         ligne.appendChild(_lastname);
         ligne.appendChild(_firstname);
         ligne.appendChild(_fonction);
@@ -47,7 +78,9 @@ function BuildPersonTable(_json){
         ligne.appendChild(_country);
         ligne.appendChild(_implication);
         ligne.appendChild(_position);
-        ligne.cloneNode();
+        ligne.appendChild(_col_bt_ressource);
+        ligne.appendChild(_col_bt_relatedevents);
+        ligne.appendChild(_col_bt_relatedstudies);
         console.log(person.Firstname + person.Name);
         result += person.Firstname + " " + person.Name;
         table.appendChild(ligne);
