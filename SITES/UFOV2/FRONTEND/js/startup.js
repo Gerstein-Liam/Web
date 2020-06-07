@@ -2,6 +2,7 @@
 function Startup() {
    DisableRightClickMenuContext();
    GetPersonData_And_BuildTable.ExecutePOST(null,null);
+   GetEventData_And_BuildTable.ExecutePOST(null,null);
  
   
 }
