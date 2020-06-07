@@ -13,7 +13,10 @@ function SiteGrid_Mod(cmd) {
     }
     function show_app() {
        if (pos == 100) {
-          clearInterval(id);
+          
+        
+        document.getElementById("right_nav_box").style.display = "block";
+           clearInterval(id);
           // alert("Hello press F11 to improve experience");
        } else {
           pos++;
@@ -27,6 +30,8 @@ function SiteGrid_Mod(cmd) {
           clearInterval(id);
           //   alert("Hello press F11 to improve experience");
        } else {
+
+        document.getElementById("right_nav_box").style.display = "none";
           pos++;
           let row = (pos) + '% ' + (100 - pos) + '% ';
           elem.style.gridTemplateRows = row;
