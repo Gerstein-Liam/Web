@@ -5,12 +5,12 @@
       <h1 style="color: rgb(255, 0, 0); font-family: system-ui; text-align: center; font-size:small; padding-bottom: 20px;">
           ADD PERSON
       </h1>
-      <input type="text" id="lastname"  value="lastname"  ondblclick="this.value=''"   onfocus="AddPersonModal.onFieldChange()" name="command">
-      <input type="text" id="firstname" value="firstname" ondblclick="this.value=''" onfocus="AddPersonModal.onFieldChange()"  name="command">
+      <input type="text" class="lastname"   id="lastname"  value="lastname"  ondblclick="this.value=''"   onfocus="AddPersonModal.onFieldChange()" name="command">
+      <input type="text" class="firstname" id="firstname" value="firstname" ondblclick="this.value=''" onfocus="AddPersonModal.onFieldChange()"  name="command">
       <br>
-      <input type="text" id="fonction" value="fonction" onfocus="this.value=''" name="command">
+      <input type="text" class="fonction" id="fonction" value="fonction" onfocus="this.value=''" name="command">
       <br>
-      <select id="domain" name="domain" form="find_testimy_criterias" onchange="UpdateResult()">
+      <select class="domain" id="domain" name="domain" form="find_testimy_criterias" onchange="UpdateResult()">
           <option value="%">Domain</option>
           <option value="Civil">Civil</option>
           <option value="Army">Army</option>
@@ -18,7 +18,7 @@
           <option value="Science">Scientits</option>
       </select>
       <br>
-      <select id="country" name="country" form="find_testimy_criterias" onchange="document.getElementById('save_status').innerHTML=' ';">
+      <select class="country" id="country" name="country" form="find_testimy_criterias" onchange="document.getElementById('save_status').innerHTML=' ';">
           <option value="%">Country</option>
           <option value="United States">United States</option>
           <option value="France">France</option>
@@ -33,13 +33,13 @@
 
       </select>
       <br>
-      <select id="implication" name="implication" form="find_testimy_criterias" onchange="UpdateResult()">
+      <select class="implication" id="implication" name="implication" form="find_testimy_criterias" onchange="UpdateResult()">
           <option value="%">Implication</option>
           <option value="Direct">Direct</option>
           <option value="Indirect">Indirect</option>
       </select>
       <br>
-      <select id="position" name="implication" form="find_testimy_criterias" onchange="UpdateResult()">
+      <select class="position" id="position" name="implication" form="find_testimy_criterias" onchange="UpdateResult()">
           <option value="%">Position</option>
           <option value="Believer">Believer</option>
           <option value="Skeptical">Skeptical</option>

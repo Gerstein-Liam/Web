@@ -6,7 +6,7 @@ var _Queries = {
     DELETE_PERSON: ` DELETE FROM person WHERE Lastname=? AND Firstname =?`,
     UPDATE_PERSON: `UPDATE person SET Lastname=? , Firstname=? ,Fonction=? ,Domain=? ,Country=?, Implication=? , Position=? WHERE ID_person=(SELECT ID_person FROM  person WHERE  Lastname=? AND Firstname=? )`,
     LOAD_EVENT_LIST: `SELECT * FROM event WHERE 1`,
-    ADD_EVENT: `INSERT INTO person(ID_event, Name,Date, Country, Type, Latitude, Longitude) VALUES (NULL, ?,NULL,?,?,NULL,NULL)`,
+    ADD_EVENT: `INSERT INTO event(ID_event, Name,Date, Country, Type, Latitude, Longitude) VALUES (NULL, ?,?,?,?,0,0)`,
 };
 function API_Query_Post__TestJSON(req) {
     return new Promise(function (resolve, reject) {

@@ -44,13 +44,13 @@ AddPersonModal = new ShowHide_FixedPosition('AddPersonModal',
 );
 function AddPerson() {
     var person_info = {
-        LASTNAME: `${document.getElementById("lastname").value}`,
-        FIRSTNAME: `${document.getElementById("firstname").value}`,
-        FONCTION: `${document.getElementById("fonction").value}`,
-        DOMAIN: `${document.getElementById("domain").value}`,
-        COUNTRY: `${document.getElementById("country").value}`,
-        IMPLICATION: `${document.getElementById("implication").value}`,
-        POSITION: `${document.getElementById("position").value}`
+        LASTNAME: `${document.getElementById('add_person_modal').getElementsByClassName('lastname')[0].value}`,
+        FIRSTNAME: `${document.getElementById('add_person_modal').getElementsByClassName('firstname')[0].value}`,
+        FONCTION: `${document.getElementById('add_person_modal').getElementsByClassName('fonction')[0].value}`,
+        DOMAIN: `${document.getElementById('add_person_modal').getElementsByClassName('domain')[0].value}`,
+        COUNTRY: `${document.getElementById('add_person_modal').getElementsByClassName('country')[0].value}`,
+        IMPLICATION: `${document.getElementById('add_person_modal').getElementsByClassName('implication')[0].value}`,
+        POSITION: `${document.getElementById('add_person_modal').getElementsByClassName('position')[0].value}`
     };
     //console.table([this._UpdateValues]);
     var post_para = {

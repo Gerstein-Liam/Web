@@ -5,10 +5,10 @@
         <h1 style="color: rgb(255, 0, 0); font-family: system-ui; text-align: center; font-size:small; padding-bottom: 20px;">
             ADD EVENT
         </h1>
-        <input type="text" id="name"  value="name"  ondblclick="this.value=''"   onfocus="AddEventModal.onFieldChange()" name="command">
-        <input type="text" id="date" value="date" ondblclick="this.value=''" onfocus="AddEventModal.onFieldChange()"  name="command">
+        <input type="text" class="name" id="name"  value="name"  ondblclick="this.value=''"    name="command">
+        <input type="text" class="date" id="date" value="date" ondblclick="this.value=''"  name="command">
         <br>
-        <select id="country" name="country" form="find_testimy_criterias" onchange="document.getElementById('save_status').innerHTML=' ';">
+        <select class="country" id="country" name="country" form="find_testimy_criterias">
             <option value="%">Country</option>
             <option value="United States">United States</option>
             <option value="France">France</option>
@@ -22,13 +22,13 @@
             <option value="United Kingdom">United Kingdom</option>
         </select>
         <br>
-        <select id="type" name="type" form="find_testimy_criterias" onchange="UpdateResult()">
+        <select class="type" id="type" name="type" form="find_testimy_criterias" >
             <option value="%">Type</option>
             <option value="Direct">Direct</option>
             <option value="Indirect">Indirect</option>
         </select>
         <br>
-        <input type="submit" value="SAVE" onclick="AddPerson()">
+        <input type="submit" value="SAVE" onclick="AddEvent()">
         <div class="db_status"> DOING </div>
     </div>
   </div>

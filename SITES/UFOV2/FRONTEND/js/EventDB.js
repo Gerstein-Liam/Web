@@ -9,16 +9,16 @@ AddEventModal = new ShowHide_FixedPosition('AddEventModal',
     }
 );
 
-/*
+
 function AddEvent() {
     var event_info = {
-        LASTNAME: `${document.getElementById("lastname").value}`,
-        FIRSTNAME: `${document.getElementById("firstname").value}`,
-        FONCTION: `${document.getElementById("fonction").value}`,
-        DOMAIN: `${document.getElementById("domain").value}`,
-        COUNTRY: `${document.getElementById("country").value}`,
-        IMPLICATION: `${document.getElementById("implication").value}`,
-        POSITION: `${document.getElementById("position").value}`
+        NAME: `${document.getElementById('add_event_modal').getElementsByClassName('name')[0].value}}`,
+        DATE: `${document.getElementById('add_event_modal').getElementsByClassName('date')[0].value}`,
+        COUNTRY: `${document.getElementById('add_event_modal').getElementsByClassName('country')[0].value}`,
+        TYPE: `${document.getElementById('add_event_modal').getElementsByClassName('type')[0].value}`
+      //  LATITUDE: `${document.getElementById("latitude").value}`,
+      //  LONGITUDE:
+   
     };
     //console.table([this._UpdateValues]);
     var post_para = {
@@ -26,9 +26,9 @@ function AddEvent() {
         NEWEVENT: event_info
     }
     let Ajax = new AjaxPostJSON("DB_REQUEST", post_para, function (res) {
-        erasetable("table-persons");
-        DB_EVENT.push({ Lastname: `${event_info.LASTNAME}`, Firstname: `${event_info.FIRSTNAME}`, Fonction: `${event_info.FONCTION}`, Domain: `${event_info.DOMAIN}`, Country: `${event_info.COUNTRY}`, Implication: `${event_info.IMPLICATION}`, Position: `${event_info.POSITION}` })
-        erasetable("table-persons");
+      //  erasetable("table-persons");
+        DB_EVENT.push({ Name: `${event_info.NAME}`, Date: `${event_info.DATE}`, Country: `${event_info.COUNTRY}`, Type: `${event_info.TYPE}`, Latitude: `${0}`, Longitude: `${0}`})
+        erasetable("table-events");
         BuildEventTable(DB_EVENT);
         document.getElementById('add_event_modal').getElementsByClassName('db_status')[0].style.backgroundColor = "green";
         document.getElementById('add_event_modal').getElementsByClassName('db_status')[0].innerHTML = res.STATUS;
@@ -39,4 +39,5 @@ function AddEvent() {
     });
     Ajax.ExecutePOST(null, null);
 }
-*/
+
+
