@@ -1,22 +1,35 @@
 <!--   ------------------------------------------------------ADD------------------------------------------------------     -->
 <div id="AddEventModal" class="modal">
-    <div class="add_modal add_event_modal">
+    <div class="add_modal add_event_modal" id="add_event_modal">
         <span class="close" onclick="AddEventModal.CloseModal()">&times;</span>
-        <h1 style="color: rgb(255, 0, 0); font-family: system-ui; text-align: center; font-size:small; padding-bottom: 20px;">EVENT
+        <h1 style="color: rgb(255, 0, 0); font-family: system-ui; text-align: center; font-size:small; padding-bottom: 20px;">
+            ADD EVENT
         </h1>
-        <input type="text" id="name" value="name"   onfocus="this.value=''" name="command">
-        <input type="text" id="date" value="date" onfocus="this.value=''" name="command"><br>
+        <input type="text" id="name"  value="name"  ondblclick="this.value=''"   onfocus="AddEventModal.onFieldChange()" name="command">
+        <input type="text" id="date" value="date" ondblclick="this.value=''" onfocus="AddEventModal.onFieldChange()"  name="command">
+        <br>
         <select id="country" name="country" form="find_testimy_criterias" onchange="document.getElementById('save_status').innerHTML=' ';">
             <option value="%">Country</option>
             <option value="United States">United States</option>
             <option value="France">France</option>
-        </select><br>
+            <option value="Peru">Peru</option>
+            <option value="Chili">Chili</option>
+            <option value="Canada">Canada</option>
+            <option value="Mexico">Mexico</option>
+            <option value="Japan">Japan</option>
+            <option value="Iran">Iran</option>
+            <option value="Belgium">Belgium</option>
+            <option value="United Kingdom">United Kingdom</option>
+        </select>
+        <br>
         <select id="type" name="type" form="find_testimy_criterias" onchange="UpdateResult()">
             <option value="%">Type</option>
-            <option value="Observation">Observation</option>
-            <option value="Conference">Conference</option>
-        </select><br>
-        <input type="submit" value="Submit"  onclick="AddPerson()">
-        <div class="save_status" id="save_status"> DOING  </div>
+            <option value="Direct">Direct</option>
+            <option value="Indirect">Indirect</option>
+        </select>
+        <br>
+        <input type="submit" value="SAVE" onclick="AddPerson()">
+        <div class="db_status"> DOING </div>
     </div>
   </div>
+  

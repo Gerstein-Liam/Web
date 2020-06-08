@@ -5,7 +5,8 @@ var _Queries = {
     ADD_PERSON: `INSERT INTO person(ID_person, Lastname,Firstname, Fonction, Domain, Country, Implication, Position) VALUES (NULL, ?,?,?,?,?,?,?)`,
     DELETE_PERSON: ` DELETE FROM person WHERE Lastname=? AND Firstname =?`,
     UPDATE_PERSON: `UPDATE person SET Lastname=? , Firstname=? ,Fonction=? ,Domain=? ,Country=?, Implication=? , Position=? WHERE ID_person=(SELECT ID_person FROM  person WHERE  Lastname=? AND Firstname=? )`,
-    LOAD_EVENT_LIST: `SELECT * FROM event WHERE 1`
+    LOAD_EVENT_LIST: `SELECT * FROM event WHERE 1`,
+    ADD_EVENT: `INSERT INTO person(ID_event, Name,Date, Country, Type, Latitude, Longitude) VALUES (NULL, ?,?,?,?,?,?)`,
 };
 function API_Query_Post__TestJSON(req) {
     return new Promise(function (resolve, reject) {
@@ -29,17 +30,15 @@ function API_Query_Post__TestJSON(req) {
             let CustomError_OnSQL = { ERROR: "SERVER SAY:SQL-ERROR" }
             switch (JSONPOST.COMMAND) {
                 case "LOAD PERSON-LIST":
-                console.log("--LOAD PERSON-LIST");
-                try { http_response = await _Database._m_DBQuery_Promise(_Queries.LOAD_PERSON_LIST, null); }
-                catch (err) { reject(JSON.stringify(CustomError_OnSQL)); }
-                break;
-               
+                    console.log("--LOAD PERSON-LIST");
+                    try { http_response = await _Database._m_DBQuery_Promise(_Queries.LOAD_PERSON_LIST, null); }
+                    catch (err) { reject(JSON.stringify(CustomError_OnSQL)); }
+                    break;
                 case "LOAD EVENT-LIST":
-                console.log("--LOAD EVENT-LIST");
-                try { http_response = await _Database._m_DBQuery_Promise(_Queries.LOAD_EVENT_LIST, null); }
-                catch (err) { reject(JSON.stringify(CustomError_OnSQL)); }
-                break;
-               
+                    console.log("--LOAD EVENT-LIST");
+                    try { http_response = await _Database._m_DBQuery_Promise(_Queries.LOAD_EVENT_LIST, null); }
+                    catch (err) { reject(JSON.stringify(CustomError_OnSQL)); }
+                    break;
                 case "ADD PERSON":
                     console.log("--ADD PERSON");
                     console.table([JSONPOST.NEWPERSON]);
@@ -51,8 +50,18 @@ function API_Query_Post__TestJSON(req) {
                     }
                     catch (err) { reject(JSON.stringify(CustomError_OnSQL)); }
                     break;
-               
-              case "UPDATE PERSON":
+                case "ADD EVENT":
+                    console.log("--ADD EVENT");
+                    console.table([JSONPOST.NEWEVENT]);
+                    try {
+                        await _Database._m_DBQuery_Promise(_Queries.ADD_EVENT, Object.values(JSONPOST.NEWEVENT));
+                        http_response = {
+                            STATUS: "SERVER SAY: EVENT SAVED"
+                        }
+                    }
+                    catch (err) { reject(JSON.stringify(CustomError_OnSQL)); }
+                    break;
+                case "UPDATE PERSON":
                     console.log("--UPDATE");
                     console.log(" [OLD] ");
                     console.table([JSONPOST.OLD]);
@@ -69,8 +78,7 @@ function API_Query_Post__TestJSON(req) {
                     }
                     catch (err) { reject(JSON.stringify(CustomError_OnSQL)); }
                     break;
-              
-              case "DELETE PERSON":
+                case "DELETE PERSON":
                     console.log("--DELETE PERSON");
                     console.table([JSONPOST.OLD]);
                     try {
