@@ -297,9 +297,24 @@
         <h1 style="color: rgb(255, 0, 0); font-family: system-ui; text-align: center; font-size:small; padding-bottom: 20px;">
             ADD EVENT
         </h1>
-        <input type="text" class="name" id="name"  value="name"  ondblclick="this.value=''"    name="command">
-        <input type="text" class="date" id="date" value="date" ondblclick="this.value=''"  name="command">
-        <br>
+        <input type="text" class="name" id="name"  value=" name"  ondblclick="this.value=''" name="command">
+        <input type="text" class="day" id="day"  value=" day"  ondblclick="this.value=''"    name="command">
+        <select class="month" id="month" name="month" form="find_testimy_criterias" >
+            <option value="%">Month</option>
+            <option value="01">January</option>
+            <option value="02">February</option>
+            <option value="03">Mars</option>
+            <option value="04">April</option>
+            <option value="05">May</option>
+            <option value="06">June</option>
+            <option value="07">July</option>
+            <option value="08">August</option>
+            <option value="09">September</option>
+            <option value="10">November</option>
+            <option value="11">October</option>
+            <option value="12">December</option>
+        </select>
+        <input type="text" class="year" id="year"  value=" year"  ondblclick="this.value=''"    name="command"> 
         <select class="country" id="country" name="country" form="find_testimy_criterias">
             <option value="%">Country</option>
             <option value="United States">United States</option>
@@ -324,7 +339,7 @@
         <div class="db_status"> DOING </div>
     </div>
   </div>
-  
+
         <div class="ma-bottom-container" id="ma-bottom-container">
   <div class="grp-grids-organisation" id="grp-grids-organisation">
     <div class="database-title-container" id="database-title-container">
