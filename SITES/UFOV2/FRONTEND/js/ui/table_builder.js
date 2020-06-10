@@ -100,7 +100,10 @@ function BuildEventTable(_json) {
         _name.innerHTML = event.Name;
         var _date = document.createElement("td");
         _date.setAttribute("class", "_date");
-        _date.innerHTML = event.Date;
+        
+  
+        var DateTruncated=`${event.Date}`;
+        _date.innerHTML =      DateTruncated.substring(0,10);
         var _country = document.createElement("td");
         _country.setAttribute("class", "_country");
         _country.innerHTML = event.Country;

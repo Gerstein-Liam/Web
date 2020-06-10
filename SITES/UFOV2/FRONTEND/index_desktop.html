@@ -298,8 +298,11 @@
             ADD EVENT
         </h1>
         <input type="text" class="name" id="name"  value=" name"  ondblclick="this.value=''" name="command">
+       
+       
         <input type="text" class="day" id="day"  value=" day"  ondblclick="this.value=''"    name="command">
-        <select class="month" id="month" name="month" form="find_testimy_criterias" >
+       
+        <select class="month" id="month" name="month" form="find_testimy_criterias"  style="justify-content: start;"  >
             <option value="%">Month</option>
             <option value="01">January</option>
             <option value="02">February</option>
@@ -314,7 +317,7 @@
             <option value="11">October</option>
             <option value="12">December</option>
         </select>
-        <input type="text" class="year" id="year"  value=" year"  ondblclick="this.value=''"    name="command"> 
+        <input type="text" class="year" id="year"  value=" year"  ondblclick="this.value=''"    name="command" style="justify-content:start;"> 
         <select class="country" id="country" name="country" form="find_testimy_criterias">
             <option value="%">Country</option>
             <option value="United States">United States</option>
@@ -331,8 +334,8 @@
         <br>
         <select class="type" id="type" name="type" form="find_testimy_criterias" >
             <option value="%">Type</option>
-            <option value="Direct">Direct</option>
-            <option value="Indirect">Indirect</option>
+            <option value="Direct">Sighting</option>
+            <option value="Indirect">Conference</option>
         </select>
         <br>
         <input type="submit" value="SAVE" onclick="AddEvent()">
