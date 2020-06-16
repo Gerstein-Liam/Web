@@ -52,7 +52,7 @@
                 <td style="font-family: system-ui; vertical-align: center; ">PERSONS</td>
                 <td>
                      <label class="switch">
-                        <input type="checkbox" id="person_check_box" onchange="MidAreaGridsMod()">
+                        <input type="checkbox" id="person_check_box" onchange="MidAreaGridsMod()" checked>
                         <span class="slider round"></span>
                       </label>
                 </td>
@@ -61,7 +61,7 @@
                 <td style="font-family: system-ui;  vertical-align: center; ">EVENTS</td>
                 <td>
                     <label class="switch">
-                        <input type="checkbox" id="event_check_box" onchange="MidAreaGridsMod()">
+                        <input type="checkbox" id="event_check_box" onchange="MidAreaGridsMod()" checked>
                         <span class="slider round"></span>
                       </label>
                 </td>
@@ -70,7 +70,7 @@
                 <td style="font-family: system-ui; vertical-align: center;">GROUPS</td>
                 <td>
                     <label class="switch">
-                        <input type="checkbox" id="group_check_box" onchange="MidAreaGridsMod()">
+                        <input type="checkbox"  id="group_check_box" onchange="MidAreaGridsMod()" checked>
                         <span class="slider round"></span>
                     </label>  
                 </td>
@@ -207,11 +207,9 @@
   </div>
 </div>
 <!--   ------------------------------------------------------RIGHT CLICK------------------------------------------------------     -->
-<div id="RightClickModal" class="modal_rightclick">
+<div id="PersonRightClickModal" class="modal_rightclick">
     <div class="modal_rightclick_content" id="modal_rightclick_content">
         <span class="close " onclick="PersonRightClickModal.CF_CloseModal() ">&times;</span>
-       
-       
         <input type="submit"  value="DELETE" id="UpdateBT" onclick="PersonRightClickModal._OnDeleteClick()" >
        
         <!--  

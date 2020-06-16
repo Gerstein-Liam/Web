@@ -93,7 +93,7 @@ function BuildEventTable(_json) {
     var i = 0;
     for (const event of _json) {
         var ligne = document.createElement("tr");
-        ligne.setAttribute('onmousedown', 'PersonRightClickModal.CF_OpenModal(event,this.id)');
+        ligne.setAttribute('onmousedown', 'EventRightClickModal.CF_OpenModal(event,this.id)');
         ligne.setAttribute('id', `${i}`);
         var _name = document.createElement("td");
         _name.setAttribute("class", "_name");
