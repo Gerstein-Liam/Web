@@ -1,4 +1,4 @@
-AddEventModal = new ShowHide_FixedPosition('AddEventModal',
+  AddEventModal = new ShowHide_FixedPosition('AddEventModal',
     function () {
         document.getElementById('add_event_modal').getElementsByClassName('db_status')[0].style.backgroundColor = "blue";
         document.getElementById('add_event_modal').getElementsByClassName('db_status')[0].innerHTML = "IDLE";
